@@ -8,7 +8,11 @@
 
 import UIKit
 
-class LeaderboardViewController: UIViewController {
+class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var leaderboardResults = String()
+    var numberOfPlayers = ["player1"]
+    var currentHole = Hole()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +23,23 @@ class LeaderboardViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return numberOfPlayers.count
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
+        cell.textLabel!.text = leaderboardResults
+        print(leaderboardResults)
+        return cell
     }
     
 
