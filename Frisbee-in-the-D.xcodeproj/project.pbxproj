@@ -15,6 +15,7 @@
 		B363F54B1BE6CAA000DB6358 /* Frisbee_in_the_DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F54A1BE6CAA000DB6358 /* Frisbee_in_the_DUITests.swift */; };
 		B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55D1BE6EBB700DB6358 /* Hole.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B363F54C1BE6CAA000DB6358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseMapViewController.swift; sourceTree = "<group>"; };
 		B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHoleViewController.swift; sourceTree = "<group>"; };
+		B363F55D1BE6EBB700DB6358 /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,11 @@
 			children = (
 				B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */,
 				B363F52E1BE6CA9F00DB6358 /* Main.storyboard */,
+				B363F55F1BE6EBBE00DB6358 /* Model */,
+				B363F55C1BE6EB9C00DB6358 /* Controllers */,
 				B363F5311BE6CA9F00DB6358 /* Assets.xcassets */,
 				B363F5331BE6CA9F00DB6358 /* LaunchScreen.storyboard */,
 				B363F5361BE6CA9F00DB6358 /* Info.plist */,
-				B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */,
-				B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */,
 			);
 			path = "Frisbee-in-the-D";
 			sourceTree = "<group>";
@@ -126,6 +128,23 @@
 				B363F54C1BE6CAA000DB6358 /* Info.plist */,
 			);
 			path = "Frisbee-in-the-DUITests";
+			sourceTree = "<group>";
+		};
+		B363F55C1BE6EB9C00DB6358 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */,
+				B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B363F55F1BE6EBBE00DB6358 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B363F55D1BE6EBB700DB6358 /* Hole.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */,
+				B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */,
 				B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */,
 				B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */,
 			);
