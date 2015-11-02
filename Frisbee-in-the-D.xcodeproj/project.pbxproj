@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */; };
-		B363F52D1BE6CA9F00DB6358 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F52C1BE6CA9F00DB6358 /* ViewController.swift */; };
 		B363F5301BE6CA9F00DB6358 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B363F52E1BE6CA9F00DB6358 /* Main.storyboard */; };
 		B363F5321BE6CA9F00DB6358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B363F5311BE6CA9F00DB6358 /* Assets.xcassets */; };
 		B363F5351BE6CA9F00DB6358 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B363F5331BE6CA9F00DB6358 /* LaunchScreen.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		B363F5271BE6CA9F00DB6358 /* Frisbee-in-the-D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Frisbee-in-the-D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B363F52C1BE6CA9F00DB6358 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B363F52F1BE6CA9F00DB6358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B363F5311BE6CA9F00DB6358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B363F5341BE6CA9F00DB6358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */,
-				B363F52C1BE6CA9F00DB6358 /* ViewController.swift */,
 				B363F52E1BE6CA9F00DB6358 /* Main.storyboard */,
 				B363F5311BE6CA9F00DB6358 /* Assets.xcassets */,
 				B363F5331BE6CA9F00DB6358 /* LaunchScreen.storyboard */,
@@ -255,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B363F52D1BE6CA9F00DB6358 /* ViewController.swift in Sources */,
 				B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +477,7 @@
 				B363F5511BE6CAA000DB6358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B363F5521BE6CAA000DB6358 /* Build configuration list for PBXNativeTarget "Frisbee-in-the-DTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +486,7 @@
 				B363F5541BE6CAA000DB6358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B363F5551BE6CAA000DB6358 /* Build configuration list for PBXNativeTarget "Frisbee-in-the-DUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +495,7 @@
 				B363F5571BE6CAA000DB6358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
