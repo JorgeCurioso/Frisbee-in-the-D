@@ -43,6 +43,17 @@ class CurrentHoleViewController: UIViewController {
     
     
     @IBAction func submitScoreButtonPressed(sender: AnyObject) {
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CurrentHole<->Leaderboard" {
+            let destVC = segue.destinationViewController as! LeaderboardViewController
+            // Pass the selected object to the new view controller
+            currentHole.userStrokes = Int(user1Strokes.text!)
+            destVC.leaderboardResults = "\(currentHole.userScore)"
+            print("\(destVC.leaderboardResults)")
+        }
     }
     
     
