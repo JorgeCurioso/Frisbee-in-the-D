@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CoreLocation
-import MapKit
 
 class Hole {
     
@@ -36,6 +35,13 @@ class Hole {
 
 let hole1 = Hole(name: "Hole #1")
 let hole2 = Hole(name: "Hole #2")
+let hole3 = Hole(name: "Hole #3")
+let hole4 = Hole(name: "Hole #4")
+let hole5 = Hole(name: "Hole #5")
+let hole6 = Hole(name: "Hole #6")
+let hole7 = Hole(name: "Hole #7")
+let hole8 = Hole(name: "Hole #8")
+let hole9 = Hole(name: "Hole #9")
 
 
 

@@ -10,8 +10,8 @@ import UIKit
 
 class CurrentHoleViewController: UIViewController {
     
+    let rooseveltPark = Course(name: "Roosevelt Park")
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

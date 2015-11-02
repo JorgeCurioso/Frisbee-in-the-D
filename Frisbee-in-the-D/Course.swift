@@ -29,4 +29,5 @@ class Course    {
     }
 }
 
-var rooseveltPark = Course(name: "Roosevelt Park")
+//var rooseveltPark = Course(name: "Roosevelt Park")
+
