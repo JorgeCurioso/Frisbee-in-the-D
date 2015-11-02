@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 
-class Hole {
+struct Hole {
     
     var name = String()
     var description = String()
@@ -19,29 +19,31 @@ class Hole {
     var aerialImage: UIImage?
     var firstPersonTeeImage: UIImage?
     
-    var coordinates = CLLocationCoordinate2D()
+    var coordinates: CLLocationCoordinate2D?
     
     var userScore: Int {
         get {
             return userStrokes! - par
         }
     }
-    
-    init(name: String) {
-        self.name = name
-    }
-    
 }
 
-let hole1 = Hole(name: "Hole #1")
-let hole2 = Hole(name: "Hole #2")
-let hole3 = Hole(name: "Hole #3")
-let hole4 = Hole(name: "Hole #4")
-let hole5 = Hole(name: "Hole #5")
-let hole6 = Hole(name: "Hole #6")
-let hole7 = Hole(name: "Hole #7")
-let hole8 = Hole(name: "Hole #8")
-let hole9 = Hole(name: "Hole #9")
+let hole1 = Hole(name: "1",
+                description: "You must go around the middle post before hitting the one on the right",
+                par: 4,
+                userStrokes: nil,
+                aerialImage: nil,
+                firstPersonTeeImage: nil,
+                coordinates: nil)
+
+let hole2 = Hole(name: "2",
+                description: "The alleyway is out of bounds. Be careful as you go for the post!",
+                par: 3,
+                userStrokes: nil,
+                aerialImage: nil,
+                firstPersonTeeImage: nil,
+                coordinates: nil)
+
 
 
 
