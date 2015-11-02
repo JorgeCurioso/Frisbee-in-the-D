@@ -13,7 +13,7 @@ import MapKit
 
 class Hole {
     
-    var title = String()
+    var name = String()
     var description = String()
     var par = Int()
     var userStrokes: Int?
@@ -28,14 +28,14 @@ class Hole {
         }
     }
     
-    init(title: String) {
-        self.title = title
+    init(name: String) {
+        self.name = name
     }
     
 }
 
-let hole1 = Hole(title: "Hole #1")
-let hole2 = Hole(title: "Hole #2")
+let hole1 = Hole(name: "Hole #1")
+let hole2 = Hole(name: "Hole #2")
 
 
 
