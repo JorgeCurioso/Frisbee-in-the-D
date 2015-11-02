@@ -16,6 +16,7 @@
 		B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55D1BE6EBB700DB6358 /* Hole.swift */; settings = {ASSET_TAGS = (); }; };
+		B363F5611BE6F27F00DB6358 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F5601BE6F27F00DB6358 /* Course.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseMapViewController.swift; sourceTree = "<group>"; };
 		B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHoleViewController.swift; sourceTree = "<group>"; };
 		B363F55D1BE6EBB700DB6358 /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
+		B363F5601BE6F27F00DB6358 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				B363F55D1BE6EBB700DB6358 /* Hole.swift */,
+				B363F5601BE6F27F00DB6358 /* Course.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */,
 				B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */,
+				B363F5611BE6F27F00DB6358 /* Course.swift in Sources */,
 				B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */,
 				B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */,
 			);
