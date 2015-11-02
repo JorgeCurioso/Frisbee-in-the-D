@@ -7,7 +7,7 @@
         <!--Current Hole-->
         <scene sceneID="k2A-d9-GoL">
             <objects>
-                <viewController title="Current Hole" id="bHI-It-CAu" sceneMemberID="viewController">
+                <viewController title="Current Hole" id="bHI-It-CAu" customClass="CurrentHoleViewController" customModule="Frisbee_in_the_D" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z1e-6t-6LV"/>
                         <viewControllerLayoutGuide type="bottom" id="Usb-Ra-oZB"/>
@@ -27,7 +27,7 @@
         <!--Course Map-->
         <scene sceneID="Q6D-Cr-UqX">
             <objects>
-                <viewController title="Course Map" id="MPC-7D-zd5" sceneMemberID="viewController">
+                <viewController title="Course Map" id="MPC-7D-zd5" customClass="CourseMapViewController" customModule="Frisbee_in_the_D" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wqi-hI-kgd"/>
                         <viewControllerLayoutGuide type="bottom" id="Eb3-zL-wc0"/>
