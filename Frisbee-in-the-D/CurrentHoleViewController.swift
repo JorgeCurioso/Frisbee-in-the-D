@@ -10,18 +10,41 @@ import UIKit
 
 class CurrentHoleViewController: UIViewController {
     
-    let rooseveltPark = Course(name: "Roosevelt Park")
+    
+    @IBOutlet weak var userName1: UILabel!
+    @IBOutlet weak var user1Strokes: UITextField!
+    
+    
+    @IBOutlet weak var teeImage: UIImageView!
+    @IBOutlet weak var holeNumber: UILabel!
+    @IBOutlet weak var holePar: UILabel!
+    @IBOutlet weak var holeDescription: UILabel!
+    
+    var course = rooseveltPark.holes
+    var currentHole = Hole()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        currentHole = course[1]
+        holeNumber.text = currentHole.name
+        holePar.text = "\(currentHole.par)"
+        holeDescription.text = currentHole.description
+        teeImage.image = currentHole.firstPersonTeeImage
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
+    }
+    
     
 
     /*
