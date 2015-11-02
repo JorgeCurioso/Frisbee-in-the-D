@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import CoreLocation
+import MapKit
 
 class Hole {
     
@@ -17,6 +19,8 @@ class Hole {
     var userStrokes: Int?
     var aerialImage: UIImage?
     var firstPersonTeeImage: UIImage?
+    
+    var coordinates = CLLocationCoordinate2D()
     
     var userScore: Int {
         get {
@@ -32,4 +36,10 @@ class Hole {
 
 let hole1 = Hole(title: "Hole #1")
 let hole2 = Hole(title: "Hole #2")
+
+
+
+
+
+
 
