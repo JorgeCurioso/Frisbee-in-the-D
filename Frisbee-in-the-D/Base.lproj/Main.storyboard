@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="-144" y="1094"/>
         </scene>
-        <!--View Controller-->
+        <!--Leaderboard View Controller-->
         <scene sceneID="8SM-Wd-QVz">
             <objects>
-                <viewController id="0sx-Mg-pJC" sceneMemberID="viewController">
+                <viewController id="0sx-Mg-pJC" customClass="LeaderboardViewController" customModule="Frisbee_in_the_D" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MLg-F8-iiR"/>
                         <viewControllerLayoutGuide type="bottom" id="BLu-wc-ARV"/>
