@@ -28,16 +28,16 @@ class CurrentHoleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         currentHoleIndex = 0
-        currentHole = course[currentHoleIndex]
-        holeNumber.text = currentHole.name
-        holePar.text = "\(currentHole.par)"
-        holeDescription.text = currentHole.description
-        teeImage.image = currentHole.firstPersonTeeImage
+        setCurrentHole()
     }
     
     
     override func viewWillAppear(animated: Bool) {
         print("Current Hole:\(currentHoleIndex)")
+        setCurrentHole()
+    }
+    
+    func setCurrentHole()   {
         currentHole = course[currentHoleIndex]
         holeNumber.text = currentHole.name
         holePar.text = "\(currentHole.par)"
@@ -59,7 +59,10 @@ class CurrentHoleViewController: UIViewController {
             let destVC = segue.destinationViewController as! LeaderboardViewController
             // Pass the selected object to the new view controller
             currentHole.userStrokes = Int(user1Strokes.text!)
-            destVC.leaderboardResults = "\(currentHole.userScore)"
+            let currentScore = currentHole.userScore
+            print(currentScore)
+            var updatedScore = rooseveltPark.calculateCurrentScore(currentScore)
+            destVC.leaderboardResults = "\(updatedScore)"
             print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
     }
@@ -68,7 +71,8 @@ class CurrentHoleViewController: UIViewController {
     // Return from leaderboard
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
-        currentHoleIndex++
+            currentHoleIndex++
+        
         
     }
 }
