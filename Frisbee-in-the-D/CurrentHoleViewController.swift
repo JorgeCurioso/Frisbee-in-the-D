@@ -34,7 +34,7 @@ class CurrentHoleViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        print("Current Hole:\(currentHoleIndex)")
+        print("Current Hole:\(currentHoleIndex + 1)")
         reloadCurrentHole()
     }
     
