@@ -19,6 +19,12 @@ struct Hole {
     var firstPersonTeeImage: UIImage?
     var coordinates: CLLocationCoordinate2D?
     
+    var userScore: Int  {
+        get {
+            return userStrokes! - par
+        }
+    }
+    
     func calculateHoleScore(userStrokes: Int?, par: Int) -> Int {
         
             return userStrokes! - par
@@ -101,6 +107,7 @@ struct Course    {
     var currentHole = Hole()
     var currentHoleIndex = Int()
     var aggregateScores = [Int]()
+    var scoreTally = Int()
 
     
     var coursePar: Int {
@@ -116,16 +123,6 @@ struct Course    {
     init(name: String, holes: [Hole])  {
             self.name = name
             self.holes = holes
-    }
-    
-    
-    mutating func calculateLeaderboardScore(userInput: String) -> [Int] {
-        currentHole.userStrokes = Int(userInput)
-        let holeScore = currentHole.calculateHoleScore(currentHole.userStrokes, par: currentHole.par)
-        aggregateScores.append(holeScore)
-        aggregateScores.reduce(0, combine: +)
-        return aggregateScores
-        
     }
 }
 
