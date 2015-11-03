@@ -17,16 +17,14 @@ struct Hole {
     var par = Int()
     var userStrokes: Int?
     var firstPersonTeeImage: UIImage?
-//    var firstPersonTeeImage: UIImage?
-    
     var coordinates: CLLocationCoordinate2D?
     
-    var userScore: Int {
-        get {
+    func calculateHoleScore(userStrokes: Int?, par: Int) -> Int {
+        
             return userStrokes! - par
-        }
     }
 }
+
 
 let hole1 = Hole(name: "1",
                 description: "You must go around the middle post before hitting the one on the right",
@@ -100,6 +98,10 @@ struct Course    {
     var name = String()
     var description = String()
     var holes = [Hole]()
+    var currentHole = Hole()
+    var currentHoleIndex = Int()
+    var aggregateScores = [Int]()
+
     
     var coursePar: Int {
         get {
@@ -112,15 +114,22 @@ struct Course    {
     }
     
     init(name: String, holes: [Hole])  {
-        self.name = name
-        self.holes = holes
+            self.name = name
+            self.holes = holes
     }
     
-    func startRound()   {
+    
+    mutating func calculateLeaderboardScore(userInput: String) -> [Int] {
+        currentHole.userStrokes = Int(userInput)
+        let holeScore = currentHole.calculateHoleScore(currentHole.userStrokes, par: currentHole.par)
+        aggregateScores.append(holeScore)
+        aggregateScores.reduce(0, combine: +)
+        return aggregateScores
+        
     }
 }
 
-let rooseveltPark = Course(name: "Roosevelt Park", holes: [hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9])
+var rooseveltPark = Course(name: "Roosevelt Park", holes: [hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9])
 
 
 

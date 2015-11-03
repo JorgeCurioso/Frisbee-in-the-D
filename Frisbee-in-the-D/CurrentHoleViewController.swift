@@ -20,8 +20,9 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet weak var holeDescription: UILabel!
     
     var course = rooseveltPark.holes
-    var currentHole = Hole()
-    var currentHoleIndex = Int()
+    var currentHole = rooseveltPark.currentHole
+    var currentHoleIndex = rooseveltPark.currentHoleIndex
+//    var aggregateScores = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,15 +54,21 @@ class CurrentHoleViewController: UIViewController {
     
     @IBAction func submitScoreButtonPressed(sender: AnyObject) {}
     
+//    func calculateLeaderboardScore() -> [Int] {
+//        currentHole.userStrokes = Int(user1Strokes.text!)
+//        let holeScore = currentHole.calculateHoleScore(currentHole.userStrokes, par: currentHole.par)
+//        aggregateScores.append(holeScore)
+//        aggregateScores.reduce(0, combine: +)
+//        return aggregateScores
+//
+//    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CurrentHole<->Leaderboard" {
             let destVC = segue.destinationViewController as! LeaderboardViewController
             // Pass the selected object to the new view controller
-            currentHole.userStrokes = Int(user1Strokes.text!)
-            let currentScore = currentHole.userScore
-            print(currentScore)
-            var updatedScore = rooseveltPark.calculateCurrentScore(currentScore)
+            var updatedScore = rooseveltPark.calculateLeaderboardScore(user1Strokes.text!)
             destVC.leaderboardResults = "\(updatedScore)"
             print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
@@ -72,7 +79,5 @@ class CurrentHoleViewController: UIViewController {
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
             currentHoleIndex++
-        
-        
     }
 }
