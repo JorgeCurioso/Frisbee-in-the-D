@@ -14,7 +14,6 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet weak var userName1: UILabel!
     @IBOutlet weak var user1Strokes: UITextField!
     
-    
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
     @IBOutlet weak var holePar: UILabel!
@@ -22,17 +21,28 @@ class CurrentHoleViewController: UIViewController {
     
     var course = rooseveltPark.holes
     var currentHole = Hole()
+    var currentHoleIndex = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        currentHole = course[1]
+        currentHoleIndex = 0
+        currentHole = course[currentHoleIndex]
         holeNumber.text = currentHole.name
         holePar.text = "\(currentHole.par)"
         holeDescription.text = currentHole.description
         teeImage.image = currentHole.firstPersonTeeImage
-        
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        print("Current Hole:\(currentHoleIndex)")
+        currentHole = course[currentHoleIndex]
+        holeNumber.text = currentHole.name
+        holePar.text = "\(currentHole.par)"
+        holeDescription.text = currentHole.description
+        teeImage.image = currentHole.firstPersonTeeImage
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +51,8 @@ class CurrentHoleViewController: UIViewController {
     }
     
     
+    @IBAction func submitScoreButtonPressed(sender: AnyObject) {}
     
-    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
-
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CurrentHole<->Leaderboard" {
@@ -52,20 +60,15 @@ class CurrentHoleViewController: UIViewController {
             // Pass the selected object to the new view controller
             currentHole.userStrokes = Int(user1Strokes.text!)
             destVC.leaderboardResults = "\(currentHole.userScore)"
-            print("\(destVC.leaderboardResults)")
+            print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
     }
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Return from leaderboard
+    @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        
+        currentHoleIndex++
+        
     }
-    */
-
 }
