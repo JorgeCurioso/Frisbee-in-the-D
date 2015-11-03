@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import MapKit
 
 struct Hole {
     
@@ -21,14 +22,18 @@ struct Hole {
     
     var teeLatitude: CLLocationDegrees?
     var teeLongitude: CLLocationDegrees?
+    var teeLocation: CLLocationCoordinate2D?
+    var teeAnnotation: MKPointAnnotation?
 
-//    var teeCoordinates: CLLocationCoordinate2D?
+//    var tee: MKPointAnnotation?
     
     var userScore: Int  {
         get {
             return userStrokes! - par
         }
     }
+    
+//    init(name: String, description: String, par: Int, firstPersonTeeImage: UIImage?, teeLatitude: CLLocationDegrees?, teeLongitude: CLLocationDegrees?){}
     
 //    func calculateHoleScore(userStrokes: Int?, par: Int) -> Int {
 //        
@@ -43,7 +48,9 @@ let hole1 = Hole(name: "1",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole1")),
                 teeLatitude: 42.329880,
-                teeLongitude: -83.074237)
+                teeLongitude: -83.074237,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole2 = Hole(name: "2",
                 description: "The alleyway is out of bounds. Be careful as you go for the post!",
@@ -51,7 +58,9 @@ let hole2 = Hole(name: "2",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole2")),
                 teeLatitude: 42.329710,
-                teeLongitude: -83.074835)
+                teeLongitude: -83.074835,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole3 = Hole(name: "3",
                 description: "Aim for the big tree",
@@ -59,7 +68,9 @@ let hole3 = Hole(name: "3",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole3")),
                 teeLatitude: 42.329622,
-                teeLongitude: -83.075698)
+                teeLongitude: -83.075698,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole4 = Hole(name: "4",
                 description: "You must go around the middle post before hitting the one on the right",
@@ -67,7 +78,9 @@ let hole4 = Hole(name: "4",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole4")),
                 teeLatitude: 42.329784,
-                teeLongitude: -83.076223)
+                teeLongitude: -83.076223,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole5 = Hole(name: "5",
                 description: "The trick here is to LAND your frisbee on the tree stump. If it slides off it doesn't count.",
@@ -75,7 +88,9 @@ let hole5 = Hole(name: "5",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole5")),
                 teeLatitude: 42.330190,
-                teeLongitude: -83.076476)
+                teeLongitude: -83.076476,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole6 = Hole(name: "6",
                 description: "This one is equally tricky. Through the 'A', but only from the side you're currently facing (not the far side). Careful not to overshoot; It could cost you!",
@@ -83,7 +98,9 @@ let hole6 = Hole(name: "6",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole6")),
                 teeLatitude: 42.330094,
-                teeLongitude: -83.077170)
+                teeLongitude: -83.077170,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole7 = Hole(name: "7",
                 description: "Starting from at least 5 feet behind, you must go through the 'Roosevelt Park' gate before hitting the tree in view",
@@ -91,7 +108,9 @@ let hole7 = Hole(name: "7",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole7")),
                 teeLatitude:  42.330779,
-                teeLongitude: -83.077247)
+                teeLongitude: -83.077247,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole8 = Hole(name: "8",
                 description: "This hole is a little differet. There is a wall on the far side you must hit (anywhere is fine)",
@@ -99,7 +118,9 @@ let hole8 = Hole(name: "8",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole8")),
                 teeLatitude: 42.330910,
-                teeLongitude:  -83.077724)
+                teeLongitude:  -83.077724,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 let hole9 = Hole(name: "9",
                 description: "To complete this hole, you must go through the two central trees before hitting the distant tree on the right",
@@ -107,7 +128,9 @@ let hole9 = Hole(name: "9",
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole9")),
                 teeLatitude:  42.330878,
-                teeLongitude: -83.078460)
+                teeLongitude: -83.078460,
+                teeLocation: nil,
+                teeAnnotation: nil)
 
 
 
@@ -122,6 +145,9 @@ struct Course    {
     var currentHoleIndex = Int()
     var aggregateScores = [Int]()
     var scoreTally = Int()
+    
+    let parkLattitude = 42.330456
+    let parkLongitude = -83.077002
 
     
     var coursePar: Int {

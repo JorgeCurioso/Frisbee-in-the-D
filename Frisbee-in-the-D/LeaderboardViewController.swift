@@ -12,7 +12,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     var leaderboardResults = String()
     var numberOfPlayers = ["player1"]
-    var currentHole = Hole()
+    var currentHole: Hole?
 
     override func viewDidLoad() {
         super.viewDidLoad()
