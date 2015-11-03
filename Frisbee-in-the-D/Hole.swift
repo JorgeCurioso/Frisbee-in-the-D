@@ -25,10 +25,10 @@ struct Hole {
         }
     }
     
-    func calculateHoleScore(userStrokes: Int?, par: Int) -> Int {
-        
-            return userStrokes! - par
-    }
+//    func calculateHoleScore(userStrokes: Int?, par: Int) -> Int {
+//        
+//            return userStrokes! - par
+//    }
 }
 
 

@@ -29,16 +29,16 @@ class CurrentHoleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         currentHoleIndex = 0
-        setCurrentHole()
+        reloadCurrentHole()
     }
     
     
     override func viewWillAppear(animated: Bool) {
         print("Current Hole:\(currentHoleIndex)")
-        setCurrentHole()
+        reloadCurrentHole()
     }
     
-    func setCurrentHole()   {
+    func reloadCurrentHole()   {
         currentHole = course[currentHoleIndex]
         holeNumber.text = currentHole.name
         holePar.text = "\(currentHole.par)"
@@ -52,18 +52,7 @@ class CurrentHoleViewController: UIViewController {
     }
     
     
-    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
-            currentHole.userStrokes = Int(user1Strokes.text!)
-            scoreTally += currentHole.userScore
-    }
-//    func calculateLeaderboardScore() -> [Int] {
-//        currentHole.userStrokes = Int(user1Strokes.text!)
-//        let holeScore = currentHole.calculateHoleScore(currentHole.userStrokes, par: currentHole.par)
-//        aggregateScores.append(holeScore)
-//        aggregateScores.reduce(0, combine: +)
-//        return aggregateScores
-//
-//    }
+    @IBAction func submitScoreButtonPressed(sender: AnyObject) {}
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -71,7 +60,11 @@ class CurrentHoleViewController: UIViewController {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
             // Pass the selected object to the new view controller
-
+            currentHole.userStrokes = Int(user1Strokes.text!)
+            var scoreToAdd = currentHole.userScore
+            scoreTally += scoreToAdd
+            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
+            
             destVC.leaderboardResults = "\(scoreTally)"
             print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
