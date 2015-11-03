@@ -15,9 +15,9 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
     @IBOutlet weak var courseMap: MKMapView!
     
     let locationManager = CLLocationManager()
-    var teeLocation = CLLocationCoordinate2D()
-    var tee = MKPointAnnotation()
-    var holeTeeLocations = [MKAnnotation]()
+    var collectionOfPins = [MKAnnotation]()
+    var collectionOfTees = [MKAnnotation]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,15 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        addTeeLocations()
+        
+        
+        for eachHole in rooseveltPark.holes {
+            var tee = MKPointAnnotation()
+            tee.coordinate = eachHole.teeLocation
+            tee.title = eachHole.name
+            collectionOfTees.append(tee)
+        }
+        courseMap.addAnnotations(collectionOfTees)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +49,7 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         let region = MKCoordinateRegion(center: parkLocation, span: span)
         courseMap.setRegion(region, animated: false)
     }
-    
-    func addTeeLocations()  {
-        
-    }
+
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Could not find your location")
@@ -53,6 +58,5 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations[0] as CLLocation
     }
-    
 }
 
