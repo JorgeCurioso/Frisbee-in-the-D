@@ -10,6 +10,8 @@
 		23A73D171BE7B70E00846EF7 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D161BE7B70E00846EF7 /* RulesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D191BE7E0F900846EF7 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D1B1BE901C800846EF7 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1A1BE901C800846EF7 /* Rules.swift */; settings = {ASSET_TAGS = (); }; };
+		23A73D1D1BE988CD00846EF7 /* SetupGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		23A73D1F1BE989A900846EF7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1E1BE989A900846EF7 /* Player.swift */; settings = {ASSET_TAGS = (); }; };
 		B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */; };
 		B363F5301BE6CA9F00DB6358 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B363F52E1BE6CA9F00DB6358 /* Main.storyboard */; };
 		B363F5321BE6CA9F00DB6358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B363F5311BE6CA9F00DB6358 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		23A73D161BE7B70E00846EF7 /* RulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		23A73D1A1BE901C800846EF7 /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupGameViewController.swift; sourceTree = "<group>"; };
+		23A73D1E1BE989A900846EF7 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B363F5271BE6CA9F00DB6358 /* Frisbee-in-the-D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Frisbee-in-the-D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B363F52F1BE6CA9F00DB6358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */,
 				23A73D161BE7B70E00846EF7 /* RulesViewController.swift */,
 				23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */,
+				23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				B363F55D1BE6EBB700DB6358 /* Hole.swift */,
 				B363F5601BE6F27F00DB6358 /* Course.swift */,
 				23A73D1A1BE901C800846EF7 /* Rules.swift */,
+				23A73D1E1BE989A900846EF7 /* Player.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -294,8 +300,10 @@
 				B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */,
 				B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */,
 				B363F5611BE6F27F00DB6358 /* Course.swift in Sources */,
+				23A73D1D1BE988CD00846EF7 /* SetupGameViewController.swift in Sources */,
 				B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */,
 				23A73D171BE7B70E00846EF7 /* RulesViewController.swift in Sources */,
+				23A73D1F1BE989A900846EF7 /* Player.swift in Sources */,
 				B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

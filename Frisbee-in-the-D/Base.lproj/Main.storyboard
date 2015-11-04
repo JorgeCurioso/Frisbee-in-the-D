@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ptf-Sa-WV2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RyD-FE-jBf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Rules-->
@@ -127,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="-144" y="1094"/>
         </scene>
-        <!--Leaderboard View Controller-->
+        <!--Leaderboard-->
         <scene sceneID="8SM-Wd-QVz">
             <objects>
-                <viewController id="0sx-Mg-pJC" customClass="LeaderboardViewController" customModule="Frisbee_in_the_D" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Leaderboard" id="0sx-Mg-pJC" customClass="LeaderboardViewController" customModule="Frisbee_in_the_D" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MLg-F8-iiR"/>
                         <viewControllerLayoutGuide type="bottom" id="BLu-wc-ARV"/>
@@ -214,6 +215,66 @@
             </objects>
             <point key="canvasLocation" x="242" y="1094"/>
         </scene>
+        <!--Setup Game-->
+        <scene sceneID="Ku2-94-sSv">
+            <objects>
+                <viewController title="Setup Game" id="RyD-FE-jBf" customClass="SetupGameViewController" customModule="Frisbee_in_the_D" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v9v-Dg-VxH"/>
+                        <viewControllerLayoutGuide type="bottom" id="fX8-Qy-NoC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bKw-LE-jaq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMx-qC-l4U">
+                                <rect key="frame" x="103" y="255" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU5-sf-Kwk">
+                                <rect key="frame" x="20" y="255" width="84" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roosevelt Park" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-4v-7W7">
+                                <rect key="frame" x="16" y="20" width="288" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="Wjy-Ii-oJ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="39"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0N-gA-oNk">
+                                <rect key="frame" x="20" y="433" width="280" height="91"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
+                                <state key="normal" title="Start Round">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startRoundWithName:" destination="RyD-FE-jBf" eventType="touchUpInside" id="8BU-wQ-7HX"/>
+                                    <segue destination="Ptf-Sa-WV2" kind="show" identifier="Start-&gt;TabBar" id="Ij1-ey-G2s"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50400904609999997" green="0.42166940790000002" blue="0.0" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="WNv-4v-7W7" secondAttribute="trailing" id="2C5-1f-Opp"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="WNv-4v-7W7" secondAttribute="leading" id="EgT-nF-reA"/>
+                            <constraint firstItem="WNv-4v-7W7" firstAttribute="top" secondItem="v9v-Dg-VxH" secondAttribute="bottom" id="LXj-R1-hUr"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="player1NameField" destination="cMx-qC-l4U" id="Tfz-FO-IWm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-151" y="-369"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nbf-vL-ory">
             <objects>
@@ -232,7 +293,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoc-Cb-OX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="390"/>
+            <point key="canvasLocation" x="-151" y="303"/>
         </scene>
     </scenes>
 </document>
