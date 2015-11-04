@@ -28,7 +28,7 @@ class CurrentHoleViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        userName1.text = Player.sharedPlayer.name
+        userName1.text = "\(Player.sharedPlayer.name)'s score"
         currentHoleIndex = 0
         reloadCurrentHole()
     }
