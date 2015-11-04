@@ -171,10 +171,19 @@
                                     <segue destination="ge1-8h-7Ej" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="oT3-jv-WnC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2f-vz-87h">
+                                <rect key="frame" x="20" y="20" width="280" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="finalResultsLabel" destination="S2f-vz-87h" id="CQ2-dm-LNW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYw-8U-iHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ge1-8h-7Ej" userLabel="Exit" sceneMemberID="exit"/>

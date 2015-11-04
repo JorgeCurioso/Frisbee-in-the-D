@@ -10,19 +10,30 @@ import UIKit
 
 class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var finalResultsLabel: UILabel!
+    
     var leaderboardResults = String()
     var numberOfPlayers = ["player1"]
-    var currentHole: Hole?
+    var currentHoleIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        finalResultsLabel.hidden = true
+        if currentHoleIndex == 8    {
+            finalResultsLabel.hidden = false
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print(rooseveltPark.currentHoleIndex)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -38,7 +49,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
         cell.textLabel!.text = leaderboardResults
-        print(leaderboardResults)
+//        print(leaderboardResults)
         return cell
     }
 }

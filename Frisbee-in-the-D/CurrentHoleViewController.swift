@@ -67,6 +67,7 @@ class CurrentHoleViewController: UIViewController {
             print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
             
             destVC.leaderboardResults = "\(scoreTally)"
+            destVC.currentHoleIndex = currentHoleIndex
             print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
     }
