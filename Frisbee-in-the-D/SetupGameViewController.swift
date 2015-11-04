@@ -12,7 +12,7 @@ class SetupGameViewController: UIViewController {
 
     @IBOutlet weak var player1NameField: UITextField!
     
-    var player1 = Player()
+//    var player1 = Player?()
     
     
     override func viewDidLoad() {
@@ -22,6 +22,8 @@ class SetupGameViewController: UIViewController {
     }
 
     @IBAction func startRoundWithName(sender: AnyObject) {
+//        player1!.name = player1NameField.text!
+        Player.sharedPlayer.name = player1NameField.text!
     }
 
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
