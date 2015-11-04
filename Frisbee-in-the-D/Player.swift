@@ -17,10 +17,11 @@ class Player {
         return Singleton.playerInstance;
     }
     
-    var name = String()
+//    var player1Name = String()
+//    var player2Name: String?
+//    var player3Name: String?
+//    var player4name: String?
     
-//    init(name: String)  {
-//        self.name = name
-//    }
+    var players = [String]()
     
 }

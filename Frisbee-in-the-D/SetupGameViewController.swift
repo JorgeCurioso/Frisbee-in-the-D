@@ -10,31 +10,115 @@ import UIKit
 
 class SetupGameViewController: UIViewController {
 
-    @IBOutlet weak var player1NameField: UITextField!
+    
+    @IBOutlet var playerNameTextField: [UITextField]!
+    @IBOutlet weak var numberOfPlayers: UISegmentedControl!
+    @IBOutlet var playerLabels: [UILabel]!
+    
+    
     
 //    var player1 = Player?()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        for field in playerNameTextField   {
+            field.hidden = true
+        }
+        for label in playerLabels   {
+            label.hidden = true
+        }
     }
 
     @IBAction func startRoundWithName(sender: AnyObject) {
-//        player1!.name = player1NameField.text!
-        Player.sharedPlayer.name = player1NameField.text!
+
+        for player in playerNameTextField  {
+            
+            if player.text != ""  {
+                Player.sharedPlayer.players.append(playerNameTextField[numberOfPlayers.selectedSegmentIndex].text!)
+            }
+        }
+        print("Seg Contrl Index:\(numberOfPlayers.selectedSegmentIndex)")
+        print("collection of players:\(Player.sharedPlayer.players.count)")
     }
 
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "Start->TabBar" {
-//            let destVC = segue.destinationViewController as! CurrentHoleViewController
-//            // Pass the selected object to the new view controller
-//            player1.name = player1NameField.text!
-//            destVC.userName1.text = player1.name
-//        }
-//    }
 
+    @IBAction func numberOfPlayersChanged(sender: AnyObject) {
+        
+        switch numberOfPlayers.selectedSegmentIndex {
+        case 0:
+            display1Player()
+        case 1:
+            display2Players()
+        case 2:
+            display3Players()
+        case 3:
+            display4Players()
+        default:
+            print("somethin went haywire")
+        }
+        
+        
+    }
+    
+    func displayPlayers()   {
+        
+        var selectedIndex = numberOfPlayers.selectedSegmentIndex
+        
+        switch selectedIndex    {
+        case 0:
+            
+        }
+        
+    }
+    
+    func display1Player()   {
+        playerLabels[0].hidden = false
+        playerNameTextField[0].hidden = false
+        
+        playerLabels[1].hidden = true
+        playerNameTextField[1].hidden = true
+        playerLabels[2].hidden = true
+        playerNameTextField[2].hidden = true
+        playerLabels[3].hidden = true
+        playerNameTextField[3].hidden = true
+    }
+    
+    func display2Players()  {
+        playerLabels[0].hidden = false
+        playerNameTextField[0].hidden = false
+        playerLabels[1].hidden = false
+        playerNameTextField[1].hidden = false
+        
+        playerLabels[2].hidden = true
+        playerNameTextField[2].hidden = true
+        playerLabels[3].hidden = true
+        playerNameTextField[3].hidden = true
+    }
+    
+    func display3Players()  {
+        playerLabels[0].hidden = false
+        playerNameTextField[0].hidden = false
+        playerLabels[1].hidden = false
+        playerNameTextField[1].hidden = false
+        playerLabels[2].hidden = false
+        playerNameTextField[2].hidden = false
+        
+        playerLabels[3].hidden = true
+        playerNameTextField[3].hidden = true
+    }
+    
+    func display4Players()  {
+        for field in playerNameTextField   {
+            field.hidden = false
+        }
+        for label in playerLabels   {
+            label.hidden = false
+        }
+    }
+    
+    
 
 
 }
