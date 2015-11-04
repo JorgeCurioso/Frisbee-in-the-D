@@ -15,7 +15,6 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
     @IBOutlet weak var courseMap: MKMapView!
     
     let locationManager = CLLocationManager()
-    var collectionOfPins = [MKAnnotation]()
     var collectionOfTees = [MKAnnotation]()
 
 
@@ -27,10 +26,10 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
+        setupCourseMap()
         
         for eachHole in rooseveltPark.holes {
-            var tee = MKPointAnnotation()
+            let tee = MKPointAnnotation()
             tee.coordinate = eachHole.teeLocation
             tee.title = eachHole.name
             collectionOfTees.append(tee)
@@ -43,7 +42,7 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    func setupCourseMap() {
         let parkLocation = CLLocationCoordinate2D(latitude: rooseveltPark.parkLattitude, longitude: rooseveltPark.parkLongitude)
         let span = MKCoordinateSpanMake(0.0035, 0.0035)
         let region = MKCoordinateRegion(center: parkLocation, span: span)
