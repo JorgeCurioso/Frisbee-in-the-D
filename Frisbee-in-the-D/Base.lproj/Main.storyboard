@@ -177,12 +177,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-LO-O8l">
+                                <rect key="frame" x="34" y="425" width="251" height="80"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <segue destination="RyD-FE-jBf" kind="show" id="G5M-Dc-9fo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="finalResultsLabel" destination="S2f-vz-87h" id="CQ2-dm-LNW"/>
+                        <outlet property="newGameButton" destination="EFK-LO-O8l" id="eSF-E8-mAD"/>
+                        <outlet property="nextHoleButton" destination="EdP-EB-zAZ" id="1hb-c5-CPd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYw-8U-iHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -282,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="-369"/>
+            <point key="canvasLocation" x="-157" y="-637"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nbf-vL-ory">
