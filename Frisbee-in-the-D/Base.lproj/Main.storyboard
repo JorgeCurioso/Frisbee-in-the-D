@@ -218,7 +218,7 @@
         <!--Setup Game-->
         <scene sceneID="Ku2-94-sSv">
             <objects>
-                <viewController title="Setup Game" id="RyD-FE-jBf" sceneMemberID="viewController">
+                <viewController title="Setup Game" id="RyD-FE-jBf" customClass="SetupGameViewController" customModule="Frisbee_in_the_D" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v9v-Dg-VxH"/>
                         <viewControllerLayoutGuide type="bottom" id="fX8-Qy-NoC"/>
@@ -254,7 +254,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ptf-Sa-WV2" kind="show" id="MzW-N9-ftS"/>
+                                    <action selector="startRoundWithName:" destination="RyD-FE-jBf" eventType="touchUpInside" id="8BU-wQ-7HX"/>
+                                    <segue destination="Ptf-Sa-WV2" kind="show" identifier="Start-&gt;TabBar" id="Ij1-ey-G2s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -266,10 +267,13 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="player1NameField" destination="cMx-qC-l4U" id="Tfz-FO-IWm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="-283"/>
+            <point key="canvasLocation" x="-151" y="-369"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nbf-vL-ory">
@@ -289,7 +293,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoc-Cb-OX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="390"/>
+            <point key="canvasLocation" x="-151" y="303"/>
         </scene>
     </scenes>
 </document>
