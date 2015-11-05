@@ -78,39 +78,27 @@ class CurrentHoleViewController: UIViewController {
         if segue.identifier == "CurrentHole<->Leaderboard" {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
-            // Pass the selected object to the new view controller
-//            currentHole.userStrokes = Int(user1Strokes.text!)
-//            var scoreToAdd = currentHole.userScore
-//            scoreTally += scoreToAdd
-//            var scoreArray = [Int]()
-//            for i in 0..<Player.sharedPlayer.players.count  {
-//                
-//                scoreArray
-//            }
             if currentHoleIndex == 0    {
                 print("current hole index is ZERO")
                 for i in 0..<Player.sharedPlayer.players.count {
-                    //            Player.sharedPlayer.score.append(Int(playerStrokesTextField[i].text!)!)
-                    //            print(Player.sharedPlayer.score[i])
-                    let scoreToAdd = Int(playerStrokesTextField[i].text!)
-                    scoreTally.append(scoreToAdd!)
+                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    scoreTally.append(scoreToAdd)
                 }
             }   else    {
                 print("current hole index is \(currentHoleIndex)")
                 for i in 0..<Player.sharedPlayer.players.count {
-                    //                let currentHoleScore = Int(playerStrokesTextField[i].text!)
-                    //                for n in
-                    scoreTally[i] += Int(playerStrokesTextField[i].text!)!
+                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    print(scoreToAdd)
+                    scoreTally[i] += scoreToAdd
                     
                 }
             }
             print(scoreTally)
             
-            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
+//            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
             
-            destVC.leaderboardResults = "\(scoreTally)"
+            destVC.leaderboardResults = scoreTally
             destVC.currentHoleIndex = currentHoleIndex
-//            print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
     }
     

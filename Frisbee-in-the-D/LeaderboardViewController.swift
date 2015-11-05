@@ -14,7 +14,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var nextHoleButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
     
-    var leaderboardResults = String()
+    var leaderboardResults = [Int]()
 //    var numberOfPlayers = ["player1"]
     var currentHoleIndex: Int?
 
@@ -44,7 +44,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
-        cell.textLabel!.text = leaderboardResults
+        cell.textLabel!.text = "\(leaderboardResults[indexPath.row])"
         return cell
     }
 }
