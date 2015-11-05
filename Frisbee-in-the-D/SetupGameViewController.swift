@@ -16,10 +16,6 @@ class SetupGameViewController: UIViewController {
     @IBOutlet var playerLabels: [UILabel]!
     
     
-    
-//    var player1 = Player?()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -40,26 +36,10 @@ class SetupGameViewController: UIViewController {
     @IBAction func numberOfPlayersChanged(sender: AnyObject) {
         
         displayPlayers()
-        
-//        switch numberOfPlayers.selectedSegmentIndex {
-//        case 0:
-//            display1Player()
-//        case 1:
-//            display2Players()
-//        case 2:
-//            display3Players()
-//        case 3:
-//            display4Players()
-//        default:
-//            print("somethin went haywire")
-//        }
-        
-        
+  
     }
     
     func displayPlayers()   {
-        
-//        var selectedIndex = numberOfPlayers.selectedSegmentIndex
         
         switch numberOfPlayers.selectedSegmentIndex    {
         case 0:
@@ -78,61 +58,4 @@ class SetupGameViewController: UIViewController {
         }
         
     }
-    
-//    let a1 = ["a", "b", "c"]
-//    let a2 = ["A", "B", "C"]
-//    let a3 = [1, 2, 3]
-//    
-//    for i in 0 ..< a1.count {
-//    println("\(a1[i])\(a2[i])\(a3[i])")
-//    }
-    
-//    func display1Player()   {
-//        playerLabels[0].hidden = false
-//        playerNameTextField[0].hidden = false
-//        
-//        playerLabels[1].hidden = true
-//        playerNameTextField[1].hidden = true
-//        playerLabels[2].hidden = true
-//        playerNameTextField[2].hidden = true
-//        playerLabels[3].hidden = true
-//        playerNameTextField[3].hidden = true
-//    }
-//    
-//    func display2Players()  {
-//        playerLabels[0].hidden = false
-//        playerNameTextField[0].hidden = false
-//        playerLabels[1].hidden = false
-//        playerNameTextField[1].hidden = false
-//        
-//        playerLabels[2].hidden = true
-//        playerNameTextField[2].hidden = true
-//        playerLabels[3].hidden = true
-//        playerNameTextField[3].hidden = true
-//    }
-//    
-//    func display3Players()  {
-//        playerLabels[0].hidden = false
-//        playerNameTextField[0].hidden = false
-//        playerLabels[1].hidden = false
-//        playerNameTextField[1].hidden = false
-//        playerLabels[2].hidden = false
-//        playerNameTextField[2].hidden = false
-//        
-//        playerLabels[3].hidden = true
-//        playerNameTextField[3].hidden = true
-//    }
-//    
-//    func display4Players()  {
-//        for field in playerNameTextField   {
-//            field.hidden = false
-//        }
-//        for label in playerLabels   {
-//            label.hidden = false
-//        }
-//    }
-    
-    
-
-
 }
