@@ -38,7 +38,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfPlayers.count
+        return Player.sharedPlayer.players.count
     }
     
     

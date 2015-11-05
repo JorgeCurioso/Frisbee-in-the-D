@@ -17,9 +17,6 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet var playerStrokesTextField: [UITextField]!
     @IBOutlet var playerNameLabel: [UILabel]!
     
-    
-    
-    
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
     @IBOutlet weak var holePar: UILabel!
@@ -28,7 +25,7 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-    var scoreTally = rooseveltPark.scoreTally
+    var scoreTally = Player.sharedPlayer.scoreTally
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +66,12 @@ class CurrentHoleViewController: UIViewController {
     }
     
     
-    @IBAction func submitScoreButtonPressed(sender: AnyObject) {}
+    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
+        for i in 0..<Player.sharedPlayer.players.count {
+            Player.sharedPlayer.score.append(Int(playerStrokesTextField[i].text!)!)
+            print(Player.sharedPlayer.score[i])
+        }
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -77,14 +79,14 @@ class CurrentHoleViewController: UIViewController {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
             // Pass the selected object to the new view controller
-            currentHole.userStrokes = Int(user1Strokes.text!)
-            var scoreToAdd = currentHole.userScore
-            scoreTally += scoreToAdd
-            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
+//            currentHole.userStrokes = Int(user1Strokes.text!)
+//            var scoreToAdd = currentHole.userScore
+//            scoreTally += scoreToAdd
+//            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
             
-            destVC.leaderboardResults = "\(scoreTally)"
+//            destVC.leaderboardResults = "\(scoreTally)"
             destVC.currentHoleIndex = currentHoleIndex
-            print("Leaderboard Results:\(destVC.leaderboardResults)")
+//            print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
     }
     

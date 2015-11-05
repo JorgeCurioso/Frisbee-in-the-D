@@ -17,11 +17,8 @@ class Player {
         return Singleton.playerInstance;
     }
     
-//    var player1Name = String()
-//    var player2Name: String?
-//    var player3Name: String?
-//    var player4name: String?
-    
     var players = [String]()
+    var score = [Int]()
+    var scoreTally = [Int]()
     
 }

@@ -17,7 +17,7 @@ struct Course    {
     var currentHole = Hole()
     var currentHoleIndex = Int()
     var aggregateScores = [Int]()
-    var scoreTally = Int()
+//    var scoreTally = Int()
     
     let parkLattitude = 42.330456
     let parkLongitude = -83.077002
