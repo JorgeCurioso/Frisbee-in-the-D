@@ -21,13 +21,24 @@ class SetupGameViewController: UIViewController {
     }
 
     @IBAction func startRoundWithName(sender: AnyObject) {
-
-        for player in playerNameTextField  {
-            
-            if player.text != ""  {
-                Player.sharedPlayer.players.append(playerNameTextField[numberOfPlayers.selectedSegmentIndex].text!)
+        
+        for playerToAdd in 0..<playerNameTextField.count    {
+            if playerNameTextField[playerToAdd].text != ""   {
+            Player.sharedPlayer.players.append(playerNameTextField[playerToAdd].text!)
+            print("Inside: \(Player.sharedPlayer.players.description)")
             }
         }
+
+//        for player in playerNameTextField  {
+//            
+//            Player.sharedPlayer.players.append(playerNameTextField[numberOfPlayers.selectedSegmentIndex].text!)
+//            print("Inside for loop\(player.text)")
+//        }
+        
+        for player in Player.sharedPlayer.players   {
+            print("Outside:\(player)")
+        }
+        
         print("Seg Contrl Index:\(numberOfPlayers.selectedSegmentIndex)")
         print("collection of players:\(Player.sharedPlayer.players.count)")
     }
