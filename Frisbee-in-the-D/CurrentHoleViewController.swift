@@ -25,7 +25,9 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-    var scoreTally = Player.sharedPlayer.scoreTally
+//    var scoreTally = rooseveltPark.scoreTally
+//    var scoreTally = Player.sharedPlayer.scoreTally
+    var scoreTally = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +69,8 @@ class CurrentHoleViewController: UIViewController {
     
     
     @IBAction func submitScoreButtonPressed(sender: AnyObject) {
-        for i in 0..<Player.sharedPlayer.players.count {
-            Player.sharedPlayer.score.append(Int(playerStrokesTextField[i].text!)!)
-            print(Player.sharedPlayer.score[i])
-        }
+        
+
     }
     
     
@@ -82,9 +82,33 @@ class CurrentHoleViewController: UIViewController {
 //            currentHole.userStrokes = Int(user1Strokes.text!)
 //            var scoreToAdd = currentHole.userScore
 //            scoreTally += scoreToAdd
-//            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
+//            var scoreArray = [Int]()
+//            for i in 0..<Player.sharedPlayer.players.count  {
+//                
+//                scoreArray
+//            }
+            if currentHoleIndex == 0    {
+                print("current hole index is ZERO")
+                for i in 0..<Player.sharedPlayer.players.count {
+                    //            Player.sharedPlayer.score.append(Int(playerStrokesTextField[i].text!)!)
+                    //            print(Player.sharedPlayer.score[i])
+                    let scoreToAdd = Int(playerStrokesTextField[i].text!)
+                    scoreTally.append(scoreToAdd!)
+                }
+            }   else    {
+                print("current hole index is \(currentHoleIndex)")
+                for i in 0..<Player.sharedPlayer.players.count {
+                    //                let currentHoleScore = Int(playerStrokesTextField[i].text!)
+                    //                for n in
+                    scoreTally[i] += Int(playerStrokesTextField[i].text!)!
+                    
+                }
+            }
+            print(scoreTally)
             
-//            destVC.leaderboardResults = "\(scoreTally)"
+            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
+            
+            destVC.leaderboardResults = "\(scoreTally)"
             destVC.currentHoleIndex = currentHoleIndex
 //            print("Leaderboard Results:\(destVC.leaderboardResults)")
         }

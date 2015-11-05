@@ -15,7 +15,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var newGameButton: UIButton!
     
     var leaderboardResults = String()
-    var numberOfPlayers = ["player1"]
+//    var numberOfPlayers = ["player1"]
     var currentHoleIndex: Int?
 
     override func viewDidLoad() {
