@@ -23,8 +23,10 @@ class SetupGameViewController: UIViewController {
     @IBAction func startRoundWithName(sender: AnyObject) {
         
         for playerToAdd in 0..<playerNameTextField.count    {
+            if playerNameTextField[playerToAdd].text != ""   {
             Player.sharedPlayer.players.append(playerNameTextField[playerToAdd].text!)
             print("Inside: \(Player.sharedPlayer.players.description)")
+            }
         }
 
 //        for player in playerNameTextField  {
