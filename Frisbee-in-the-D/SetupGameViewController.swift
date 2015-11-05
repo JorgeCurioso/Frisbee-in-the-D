@@ -22,13 +22,6 @@ class SetupGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for field in playerNameTextField   {
-            field.hidden = true
-        }
-        for label in playerLabels   {
-            label.hidden = true
-        }
     }
 
     @IBAction func startRoundWithName(sender: AnyObject) {
@@ -46,77 +39,98 @@ class SetupGameViewController: UIViewController {
 
     @IBAction func numberOfPlayersChanged(sender: AnyObject) {
         
-        switch numberOfPlayers.selectedSegmentIndex {
-        case 0:
-            display1Player()
-        case 1:
-            display2Players()
-        case 2:
-            display3Players()
-        case 3:
-            display4Players()
-        default:
-            print("somethin went haywire")
-        }
+        displayPlayers()
+        
+//        switch numberOfPlayers.selectedSegmentIndex {
+//        case 0:
+//            display1Player()
+//        case 1:
+//            display2Players()
+//        case 2:
+//            display3Players()
+//        case 3:
+//            display4Players()
+//        default:
+//            print("somethin went haywire")
+//        }
         
         
     }
     
     func displayPlayers()   {
         
-        var selectedIndex = numberOfPlayers.selectedSegmentIndex
+//        var selectedIndex = numberOfPlayers.selectedSegmentIndex
         
-        switch selectedIndex    {
+        switch numberOfPlayers.selectedSegmentIndex    {
         case 0:
-            
+            playerLabels[0].hidden = false
+            for i in 1...3  {playerLabels[i].hidden = true; playerNameTextField[i].hidden = true}
+        case 1:
+            for i in 0...1  {playerLabels[i].hidden = false; playerNameTextField[i].hidden = false}
+            for i in 2...3  {playerLabels[i].hidden = true; playerNameTextField[i].hidden = true}
+        case 2:
+            for i in 0...2  {playerLabels[i].hidden = false; playerNameTextField[i].hidden = false}
+            playerLabels[3].hidden = true
+        case 3:
+            for i in 0...3  {playerLabels[i].hidden = false; playerNameTextField[i].hidden = false}
+        default:
+            print("uh-oh, spaghetti-o's")
         }
         
     }
     
-    func display1Player()   {
-        playerLabels[0].hidden = false
-        playerNameTextField[0].hidden = false
-        
-        playerLabels[1].hidden = true
-        playerNameTextField[1].hidden = true
-        playerLabels[2].hidden = true
-        playerNameTextField[2].hidden = true
-        playerLabels[3].hidden = true
-        playerNameTextField[3].hidden = true
-    }
+//    let a1 = ["a", "b", "c"]
+//    let a2 = ["A", "B", "C"]
+//    let a3 = [1, 2, 3]
+//    
+//    for i in 0 ..< a1.count {
+//    println("\(a1[i])\(a2[i])\(a3[i])")
+//    }
     
-    func display2Players()  {
-        playerLabels[0].hidden = false
-        playerNameTextField[0].hidden = false
-        playerLabels[1].hidden = false
-        playerNameTextField[1].hidden = false
-        
-        playerLabels[2].hidden = true
-        playerNameTextField[2].hidden = true
-        playerLabels[3].hidden = true
-        playerNameTextField[3].hidden = true
-    }
-    
-    func display3Players()  {
-        playerLabels[0].hidden = false
-        playerNameTextField[0].hidden = false
-        playerLabels[1].hidden = false
-        playerNameTextField[1].hidden = false
-        playerLabels[2].hidden = false
-        playerNameTextField[2].hidden = false
-        
-        playerLabels[3].hidden = true
-        playerNameTextField[3].hidden = true
-    }
-    
-    func display4Players()  {
-        for field in playerNameTextField   {
-            field.hidden = false
-        }
-        for label in playerLabels   {
-            label.hidden = false
-        }
-    }
+//    func display1Player()   {
+//        playerLabels[0].hidden = false
+//        playerNameTextField[0].hidden = false
+//        
+//        playerLabels[1].hidden = true
+//        playerNameTextField[1].hidden = true
+//        playerLabels[2].hidden = true
+//        playerNameTextField[2].hidden = true
+//        playerLabels[3].hidden = true
+//        playerNameTextField[3].hidden = true
+//    }
+//    
+//    func display2Players()  {
+//        playerLabels[0].hidden = false
+//        playerNameTextField[0].hidden = false
+//        playerLabels[1].hidden = false
+//        playerNameTextField[1].hidden = false
+//        
+//        playerLabels[2].hidden = true
+//        playerNameTextField[2].hidden = true
+//        playerLabels[3].hidden = true
+//        playerNameTextField[3].hidden = true
+//    }
+//    
+//    func display3Players()  {
+//        playerLabels[0].hidden = false
+//        playerNameTextField[0].hidden = false
+//        playerLabels[1].hidden = false
+//        playerNameTextField[1].hidden = false
+//        playerLabels[2].hidden = false
+//        playerNameTextField[2].hidden = false
+//        
+//        playerLabels[3].hidden = true
+//        playerNameTextField[3].hidden = true
+//    }
+//    
+//    func display4Players()  {
+//        for field in playerNameTextField   {
+//            field.hidden = false
+//        }
+//        for label in playerLabels   {
+//            label.hidden = false
+//        }
+//    }
     
     
 
