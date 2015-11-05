@@ -155,6 +155,14 @@
                         <outlet property="teeImage" destination="BQT-Ao-c4a" id="Xmi-HD-bDE"/>
                         <outlet property="user1Strokes" destination="upa-XB-ztX" id="Iw0-ws-iYZ"/>
                         <outlet property="userName1" destination="VSP-GE-Q5r" id="9yU-ms-svE"/>
+                        <outletCollection property="playerStrokesTextField" destination="upa-XB-ztX" collectionClass="NSMutableArray" id="Ss3-vj-rCx"/>
+                        <outletCollection property="playerStrokesTextField" destination="Hdm-ua-8Oc" collectionClass="NSMutableArray" id="mdm-ug-4Fb"/>
+                        <outletCollection property="playerStrokesTextField" destination="NT6-lY-aEf" collectionClass="NSMutableArray" id="Oa9-8U-caV"/>
+                        <outletCollection property="playerStrokesTextField" destination="pbl-X8-4Qe" collectionClass="NSMutableArray" id="Ld4-oK-Xav"/>
+                        <outletCollection property="playerNameLabel" destination="VSP-GE-Q5r" collectionClass="NSMutableArray" id="vRD-Ee-Pzk"/>
+                        <outletCollection property="playerNameLabel" destination="Vhb-zw-ZBo" collectionClass="NSMutableArray" id="RLs-Y9-pMY"/>
+                        <outletCollection property="playerNameLabel" destination="qh3-CW-gs7" collectionClass="NSMutableArray" id="fC4-Xb-QyV"/>
+                        <outletCollection property="playerNameLabel" destination="7Cr-6t-KUI" collectionClass="NSMutableArray" id="xou-uv-QPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4H-eJ-cfP" userLabel="First Responder" sceneMemberID="firstResponder"/>

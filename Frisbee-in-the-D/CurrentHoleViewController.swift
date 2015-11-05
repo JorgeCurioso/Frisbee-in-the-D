@@ -14,6 +14,12 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet weak var userName1: UILabel!
     @IBOutlet weak var user1Strokes: UITextField!
     
+    @IBOutlet var playerStrokesTextField: [UITextField]!
+    @IBOutlet var playerNameLabel: [UILabel]!
+    
+    
+    
+    
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
     @IBOutlet weak var holePar: UILabel!
@@ -28,9 +34,19 @@ class CurrentHoleViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        userName1.text = "\(Player.sharedPlayer.players[0])'s score"
+        
+//        userName1.text = "\(Player.sharedPlayer.players[0])'s score"
+        displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
+    }
+    
+    func displayNamesAndFields()    {
+        for playerToDisplay in 0..<Player.sharedPlayer.players.count {
+            playerNameLabel[playerToDisplay].hidden = false
+            playerNameLabel[playerToDisplay].text = Player.sharedPlayer.players[playerToDisplay]
+            playerStrokesTextField[playerToDisplay].hidden = false
+        }
     }
     
     
