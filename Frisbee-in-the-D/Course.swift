@@ -16,6 +16,7 @@ struct Course    {
     var holes = [Hole]()
     var currentHole = Hole()
     var currentHoleIndex = Int()
+    var currentHoleScores = [Int]()
     var aggregateScores = [Int]()
     var scoreTally = Int()
     

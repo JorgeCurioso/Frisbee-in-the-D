@@ -14,6 +14,9 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet weak var userName1: UILabel!
     @IBOutlet weak var user1Strokes: UITextField!
     
+    @IBOutlet var playerStrokesTextField: [UITextField]!
+    @IBOutlet var playerNameLabel: [UILabel]!
+    
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
     @IBOutlet weak var holePar: UILabel!
@@ -22,15 +25,27 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-    var scoreTally = rooseveltPark.scoreTally
+//    var scoreTally = rooseveltPark.scoreTally
+//    var scoreTally = Player.sharedPlayer.scoreTally
+    var scoreTally = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        userName1.text = "\(Player.sharedPlayer.players[0])'s score"
+        
+//        userName1.text = "\(Player.sharedPlayer.players[0])'s score"
+        displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
+    }
+    
+    func displayNamesAndFields()    {
+        for playerToDisplay in 0..<Player.sharedPlayer.players.count {
+            playerNameLabel[playerToDisplay].hidden = false
+            playerNameLabel[playerToDisplay].text = Player.sharedPlayer.players[playerToDisplay]
+            playerStrokesTextField[playerToDisplay].hidden = false
+        }
     }
     
     
@@ -60,15 +75,27 @@ class CurrentHoleViewController: UIViewController {
         if segue.identifier == "CurrentHole<->Leaderboard" {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
-            // Pass the selected object to the new view controller
-            currentHole.userStrokes = Int(user1Strokes.text!)
-            var scoreToAdd = currentHole.userScore
-            scoreTally += scoreToAdd
-            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
+            if currentHoleIndex == 0    {
+                print("current hole index is ZERO")
+                for i in 0..<Player.sharedPlayer.players.count {
+                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    scoreTally.append(scoreToAdd)
+                }
+            }   else    {
+                print("current hole index is \(currentHoleIndex)")
+                for i in 0..<Player.sharedPlayer.players.count {
+                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    print(scoreToAdd)
+                    scoreTally[i] += scoreToAdd
+                    
+                }
+            }
+            print(scoreTally)
             
-            destVC.leaderboardResults = "\(scoreTally)"
+//            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
+            
+            destVC.leaderboardResults = scoreTally
             destVC.currentHoleIndex = currentHoleIndex
-            print("Leaderboard Results:\(destVC.leaderboardResults)")
         }
     }
     
