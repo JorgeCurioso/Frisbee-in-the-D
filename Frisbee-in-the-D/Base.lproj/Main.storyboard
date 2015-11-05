@@ -211,7 +211,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JGl-56-EoD">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" translatesAutoresizingMaskIntoConstraints="NO" id="JGl-56-EoD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </mapView>
                         </subviews>
@@ -245,7 +245,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMx-qC-l4U">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 1 Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMx-qC-l4U">
                                 <rect key="frame" x="103" y="255" width="197" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -276,6 +276,52 @@
                                     <segue destination="Ptf-Sa-WV2" kind="show" identifier="Start-&gt;TabBar" id="Ij1-ey-G2s"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 2 Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xad-GI-R5P">
+                                <rect key="frame" x="103" y="293" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 3 Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IxA-TC-PWc">
+                                <rect key="frame" x="103" y="331" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 4 Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOd-14-owo">
+                                <rect key="frame" x="103" y="369" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YND-gx-58Y">
+                                <rect key="frame" x="20" y="293" width="84" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 3:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nl-sf-r9N">
+                                <rect key="frame" x="20" y="331" width="84" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 4:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNd-uC-g8j">
+                                <rect key="frame" x="20" y="369" width="84" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MIj-0J-gWp">
+                                <rect key="frame" x="20" y="188" width="280" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="1 Player"/>
+                                    <segment title="2 Player"/>
+                                    <segment title="3 Player"/>
+                                    <segment title="4 Player"/>
+                                </segments>
+                                <connections>
+                                    <action selector="numberOfPlayersChanged:" destination="RyD-FE-jBf" eventType="valueChanged" id="wwC-Rr-SWG"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.50400904609999997" green="0.42166940790000002" blue="0.0" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -286,7 +332,15 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="player1NameField" destination="cMx-qC-l4U" id="Tfz-FO-IWm"/>
+                        <outlet property="numberOfPlayers" destination="MIj-0J-gWp" id="1cJ-KO-FAA"/>
+                        <outletCollection property="playerNameTextField" destination="cMx-qC-l4U" collectionClass="NSMutableArray" id="0lc-ag-BWy"/>
+                        <outletCollection property="playerNameTextField" destination="Xad-GI-R5P" collectionClass="NSMutableArray" id="n2A-Lg-aLf"/>
+                        <outletCollection property="playerNameTextField" destination="IxA-TC-PWc" collectionClass="NSMutableArray" id="aR3-KP-879"/>
+                        <outletCollection property="playerNameTextField" destination="gOd-14-owo" collectionClass="NSMutableArray" id="r5W-aS-alq"/>
+                        <outletCollection property="playerLabels" destination="iU5-sf-Kwk" collectionClass="NSMutableArray" id="Dc2-Kf-Hhk"/>
+                        <outletCollection property="playerLabels" destination="YND-gx-58Y" collectionClass="NSMutableArray" id="u1I-L5-rj6"/>
+                        <outletCollection property="playerLabels" destination="2Nl-sf-r9N" collectionClass="NSMutableArray" id="4zm-bW-8Ak"/>
+                        <outletCollection property="playerLabels" destination="eNd-uC-g8j" collectionClass="NSMutableArray" id="efI-rS-0lB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
