@@ -25,16 +25,12 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-//    var scoreTally = rooseveltPark.scoreTally
-//    var scoreTally = Player.sharedPlayer.scoreTally
     var scoreTally = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-//        userName1.text = "\(Player.sharedPlayer.players[0])'s score"
         displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
@@ -91,9 +87,6 @@ class CurrentHoleViewController: UIViewController {
                 }
             }
             print(scoreTally)
-            
-//            print("Par:\(currentHole.par), user:\(user1Strokes.text!), Aggregate:\(scoreTally)")
-            
             destVC.leaderboardResults = scoreTally
             destVC.currentHoleIndex = currentHoleIndex
         }
