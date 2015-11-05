@@ -68,10 +68,7 @@ class CurrentHoleViewController: UIViewController {
     }
     
     
-    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
-        
-
-    }
+    @IBAction func submitScoreButtonPressed(sender: AnyObject) {}
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
