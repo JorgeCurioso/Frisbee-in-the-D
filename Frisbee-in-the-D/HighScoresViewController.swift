@@ -23,7 +23,7 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
         
         var query = PFQuery(className: "Player")
-        query.orderByDescending("Score")
+        query.orderByAscending("Score")
         query.findObjectsInBackgroundWithBlock  {
             (players:[PFObject]?, error:NSError?) -> Void in
             
@@ -40,9 +40,10 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
                 print("NO SOUP FOR YOU!")
             }
         }
-            
-        
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        highScoresTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
