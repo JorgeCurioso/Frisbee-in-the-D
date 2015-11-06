@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -20,6 +21,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         changeLayoutForFinalHole()
+        saveFinalScores()
     }
     
     func changeLayoutForFinalHole() {
@@ -30,6 +32,27 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
             nextHoleButton.hidden = true
             newGameButton.hidden = false
         }
+    }
+    
+    func saveFinalScores()  {
+        
+        
+        if currentHoleIndex == 8    {
+            for i in 0..<Player.sharedPlayer.players.count    {
+                
+                let player = PFObject(className: "Player")
+                player.setObject(Player.sharedPlayer.players[i], forKey: "Name")
+                player.setObject(Player.sharedPlayer.scoreTally[i], forKey: "Score")
+                player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+                    if succeeded {
+                        print("\(player) Uploaded")
+                    } else {
+                        print("Error: \(error) \(error!.userInfo)")
+                }
+            }
+        }
+        }
+        
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

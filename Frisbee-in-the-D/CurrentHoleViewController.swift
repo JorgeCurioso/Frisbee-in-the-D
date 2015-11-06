@@ -75,19 +75,20 @@ class CurrentHoleViewController: UIViewController {
                 print("current hole index is ZERO")
                 for i in 0..<Player.sharedPlayer.players.count {
                     let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
-                    scoreTally.append(scoreToAdd)
+                    Player.sharedPlayer.scoreTally.append(scoreToAdd)
                 }
             }   else    {
                 print("current hole index is \(currentHoleIndex)")
                 for i in 0..<Player.sharedPlayer.players.count {
                     let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
-                    print(scoreToAdd)
-                    scoreTally[i] += scoreToAdd
+                    print("Score to add:\(scoreToAdd)")
+                    Player.sharedPlayer.scoreTally[i] += scoreToAdd
+                    print(Player.sharedPlayer.scoreTally[i])
                     
                 }
             }
-            print(scoreTally)
-            destVC.leaderboardResults = scoreTally
+            print("scoreTally array:\(Player.sharedPlayer.scoreTally)")
+            destVC.leaderboardResults = Player.sharedPlayer.scoreTally
             destVC.currentHoleIndex = currentHoleIndex
         }
     }

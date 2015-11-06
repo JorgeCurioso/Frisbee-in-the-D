@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		230AE9651BEC3190005101F8 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AE9641BEC3190005101F8 /* Keys.swift */; settings = {ASSET_TAGS = (); }; };
+		2342AB011BED28F300F622E8 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342AB001BED28F300F622E8 /* GetStartedViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		2342AB031BED290700F622E8 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342AB021BED290700F622E8 /* HighScoresViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D171BE7B70E00846EF7 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D161BE7B70E00846EF7 /* RulesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D191BE7E0F900846EF7 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D1B1BE901C800846EF7 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1A1BE901C800846EF7 /* Rules.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		230AE9611BEC308F005101F8 /* Frisbee-in-the-D-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frisbee-in-the-D-Bridging-Header.h"; sourceTree = "<group>"; };
 		230AE9641BEC3190005101F8 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		2342AB001BED28F300F622E8 /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		2342AB021BED290700F622E8 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 		23A73D161BE7B70E00846EF7 /* RulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		23A73D1A1BE901C800846EF7 /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				23A73D161BE7B70E00846EF7 /* RulesViewController.swift */,
 				23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */,
 				23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */,
+				2342AB001BED28F300F622E8 /* GetStartedViewController.swift */,
+				2342AB021BED290700F622E8 /* HighScoresViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				23A73D191BE7E0F900846EF7 /* LeaderboardViewController.swift in Sources */,
 				23A73D1B1BE901C800846EF7 /* Rules.swift in Sources */,
 				B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */,
+				2342AB011BED28F300F622E8 /* GetStartedViewController.swift in Sources */,
 				B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */,
 				230AE9651BEC3190005101F8 /* Keys.swift in Sources */,
 				B363F5611BE6F27F00DB6358 /* Course.swift in Sources */,
@@ -386,6 +393,7 @@
 				B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */,
 				23A73D171BE7B70E00846EF7 /* RulesViewController.swift in Sources */,
 				23A73D1F1BE989A900846EF7 /* Player.swift in Sources */,
+				2342AB031BED290700F622E8 /* HighScoresViewController.swift in Sources */,
 				B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

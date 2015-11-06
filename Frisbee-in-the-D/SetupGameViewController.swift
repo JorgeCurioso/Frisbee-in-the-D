@@ -27,28 +27,28 @@ class SetupGameViewController: UIViewController {
             if playerNameTextField[playerToAdd].text != ""   {
             Player.sharedPlayer.players.append(playerNameTextField[playerToAdd].text!)
             print("Inside: \(Player.sharedPlayer.players.description)")
-                
-            //Parse related stuff while we're iterating
-            let player = PFObject(className: "Player")
-            player.setObject("\(playerNameTextField[playerToAdd].text!)", forKey: "Name")
-            player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-                if succeeded {
-                    print("\(player) Uploaded")
-                } else {
-                    print("Error: \(error) \(error!.userInfo)")
-                    }
-                }
-            }
+//
+//            //Parse related stuff while we're iterating
+//            let player = PFObject(className: "Player")
+//            player.setObject("\(playerNameTextField[playerToAdd].text!)", forKey: "Name")
+//            player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+//                if succeeded {
+//                    print("\(player) Uploaded")
+//                } else {
+//                    print("Error: \(error) \(error!.userInfo)")
+//                    }
+//                }
+//            }
         }
-        
-
-        
-        for player in Player.sharedPlayer.players   {
-            print("Outside:\(player)")
+//
+//
+//        
+//        for player in Player.sharedPlayer.players   {
+//            print("Outside:\(player)")
         }
-        
-        print("Seg Contrl Index:\(numberOfPlayers.selectedSegmentIndex)")
-        print("collection of players:\(Player.sharedPlayer.players.count)")
+//
+//        print("Seg Contrl Index:\(numberOfPlayers.selectedSegmentIndex)")
+//        print("collection of players:\(Player.sharedPlayer.players.count)")
     }
 
 
