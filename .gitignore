@@ -20,6 +20,10 @@ DerivedData
 *.DS_Store
 *.DS_Store?
 
+*Keys.swift
+Keys.swift
+/Pods/
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However

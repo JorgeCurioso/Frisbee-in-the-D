@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230AE9651BEC3190005101F8 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AE9641BEC3190005101F8 /* Keys.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D171BE7B70E00846EF7 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D161BE7B70E00846EF7 /* RulesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D191BE7E0F900846EF7 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D1B1BE901C800846EF7 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1A1BE901C800846EF7 /* Rules.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D1D1BE988CD00846EF7 /* SetupGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23A73D1F1BE989A900846EF7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1E1BE989A900846EF7 /* Player.swift */; settings = {ASSET_TAGS = (); }; };
+		53FBFF1CCF7DD1ADAA24385F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC908D1F2BF7DF32A19284A6 /* Pods.framework */; };
 		B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */; };
 		B363F5301BE6CA9F00DB6358 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B363F52E1BE6CA9F00DB6358 /* Main.storyboard */; };
 		B363F5321BE6CA9F00DB6358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B363F5311BE6CA9F00DB6358 /* Assets.xcassets */; };
@@ -42,11 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230AE9611BEC308F005101F8 /* Frisbee-in-the-D-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frisbee-in-the-D-Bridging-Header.h"; sourceTree = "<group>"; };
+		230AE9641BEC3190005101F8 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		23A73D161BE7B70E00846EF7 /* RulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		23A73D1A1BE901C800846EF7 /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupGameViewController.swift; sourceTree = "<group>"; };
 		23A73D1E1BE989A900846EF7 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4161C1D03EFF733BA9D1939C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		644D87FF2951CB7B3702927A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B363F5271BE6CA9F00DB6358 /* Frisbee-in-the-D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Frisbee-in-the-D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B363F52F1BE6CA9F00DB6358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 		B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHoleViewController.swift; sourceTree = "<group>"; };
 		B363F55D1BE6EBB700DB6358 /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 		B363F5601BE6F27F00DB6358 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		EC908D1F2BF7DF32A19284A6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53FBFF1CCF7DD1ADAA24385F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61755C7299AB4D27288801F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				644D87FF2951CB7B3702927A /* Pods.debug.xcconfig */,
+				4161C1D03EFF733BA9D1939C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8F12BCE8F89D6E71522C9478 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC908D1F2BF7DF32A19284A6 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B363F51E1BE6CA9F00DB6358 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +122,8 @@
 				B363F53E1BE6CAA000DB6358 /* Frisbee-in-the-DTests */,
 				B363F5491BE6CAA000DB6358 /* Frisbee-in-the-DUITests */,
 				B363F5281BE6CA9F00DB6358 /* Products */,
+				61755C7299AB4D27288801F8 /* Pods */,
+				8F12BCE8F89D6E71522C9478 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +147,7 @@
 				B363F5311BE6CA9F00DB6358 /* Assets.xcassets */,
 				B363F5331BE6CA9F00DB6358 /* LaunchScreen.storyboard */,
 				B363F5361BE6CA9F00DB6358 /* Info.plist */,
+				230AE9611BEC308F005101F8 /* Frisbee-in-the-D-Bridging-Header.h */,
 			);
 			path = "Frisbee-in-the-D";
 			sourceTree = "<group>";
@@ -161,6 +189,7 @@
 				B363F5601BE6F27F00DB6358 /* Course.swift */,
 				23A73D1A1BE901C800846EF7 /* Rules.swift */,
 				23A73D1E1BE989A900846EF7 /* Player.swift */,
+				230AE9641BEC3190005101F8 /* Keys.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -172,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B363F54F1BE6CAA000DB6358 /* Build configuration list for PBXNativeTarget "Frisbee-in-the-D" */;
 			buildPhases = (
+				4CB436C1C3FE04927D5CC884 /* Check Pods Manifest.lock */,
 				B363F5231BE6CA9F00DB6358 /* Sources */,
 				B363F5241BE6CA9F00DB6358 /* Frameworks */,
 				B363F5251BE6CA9F00DB6358 /* Resources */,
+				05BDF10D611F8055118DEF32 /* Embed Pods Frameworks */,
+				5DC3C1D3E54A096185F73EB6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +259,7 @@
 		B363F51F1BE6CA9F00DB6358 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "George Royce";
 				TargetAttributes = {
@@ -290,6 +323,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05BDF10D611F8055118DEF32 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CB436C1C3FE04927D5CC884 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5DC3C1D3E54A096185F73EB6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B363F5231BE6CA9F00DB6358 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -299,6 +380,7 @@
 				23A73D1B1BE901C800846EF7 /* Rules.swift in Sources */,
 				B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */,
 				B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */,
+				230AE9651BEC3190005101F8 /* Keys.swift in Sources */,
 				B363F5611BE6F27F00DB6358 /* Course.swift in Sources */,
 				23A73D1D1BE988CD00846EF7 /* SetupGameViewController.swift in Sources */,
 				B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */,
@@ -442,23 +524,30 @@
 		};
 		B363F5501BE6CAA000DB6358 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 644D87FF2951CB7B3702927A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Frisbee-in-the-D/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.George-Royce.Frisbee-in-the-D";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Frisbee-in-the-D/Frisbee-in-the-D-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B363F5511BE6CAA000DB6358 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4161C1D03EFF733BA9D1939C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Frisbee-in-the-D/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.George-Royce.Frisbee-in-the-D";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Frisbee-in-the-D/Frisbee-in-the-D-Bridging-Header.h";
 			};
 			name = Release;
 		};
