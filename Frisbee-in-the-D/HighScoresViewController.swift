@@ -63,6 +63,9 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
+    @IBAction func test(sender: AnyObject) {
+        highScoresTableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
