@@ -21,7 +21,10 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-//    var scoreTally = [Int]()
+    
+    var player = Player()
+    var players = [Player]()
+    var scoreTally = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +36,12 @@ class CurrentHoleViewController: UIViewController {
     }
     
     func displayNamesAndFields()    {
-        for playerToDisplay in 0..<Player.sharedPlayer.players.count {
-            playerNameLabel[playerToDisplay].hidden = false
-            playerNameLabel[playerToDisplay].text = Player.sharedPlayer.players[playerToDisplay]
-            playerStrokesTextField[playerToDisplay].hidden = false
-        }
+//        for i in 0..<Player.sharedPlayer.players.count {
+//            playerNameLabel[i].hidden = false
+//            playerNameLabel[i].text = Player.sharedPlayer.players[i]
+//            playerStrokesTextField[i].hidden = false
+//        }
+        
     }
     
     
@@ -67,24 +71,35 @@ class CurrentHoleViewController: UIViewController {
         if segue.identifier == "CurrentHole<->Leaderboard" {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
+//            if currentHoleIndex == 0    {
+////                print("current hole index is ZERO")
+//                for i in 0..<Player.sharedPlayer.players.count {
+//                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
+//                    Player.sharedPlayer.scoreTally.append(scoreToAdd)
+//                }
+//            }   else    {
+////                print("current hole index is \(currentHoleIndex)")
+//                for i in 0..<Player.sharedPlayer.players.count {
+//                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
+//                    print("Score to add:\(scoreToAdd)")
+//                    Player.sharedPlayer.scoreTally[i] += scoreToAdd
+//                    print(Player.sharedPlayer.scoreTally[i])
+//                    
+//                }
+//            }
             if currentHoleIndex == 0    {
-//                print("current hole index is ZERO")
-                for i in 0..<Player.sharedPlayer.players.count {
-                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
-                    Player.sharedPlayer.scoreTally.append(scoreToAdd)
+                for i in 0..<players.count  {
+                    player.holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
                 }
-            }   else    {
-//                print("current hole index is \(currentHoleIndex)")
-                for i in 0..<Player.sharedPlayer.players.count {
-                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
-                    print("Score to add:\(scoreToAdd)")
-                    Player.sharedPlayer.scoreTally[i] += scoreToAdd
-                    print(Player.sharedPlayer.scoreTally[i])
-                    
+            } else  {
+                for i in 0..<players.count  {
+                    player.holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    player.cumulativeScore! += player.holeScore!
                 }
             }
 //            print("scoreTally array:\(Player.sharedPlayer.scoreTally)")
-            destVC.leaderboardResults = Player.sharedPlayer.scoreTally
+//            destVC.leaderboardResults = Player.sharedPlayer.scoreTally
+            destVC.players = players
             destVC.currentHoleIndex = currentHoleIndex
         }
     }

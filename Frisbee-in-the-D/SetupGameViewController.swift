@@ -16,6 +16,8 @@ class SetupGameViewController: UIViewController {
     @IBOutlet weak var numberOfPlayers: UISegmentedControl!
     @IBOutlet var playerLabels: [UILabel]!
     
+    var player = Player.sharedPlayer
+    var players = [Player]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,32 +25,18 @@ class SetupGameViewController: UIViewController {
 
     @IBAction func startRoundWithName(sender: AnyObject) {
         
-        for playerToAdd in 0..<playerNameTextField.count    {
-            if playerNameTextField[playerToAdd].text != ""   {
-            Player.sharedPlayer.players.append(playerNameTextField[playerToAdd].text!)
-            print("Inside: \(Player.sharedPlayer.players.description)")
-//
-//            //Parse related stuff while we're iterating
-//            let player = PFObject(className: "Player")
-//            player.setObject("\(playerNameTextField[playerToAdd].text!)", forKey: "Name")
-//            player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-//                if succeeded {
-//                    print("\(player) Uploaded")
-//                } else {
-//                    print("Error: \(error) \(error!.userInfo)")
-//                    }
-//                }
-//            }
+        for i in 0..<playerNameTextField.count    {
+            if playerNameTextField[i].text != ""   {
+                player.name = (playerNameTextField[i].text!)
+                players.append(player)
+                print("Inside: \(player.name!)")
+                //First attempt at changing the code below to the code above. Getting away from Players collection in player class.
+                
+//            Player.sharedPlayer.players.append(playerNameTextField[playerToAdd].text!)
+//            print("Inside: \(Player.sharedPlayer.players.description)")
+            }
         }
-//
-//
-//        
-//        for player in Player.sharedPlayer.players   {
-//            print("Outside:\(player)")
-        }
-//
-//        print("Seg Contrl Index:\(numberOfPlayers.selectedSegmentIndex)")
-//        print("collection of players:\(Player.sharedPlayer.players.count)")
+            print(players.count)
     }
 
 
@@ -76,5 +64,13 @@ class SetupGameViewController: UIViewController {
             print("uh-oh, spaghetti-o's")
         }
         
+    }
+    
+    /// hmm....seems there's some trouble trying to pass data to the TabBarController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Start->TabBar" {
+            let destVC = segue.destinationViewController as! TabBarController
+            destVC.players = players
+        }
     }
 }
