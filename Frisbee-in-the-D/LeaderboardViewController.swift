@@ -17,7 +17,8 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     var leaderboardResults = [Int]()
     var currentHoleIndex: Int?
-
+//    var players = MultiPlayer.sharedMultiPlayer.players
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         changeLayoutForFinalHole()
@@ -36,23 +37,36 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func saveFinalScores()  {
         
-        
         if currentHoleIndex == 8    {
-            for i in 0..<Player.sharedPlayer.players.count    {
+            for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
                 
                 let player = PFObject(className: "Player")
-                player.setObject(Player.sharedPlayer.players[i], forKey: "Name")
-                player.setObject(Player.sharedPlayer.scoreTally[i], forKey: "Score")
+                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].name!, forKey: "Name")
+                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore, forKey: "Score")
                 player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
                     if succeeded {
                         print("\(player) Uploaded")
                     } else {
                         print("Error: \(error) \(error!.userInfo)")
+                    }
                 }
             }
         }
-        }
-        
+//        if currentHoleIndex == 8    {
+//            for i in 0..<players.count    {
+//                
+//                let player = PFObject(className: "Player")
+//                player.setObject(players[i].name!, forKey: "Name")
+//                player.setObject(players[i].cumulativeScore, forKey: "Score")
+//                player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+//                    if succeeded {
+//                        print("\(player) Uploaded")
+//                    } else {
+//                        print("Error: \(error) \(error!.userInfo)")
+//                    }
+//                }
+//            }
+//        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -60,13 +74,19 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Player.sharedPlayer.players.count
+        return MultiPlayer.sharedMultiPlayer.players.count
+//        return players.count
+
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "\(leaderboardResults[indexPath.row])"
+//        let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "leaderboardCell")
+        cell.textLabel?.text = "\(MultiPlayer.sharedMultiPlayer.players[indexPath.row].cumulativeScore)"
+        cell.detailTextLabel?.text = MultiPlayer.sharedMultiPlayer.players[indexPath.row].name
+//        cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
+//        cell.detailTextLabel?.text = players[indexPath.row].name
         return cell
     }
 }

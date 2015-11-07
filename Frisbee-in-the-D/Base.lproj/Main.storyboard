@@ -20,18 +20,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rules of the Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-KH-xsT">
                                 <rect key="frame" x="20" y="41" width="280" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eWp-df-W7a">
                                 <rect key="frame" x="20" y="73" width="280" height="438"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.3921568627" green="0.55401932570000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rules" id="TVt-Ns-qMz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -144,7 +143,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.54574424342105265" green="0.50711862664473684" blue="0.34714226973684209" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hole" id="FU8-Ut-hMf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -153,8 +152,6 @@
                         <outlet property="holeNumber" destination="xuB-xJ-y5F" id="ecL-mZ-2N9"/>
                         <outlet property="holePar" destination="Q73-ld-Lem" id="ZUI-pD-TIC"/>
                         <outlet property="teeImage" destination="BQT-Ao-c4a" id="Xmi-HD-bDE"/>
-                        <outlet property="user1Strokes" destination="upa-XB-ztX" id="Iw0-ws-iYZ"/>
-                        <outlet property="userName1" destination="VSP-GE-Q5r" id="9yU-ms-svE"/>
                         <outletCollection property="playerStrokesTextField" destination="upa-XB-ztX" collectionClass="NSMutableArray" id="Ss3-vj-rCx"/>
                         <outletCollection property="playerStrokesTextField" destination="Hdm-ua-8Oc" collectionClass="NSMutableArray" id="mdm-ug-4Fb"/>
                         <outletCollection property="playerStrokesTextField" destination="NT6-lY-aEf" collectionClass="NSMutableArray" id="Oa9-8U-caV"/>
@@ -192,6 +189,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="0.42999999999999999" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -226,7 +224,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -256,7 +254,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" red="0.59282483552631504" green="0.61428351151315785" blue="0.36443770559210525" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JGl-56-EoD" firstAttribute="leading" secondItem="e9b-pu-pe7" secondAttribute="leading" id="AeL-io-gAL"/>
                             <constraint firstAttribute="trailing" secondItem="JGl-56-EoD" secondAttribute="trailing" id="EAE-zI-11a"/>
@@ -309,13 +307,30 @@
                                 <rect key="frame" x="20" y="79" width="280" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighScoreCell" id="0Wj-VI-CQr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighScoreCell" textLabel="ffd-EE-1Wi" detailTextLabel="mTM-Lf-hBM" style="IBUITableViewCellStyleValue1" id="0Wj-VI-CQr">
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Wj-VI-CQr" id="U2b-9X-9Tp">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ffd-EE-1Wi">
+                                                    <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mTM-Lf-hBM">
+                                                    <rect key="frame" x="223.5" y="12" width="41.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69000000000000006" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -337,7 +352,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -438,7 +453,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.50400904609999997" green="0.42166940790000002" blue="0.0" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.69664724570757908" green="0.74542297979797978" blue="0.63165896227117335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="WNv-4v-7W7" secondAttribute="trailing" id="2C5-1f-Opp"/>
                             <constraint firstAttribute="leadingMargin" secondItem="WNv-4v-7W7" secondAttribute="leading" id="EgT-nF-reA"/>

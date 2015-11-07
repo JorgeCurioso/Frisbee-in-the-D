@@ -10,15 +10,24 @@ import Foundation
 
 class Player {
     
-    class var sharedPlayer : Player {
-        struct Singleton {
-            static let playerInstance = Player()
-        }
-        return Singleton.playerInstance;
+    var name: String?
+    var holeScore = Int()
+    var cumulativeScore = Int()
+    
+    init(name: String)  {
+        self.name = name
     }
     
-    var players = [String]()
-    var score = [Int]()
-    var scoreTally = [Int]()
+}
+
+class MultiPlayer   {
     
+    class var sharedMultiPlayer : MultiPlayer   {
+        struct Singleton    {
+            static let multiPlayerInstance = MultiPlayer()
+        }
+        return Singleton.multiPlayerInstance
+    }
+    
+    var players = [Player]()
 }

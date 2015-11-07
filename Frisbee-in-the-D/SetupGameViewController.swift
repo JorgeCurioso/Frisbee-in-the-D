@@ -16,6 +16,7 @@ class SetupGameViewController: UIViewController {
     @IBOutlet weak var numberOfPlayers: UISegmentedControl!
     @IBOutlet var playerLabels: [UILabel]!
     
+//    var players = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,46 +24,29 @@ class SetupGameViewController: UIViewController {
 
     @IBAction func startRoundWithName(sender: AnyObject) {
         
-        for playerToAdd in 0..<playerNameTextField.count    {
-            if playerNameTextField[playerToAdd].text != ""   {
-            Player.sharedPlayer.players.append(playerNameTextField[playerToAdd].text!)
-            print("Inside: \(Player.sharedPlayer.players.description)")
-//
-//            //Parse related stuff while we're iterating
-//            let player = PFObject(className: "Player")
-//            player.setObject("\(playerNameTextField[playerToAdd].text!)", forKey: "Name")
-//            player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-//                if succeeded {
-//                    print("\(player) Uploaded")
-//                } else {
-//                    print("Error: \(error) \(error!.userInfo)")
-//                    }
-//                }
+        for i in 0..<playerNameTextField.count    {
+            if playerNameTextField[i].text != ""   {
+                let player = Player(name: playerNameTextField[i].text!)
+                MultiPlayer.sharedMultiPlayer.players.append(player)
+            }
+        }
+//        for i in 0..<playerNameTextField.count    {
+//            if playerNameTextField[i].text != ""   {
+//                let player = Player(name: playerNameTextField[i].text!)
+//                players.append(player)
 //            }
-        }
-//
-//
-//        
-//        for player in Player.sharedPlayer.players   {
-//            print("Outside:\(player)")
-        }
-//
-//        print("Seg Contrl Index:\(numberOfPlayers.selectedSegmentIndex)")
-//        print("collection of players:\(Player.sharedPlayer.players.count)")
+//        }
     }
 
 
     @IBAction func numberOfPlayersChanged(sender: AnyObject) {
-        
         displayPlayers()
-  
     }
     
     func displayPlayers()   {
         
         switch numberOfPlayers.selectedSegmentIndex    {
         case 0:
-//            playerLabels[0].hidden = false
             for i in 1...3  {playerLabels[i].hidden = true; playerNameTextField[i].hidden = true}
         case 1:
             for i in 0...1  {playerLabels[i].hidden = false; playerNameTextField[i].hidden = false}

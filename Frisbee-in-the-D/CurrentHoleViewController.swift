@@ -10,10 +10,6 @@ import UIKit
 
 class CurrentHoleViewController: UIViewController {
     
-    
-    @IBOutlet weak var userName1: UILabel!
-    @IBOutlet weak var user1Strokes: UITextField!
-    
     @IBOutlet var playerStrokesTextField: [UITextField]!
     @IBOutlet var playerNameLabel: [UILabel]!
     
@@ -25,7 +21,8 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-    var scoreTally = [Int]()
+    
+//    var players = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +31,35 @@ class CurrentHoleViewController: UIViewController {
         displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
+        print("Current Hole has \(MultiPlayer.sharedMultiPlayer.players.count) players")
+//        print("Current Hole has \(players.count) players")
+
     }
     
     func displayNamesAndFields()    {
-        for playerToDisplay in 0..<Player.sharedPlayer.players.count {
-            playerNameLabel[playerToDisplay].hidden = false
-            playerNameLabel[playerToDisplay].text = Player.sharedPlayer.players[playerToDisplay]
-            playerStrokesTextField[playerToDisplay].hidden = false
+
+        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+            playerNameLabel[i].hidden = false
+            playerNameLabel[i].text = MultiPlayer.sharedMultiPlayer.players[i].name
+            playerStrokesTextField[i].hidden = false
         }
+//        for i in 0..<players.count  {
+//            playerNameLabel[i].hidden = false
+//            playerNameLabel[i].text = players[i].name
+//            playerStrokesTextField[i].hidden = false
+//        }
     }
     
     
     override func viewWillAppear(animated: Bool) {
         print("Current Hole:\(currentHoleIndex + 1)")
         reloadCurrentHole()
+        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
+            print(MultiPlayer.sharedMultiPlayer.players[i].holeScore)
+        }
+//        for i in 0..<players.count    {
+//            print(players[i].holeScore)
+//        }
     }
     
     func reloadCurrentHole()   {
@@ -71,24 +83,17 @@ class CurrentHoleViewController: UIViewController {
         if segue.identifier == "CurrentHole<->Leaderboard" {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
-            if currentHoleIndex == 0    {
-                print("current hole index is ZERO")
-                for i in 0..<Player.sharedPlayer.players.count {
-                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
-                    Player.sharedPlayer.scoreTally.append(scoreToAdd)
+                for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+                    print(MultiPlayer.sharedMultiPlayer.players[i].name)
+                    MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
                 }
-            }   else    {
-                print("current hole index is \(currentHoleIndex)")
-                for i in 0..<Player.sharedPlayer.players.count {
-                    let scoreToAdd = Int(playerStrokesTextField[i].text!)! - currentHole.par
-                    print("Score to add:\(scoreToAdd)")
-                    Player.sharedPlayer.scoreTally[i] += scoreToAdd
-                    print(Player.sharedPlayer.scoreTally[i])
-                    
-                }
-            }
-            print("scoreTally array:\(Player.sharedPlayer.scoreTally)")
-            destVC.leaderboardResults = Player.sharedPlayer.scoreTally
+//            for i in 0..<players.count  {
+//                print(players[i].name)
+//                players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
+//                players[i].cumulativeScore += players[i].holeScore
+//            }
+            
             destVC.currentHoleIndex = currentHoleIndex
         }
     }
@@ -96,7 +101,6 @@ class CurrentHoleViewController: UIViewController {
     
     // Return from leaderboard
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        
             currentHoleIndex++
     }
 }
