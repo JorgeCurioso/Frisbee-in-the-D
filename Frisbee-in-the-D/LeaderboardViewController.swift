@@ -65,8 +65,11 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "\(leaderboardResults[indexPath.row])"
+//        let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "leaderboardCell")
+
+        cell.textLabel?.text = "\(leaderboardResults[indexPath.row])"
+        cell.detailTextLabel?.text = Player.sharedPlayer.players[indexPath.row]
         return cell
     }
 }

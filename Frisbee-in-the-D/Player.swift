@@ -17,7 +17,11 @@ class Player {
         return Singleton.playerInstance;
     }
     
+    //consider messing with this-we only need a collection of players in certain circumstances
+    //
     var players = [String]()
+    
+    
     var score = [Int]()
     var scoreTally = [Int]()
     
