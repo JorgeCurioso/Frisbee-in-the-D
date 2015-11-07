@@ -16,8 +16,8 @@ class SetupGameViewController: UIViewController {
     @IBOutlet weak var numberOfPlayers: UISegmentedControl!
     @IBOutlet var playerLabels: [UILabel]!
     
-    var player = Player.sharedPlayer
-    var players = [Player]()
+//    var player = Player.sharedPlayer
+//    var players = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +27,20 @@ class SetupGameViewController: UIViewController {
         
         for i in 0..<playerNameTextField.count    {
             if playerNameTextField[i].text != ""   {
-                player.name = (playerNameTextField[i].text!)
-                players.append(player)
-                print("Inside: \(player.name!)")
+                let player = Player(name: playerNameTextField[i].text!)
+                MultiPlayer.sharedMultiPlayer.players.append(player)
+//                MultiPlayer.sharedMultiPlayer.players.append(player)
+                print("Start Round has: \(player.name!) as a player")
                 //First attempt at changing the code below to the code above. Getting away from Players collection in player class.
                 
 //            Player.sharedPlayer.players.append(playerNameTextField[playerToAdd].text!)
 //            print("Inside: \(Player.sharedPlayer.players.description)")
             }
+//            print("\(players[i].name)")
         }
-            print(players.count)
+        for i in MultiPlayer.sharedMultiPlayer.players   {
+            print("These are the players in the players Array:\(i.name)")
+        }
     }
 
 
@@ -67,10 +71,10 @@ class SetupGameViewController: UIViewController {
     }
     
     /// hmm....seems there's some trouble trying to pass data to the TabBarController
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Start->TabBar" {
-            let destVC = segue.destinationViewController as! TabBarController
-            destVC.players = players
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "Start->TabBar" {
+//            let destVC = segue.destinationViewController as! CurrentHoleViewController
+//            destVC.players = players
+//        }
+//    }
 }

@@ -18,8 +18,8 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     var leaderboardResults = [Int]()
     var currentHoleIndex: Int?
     
-    var player = Player()
-    var players = [Player]()
+    var player: Player?
+//    var players = MultiPlayer.sharedMultiPlayer.players
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +40,11 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     func saveFinalScores()  {
         
         if currentHoleIndex == 8    {
-            for i in 0..<players.count    {
+            for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
                 
                 let player = PFObject(className: "Player")
-                player.setObject(players[i].name!, forKey: "Name")
-                player.setObject(players[i].cumulativeScore!, forKey: "Score")
+                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].name!, forKey: "Name")
+                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore, forKey: "Score")
                 player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
                     if succeeded {
                         print("\(player) Uploaded")
@@ -78,7 +78,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return Player.sharedPlayer.players.count
-        return players.count
+        return MultiPlayer.sharedMultiPlayer.players.count
     }
     
     
@@ -88,8 +88,8 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 
 //        cell.textLabel?.text = "\(leaderboardResults[indexPath.row])"
 //        cell.detailTextLabel?.text = Player.sharedPlayer.players[indexPath.row]
-        cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
-        cell.detailTextLabel?.text = players[indexPath.row].name
+        cell.textLabel?.text = "\(MultiPlayer.sharedMultiPlayer.players[indexPath.row].cumulativeScore)"
+        cell.detailTextLabel?.text = MultiPlayer.sharedMultiPlayer.players[indexPath.row].name
         return cell
     }
 }

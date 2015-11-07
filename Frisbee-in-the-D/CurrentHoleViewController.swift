@@ -22,9 +22,8 @@ class CurrentHoleViewController: UIViewController {
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
     
-    var player = Player()
-    var players = [Player]()
-    var scoreTally = [Int]()
+//    var player = Player.sharedPlayer
+//    var players = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +32,8 @@ class CurrentHoleViewController: UIViewController {
         displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
+        print("Current Hole has \(MultiPlayer.sharedMultiPlayer.players.count) players")
+//        print("There's a player here... \(players)")
     }
     
     func displayNamesAndFields()    {
@@ -41,13 +42,20 @@ class CurrentHoleViewController: UIViewController {
 //            playerNameLabel[i].text = Player.sharedPlayer.players[i]
 //            playerStrokesTextField[i].hidden = false
 //        }
-        
+        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+            playerNameLabel[i].hidden = false
+            playerNameLabel[i].text = MultiPlayer.sharedMultiPlayer.players[i].name
+            playerStrokesTextField[i].hidden = false
+        }
     }
     
     
     override func viewWillAppear(animated: Bool) {
         print("Current Hole:\(currentHoleIndex + 1)")
         reloadCurrentHole()
+        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
+            print(MultiPlayer.sharedMultiPlayer.players[i].holeScore)
+        }
     }
     
     func reloadCurrentHole()   {
@@ -87,19 +95,21 @@ class CurrentHoleViewController: UIViewController {
 //                    
 //                }
 //            }
-            if currentHoleIndex == 0    {
-                for i in 0..<players.count  {
-                    player.holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
+//            if currentHoleIndex == 0    {
+//                for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+//                    MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
+//                    print("\(MultiPlayer.sharedMultiPlayer.players[i].name) got a \(MultiPlayer.sharedMultiPlayer.players[i].holeScore)")
+//                }
+//            } else  {
+                for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+                    print(MultiPlayer.sharedMultiPlayer.players[i].name)
+                    MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
                 }
-            } else  {
-                for i in 0..<players.count  {
-                    player.holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
-                    player.cumulativeScore! += player.holeScore!
-                }
-            }
+//            }
 //            print("scoreTally array:\(Player.sharedPlayer.scoreTally)")
 //            destVC.leaderboardResults = Player.sharedPlayer.scoreTally
-            destVC.players = players
+//            destVC.players = MultiPlayer.sharedMultiPlayer.players
             destVC.currentHoleIndex = currentHoleIndex
         }
     }
