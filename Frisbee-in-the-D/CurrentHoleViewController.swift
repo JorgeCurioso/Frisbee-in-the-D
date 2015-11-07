@@ -22,7 +22,7 @@ class CurrentHoleViewController: UIViewController {
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
     
-//    var players = MultiPlayer.sharedMultiPlayer.players
+//    var players: [Player] = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()

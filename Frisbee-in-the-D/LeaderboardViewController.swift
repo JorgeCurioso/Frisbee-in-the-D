@@ -15,9 +15,9 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var nextHoleButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
     
-    var leaderboardResults = [Int]()
+    var leaderboardResults = [String]()
     var currentHoleIndex: Int?
-//    var players = MultiPlayer.sharedMultiPlayer.players
+//    var players: [Player] = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,13 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 //        }
     }
     
+//    func sortLeaderboard() -> [Player] {
+//        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+//            
+//        }
+//    }
+
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -83,8 +90,12 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
         let cell = UITableViewCell(style: .Value1, reuseIdentifier: "leaderboardCell")
-        cell.textLabel?.text = "\(MultiPlayer.sharedMultiPlayer.players[indexPath.row].cumulativeScore)"
-        cell.detailTextLabel?.text = MultiPlayer.sharedMultiPlayer.players[indexPath.row].name
+        
+        var players : [Player] = MultiPlayer.sharedMultiPlayer.players
+        players.sortInPlace({ $0.cumulativeScore < $1.cumulativeScore })
+        
+        cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
+        cell.detailTextLabel?.text = players[indexPath.row].name
 //        cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
 //        cell.detailTextLabel?.text = players[indexPath.row].name
         return cell
