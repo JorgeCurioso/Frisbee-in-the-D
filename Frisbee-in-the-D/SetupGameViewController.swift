@@ -16,7 +16,7 @@ class SetupGameViewController: UIViewController {
     @IBOutlet weak var numberOfPlayers: UISegmentedControl!
     @IBOutlet var playerLabels: [UILabel]!
     
-//    var players = MultiPlayer.sharedMultiPlayer.players
+//    var players: [Player] = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ class SetupGameViewController: UIViewController {
 //                players.append(player)
 //            }
 //        }
+//        print(players)
     }
 
 
