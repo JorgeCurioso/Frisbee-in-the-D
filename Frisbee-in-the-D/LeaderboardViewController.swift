@@ -68,12 +68,6 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 //            }
 //        }
     }
-    
-//    func sortLeaderboard() -> [Player] {
-//        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
-//            
-//        }
-//    }
 
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -94,7 +88,13 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         var players : [Player] = MultiPlayer.sharedMultiPlayer.players
         players.sortInPlace({ $0.cumulativeScore < $1.cumulativeScore })
         
-        cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
+        if players[indexPath.row].cumulativeScore > 0   {
+            cell.textLabel?.text = "+ \(players[indexPath.row].cumulativeScore)"
+        } else if players[indexPath.row].cumulativeScore == 0 {
+            cell.textLabel?.text = "E"
+        } else  {
+            cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
+        }
         cell.detailTextLabel?.text = players[indexPath.row].name
 //        cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
 //        cell.detailTextLabel?.text = players[indexPath.row].name
