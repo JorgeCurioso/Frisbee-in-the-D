@@ -63,9 +63,4 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
         cell.detailTextLabel!.text = playerNames[indexPath.row]
         return cell
     }
-    
-    @IBAction func test(sender: AnyObject) {
-        highScoresTableView.reloadData()
-    }
-
 }
