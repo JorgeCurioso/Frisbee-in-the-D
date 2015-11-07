@@ -30,5 +30,4 @@ class MultiPlayer   {
     }
     
     var players = [Player]()
-    
 }

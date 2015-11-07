@@ -16,6 +16,7 @@ class SetupGameViewController: UIViewController {
     @IBOutlet weak var numberOfPlayers: UISegmentedControl!
     @IBOutlet var playerLabels: [UILabel]!
     
+//    var players = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,12 @@ class SetupGameViewController: UIViewController {
                 MultiPlayer.sharedMultiPlayer.players.append(player)
             }
         }
+//        for i in 0..<playerNameTextField.count    {
+//            if playerNameTextField[i].text != ""   {
+//                let player = Player(name: playerNameTextField[i].text!)
+//                players.append(player)
+//            }
+//        }
     }
 
 
