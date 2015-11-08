@@ -258,6 +258,7 @@
                                 <rect key="frame" x="34" y="425" width="251" height="80"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
+                                    <action selector="newGameButtonPressed:" destination="0sx-Mg-pJC" eventType="touchUpInside" id="9Mr-r4-D3J"/>
                                     <segue destination="dLr-ip-sWh" kind="show" id="FF3-r0-p1e"/>
                                 </connections>
                             </button>
