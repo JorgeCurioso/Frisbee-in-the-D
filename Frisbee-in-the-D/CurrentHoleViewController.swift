@@ -12,6 +12,8 @@ class CurrentHoleViewController: UIViewController {
     
     @IBOutlet var playerStrokesTextField: [UITextField]!
     @IBOutlet var playerNameLabel: [UILabel]!
+    @IBOutlet var strokeIncrementers: [UIStepper]!
+    
     
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
@@ -42,6 +44,7 @@ class CurrentHoleViewController: UIViewController {
             playerNameLabel[i].hidden = false
             playerNameLabel[i].text = MultiPlayer.sharedMultiPlayer.players[i].name
             playerStrokesTextField[i].hidden = false
+            strokeIncrementers[i].hidden = false
         }
 //        for i in 0..<players.count  {
 //            playerNameLabel[i].hidden = false
@@ -75,6 +78,13 @@ class CurrentHoleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func strokeIncrementerTapped(sender: AnyObject) {
+        
+        for i in 0..<strokeIncrementers.count   {
+            playerStrokesTextField[i].text = "\(Int(strokeIncrementers[i].value))"
+            playerStrokesTextField[i].reloadInputViews()
+        }
+    }
     
     @IBAction func submitScoreButtonPressed(sender: AnyObject) {}
     
