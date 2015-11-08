@@ -15,9 +15,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var nextHoleButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
     
-    var leaderboardResults = [String]()
     var currentHoleIndex: Int?
-//    var players: [Player] = MultiPlayer.sharedMultiPlayer.players
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +35,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func saveFinalScores()  {
         
+        // if we're on the last hole of the course, send all our players up to Parse with a name and score attribute
         if currentHoleIndex == 8    {
             for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
                 
@@ -52,23 +51,9 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
                 }
             }
         }
-//        if currentHoleIndex == 8    {
-//            for i in 0..<players.count    {
-//                
-//                let player = PFObject(className: "Player")
-//                player.setObject(players[i].name!, forKey: "Name")
-//                player.setObject(players[i].cumulativeScore, forKey: "Score")
-//                player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-//                    if succeeded {
-//                        print("\(player) Uploaded")
-//                    } else {
-//                        print("Error: \(error) \(error!.userInfo)")
-//                    }
-//                }
-//            }
-//        }
     }
 
+    // clears the collection of Players so none are added to another round
     @IBAction func newGameButtonPressed(sender: AnyObject) {
         MultiPlayer.sharedMultiPlayer.players = []
     }
@@ -79,8 +64,6 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MultiPlayer.sharedMultiPlayer.players.count
-//        return players.count
-
     }
     
     
@@ -92,15 +75,13 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         players.sortInPlace({ $0.cumulativeScore < $1.cumulativeScore })
         
         if players[indexPath.row].cumulativeScore > 0   {
-            cell.textLabel?.text = "+ \(players[indexPath.row].cumulativeScore)"
+            cell.detailTextLabel?.text = "+ \(players[indexPath.row].cumulativeScore)"
         } else if players[indexPath.row].cumulativeScore == 0 {
-            cell.textLabel?.text = "E"
+            cell.detailTextLabel?.text = "E"
         } else  {
-            cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
+            cell.detailTextLabel?.text = "\(players[indexPath.row].cumulativeScore)"
         }
-        cell.detailTextLabel?.text = players[indexPath.row].name
-//        cell.textLabel?.text = "\(players[indexPath.row].cumulativeScore)"
-//        cell.detailTextLabel?.text = players[indexPath.row].name
+        cell.textLabel?.text = players[indexPath.row].name
         return cell
     }
 }

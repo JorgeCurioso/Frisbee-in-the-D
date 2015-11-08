@@ -58,10 +58,19 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell  {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("HighScoreCell")
-        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "HighScoreCell")
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "HighScoreCell")
         
-        cell.textLabel!.text = "\(highScores[indexPath.row])"
-        cell.detailTextLabel!.text = playerNames[indexPath.row]
+        if Int(highScores[indexPath.row].value) > 0   {
+            cell.detailTextLabel?.text = "+ \(highScores[indexPath.row])"
+        } else if Int(highScores[indexPath.row].value) == 0 {
+            cell.detailTextLabel?.text = "E"
+        } else  {
+            cell.detailTextLabel?.text = "\((highScores[indexPath.row]))"
+        }
+        cell.textLabel?.text = playerNames[indexPath.row]
+        
+//        cell.textLabel!.text = "\(highScores[indexPath.row])"
+//        cell.detailTextLabel!.text = playerNames[indexPath.row]
         return cell
     }
 }

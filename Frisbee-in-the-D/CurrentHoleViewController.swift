@@ -23,9 +23,7 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-    
-//    var players: [Player] = MultiPlayer.sharedMultiPlayer.players
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,8 +32,6 @@ class CurrentHoleViewController: UIViewController {
         currentHoleIndex = 0
         reloadCurrentHole()
         print("Current Hole has \(MultiPlayer.sharedMultiPlayer.players.count) players")
-//        print("Current Hole has \(players.count) players")
-
     }
     
     func displayNamesAndFields()    {
@@ -46,11 +42,6 @@ class CurrentHoleViewController: UIViewController {
             playerStrokesTextField[i].hidden = false
             strokeIncrementers[i].hidden = false
         }
-//        for i in 0..<players.count  {
-//            playerNameLabel[i].hidden = false
-//            playerNameLabel[i].text = players[i].name
-//            playerStrokesTextField[i].hidden = false
-//        }
     }
     
     
@@ -60,9 +51,6 @@ class CurrentHoleViewController: UIViewController {
         for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
             print(MultiPlayer.sharedMultiPlayer.players[i].holeScore)
         }
-//        for i in 0..<players.count    {
-//            print(players[i].holeScore)
-//        }
     }
     
     func reloadCurrentHole()   {
@@ -105,11 +93,6 @@ class CurrentHoleViewController: UIViewController {
                     MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
                     MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
                 }
-//            for i in 0..<players.count  {
-//                print(players[i].name)
-//                players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
-//                players[i].cumulativeScore += players[i].holeScore
-//            }
             
             destVC.currentHoleIndex = currentHoleIndex
         }
