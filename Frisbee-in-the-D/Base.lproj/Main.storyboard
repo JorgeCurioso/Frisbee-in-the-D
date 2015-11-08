@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sff-Ki-Hbx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dLr-ip-sWh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -29,18 +29,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-s6-3Hv">
+                                <rect key="frame" x="23" y="531" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="5oO-Ti-TTs" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="G4U-ot-bmC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rules" id="TVt-Ns-qMz"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="rulesTextView" destination="eWp-df-W7a" id="HZm-9l-xAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVc-Fn-ZAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5oO-Ti-TTs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="330" y="-324"/>
+            <point key="canvasLocation" x="306" y="-372"/>
         </scene>
         <!--Current Hole-->
         <scene sceneID="k2A-d9-GoL">
@@ -164,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4H-eJ-cfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="970"/>
+            <point key="canvasLocation" x="306" y="246"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="8SM-Wd-QVz">
@@ -220,7 +230,7 @@
                                 <rect key="frame" x="34" y="425" width="251" height="80"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
-                                    <segue destination="3Gi-5w-Mp0" kind="show" id="LAZ-8o-cpQ"/>
+                                    <segue destination="dLr-ip-sWh" kind="show" id="FF3-r0-p1e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,7 +246,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYw-8U-iHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ge1-8h-7Ej" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="746" y="970"/>
+            <point key="canvasLocation" x="714" y="246"/>
         </scene>
         <!--Course Map-->
         <scene sceneID="Q6D-Cr-UqX">
@@ -270,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bow-F2-vaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="303"/>
+            <point key="canvasLocation" x="306" y="855"/>
         </scene>
         <!--Get Started-->
         <scene sceneID="ffq-l5-PBS">
@@ -302,20 +312,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFU-mo-a8K">
-                                <rect key="frame" x="39" y="376" width="245" height="46"/>
-                                <state key="normal" title="High Scores"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cV-8h-yJG">
+                                <rect key="frame" x="39" y="404" width="245" height="51"/>
+                                <state key="normal" title="New to the Game?"/>
                                 <connections>
-                                    <action selector="highScoresButtonPressed:" destination="Sff-Ki-Hbx" eventType="touchUpInside" id="MfT-D6-clP"/>
-                                    <segue destination="3Gi-5w-Mp0" kind="show" identifier="Start&lt;-&gt;HighScores" id="PDF-FM-oTK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sx-fw-caT">
-                                <rect key="frame" x="39" y="489" width="245" height="51"/>
-                                <state key="normal" title="Get Started"/>
-                                <connections>
-                                    <action selector="getStartedButtonPressed:" destination="Sff-Ki-Hbx" eventType="touchUpInside" id="CKK-kg-92n"/>
-                                    <segue destination="RyD-FE-jBf" kind="show" identifier="Start-&gt;Setup" id="d8d-NO-dDF"/>
+                                    <action selector="newToGameButtonPressed:" destination="Sff-Ki-Hbx" eventType="touchUpInside" id="nGe-OO-Cp8"/>
+                                    <segue destination="KHh-li-AQK" kind="show" identifier="Start&lt;-&gt;Rules" id="M6z-RZ-S4g"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqd-ba-X73">
@@ -324,17 +326,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cV-8h-yJG">
-                                <rect key="frame" x="39" y="430" width="245" height="51"/>
-                                <state key="normal" title="New to the Game?"/>
-                                <connections>
-                                    <action selector="newToGameButtonPressed:" destination="Sff-Ki-Hbx" eventType="touchUpInside" id="nGe-OO-Cp8"/>
-                                    <segue destination="KHh-li-AQK" kind="show" identifier="Start&lt;-&gt;Rules" id="M6z-RZ-S4g"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="1qY-H0-oUh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="courseDescriptionTextView" destination="Uqd-ba-X73" id="Kon-Ml-h3A"/>
@@ -343,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DQ-Pb-Ph5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="-395"/>
+            <point key="canvasLocation" x="-564" y="-364"/>
         </scene>
         <!--High Scores-->
         <scene sceneID="6fs-ZB-9Zn">
@@ -398,25 +393,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlD-pU-lxv">
-                                <rect key="frame" x="20" y="31" width="41" height="30"/>
-                                <state key="normal" title="Home"/>
-                                <connections>
-                                    <segue destination="ZbV-Fy-ODj" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="WQ8-Bj-Jrg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HTe-HR-WnO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="highScoresTableView" destination="dqU-Pi-GtT" id="DD1-JO-4mQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0M-Og-7qE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ZbV-Fy-ODj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-987" y="303"/>
+            <point key="canvasLocation" x="-564" y="871"/>
         </scene>
         <!--Setup Game-->
         <scene sceneID="Ku2-94-sSv">
@@ -515,6 +503,7 @@
                             <constraint firstItem="WNv-4v-7W7" firstAttribute="top" secondItem="v9v-Dg-VxH" secondAttribute="bottom" id="LXj-R1-hUr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="gYS-t8-ftm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="numberOfPlayers" destination="MIj-0J-gWp" id="1cJ-KO-FAA"/>
@@ -530,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="303"/>
+            <point key="canvasLocation" x="-564" y="251"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nbf-vL-ory">
@@ -552,9 +541,28 @@
             </objects>
             <point key="canvasLocation" x="-151" y="303"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Xi7-IH-K7a">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dLr-ip-sWh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="avM-4R-Q2o">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Sff-Ki-Hbx" kind="relationship" relationship="viewControllers" id="ZgP-Ha-s3i"/>
+                        <segue destination="RyD-FE-jBf" kind="relationship" relationship="viewControllers" id="YoC-nM-EQ9"/>
+                        <segue destination="3Gi-5w-Mp0" kind="relationship" relationship="viewControllers" id="ciK-Gg-JWd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3C-w0-acw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1043" y="303"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="M6z-RZ-S4g"/>
-        <segue reference="PDF-FM-oTK"/>
     </inferredMetricsTieBreakers>
 </document>
