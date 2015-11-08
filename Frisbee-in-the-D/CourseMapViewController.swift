@@ -33,11 +33,11 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         
         setupCourseMap()
         
-        for eachHole in rooseveltPark.holes {
+        for i in 0..<rooseveltPark.holes.count {
             let tee = MKPointAnnotation()
-            tee.coordinate = eachHole.teeLocation
-            tee.title = eachHole.name
-//                        if rooseveltPark.currentHoleIndex == 0  {
+            tee.coordinate = rooseveltPark.holes[i].teeLocation
+            tee.title = rooseveltPark.holes[i].name
+//                        if i == rooseveltPark.currentHoleIndex  {
 //                            tee.subtitle = "Current Hole"
 //                        }
             collectionOfTees.append(tee)
@@ -53,6 +53,7 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
 //        }
         courseMap.addAnnotations(collectionOfTees)
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
