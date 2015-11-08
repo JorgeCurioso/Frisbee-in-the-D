@@ -116,7 +116,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submitScoreButtonPressed:" destination="bHI-It-CAu" eventType="touchUpInside" id="IgH-eD-GHR"/>
-                                    <segue destination="0sx-Mg-pJC" kind="show" identifier="CurrentHole&lt;-&gt;Leaderboard" id="fCf-Kh-BY4"/>
+                                    <segue destination="0sx-Mg-pJC" kind="showDetail" identifier="CurrentHole&lt;-&gt;Leaderboard" id="fCf-Kh-BY4"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-zw-ZBo">
@@ -329,7 +329,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="1qY-H0-oUh"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="1qY-H0-oUh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="courseDescriptionTextView" destination="Uqd-ba-X73" id="Kon-Ml-h3A"/>
@@ -396,7 +396,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="HTe-HR-WnO"/>
+                    <tabBarItem key="tabBarItem" title="High Scores" id="HTe-HR-WnO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="highScoresTableView" destination="dqU-Pi-GtT" id="DD1-JO-4mQ"/>
@@ -503,7 +503,7 @@
                             <constraint firstItem="WNv-4v-7W7" firstAttribute="top" secondItem="v9v-Dg-VxH" secondAttribute="bottom" id="LXj-R1-hUr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gYS-t8-ftm"/>
+                    <tabBarItem key="tabBarItem" title="Start Round" id="gYS-t8-ftm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="numberOfPlayers" destination="MIj-0J-gWp" id="1cJ-KO-FAA"/>
