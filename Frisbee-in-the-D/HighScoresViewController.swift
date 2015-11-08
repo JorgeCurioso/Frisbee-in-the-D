@@ -32,6 +32,7 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
                 for player in players!   {
                     self.playerNames.append(player["Name"] as! (String))
                     self.highScores.append(player["Score"] as! (Int))
+                    self.highScoresTableView.reloadData()
                 }
                 print(self.playerNames)
                 print(self.highScores)
@@ -63,9 +64,4 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
         cell.detailTextLabel!.text = playerNames[indexPath.row]
         return cell
     }
-    
-    @IBAction func test(sender: AnyObject) {
-        highScoresTableView.reloadData()
-    }
-
 }

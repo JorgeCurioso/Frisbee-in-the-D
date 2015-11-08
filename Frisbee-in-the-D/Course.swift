@@ -16,30 +16,27 @@ struct Course    {
     var holes = [Hole]()
     var currentHole = Hole()
     var currentHoleIndex = Int()
-    var currentHoleScores = [Int]()
-    var aggregateScores = [Int]()
-    var scoreTally = Int()
     
     let parkLattitude = 42.330456
     let parkLongitude = -83.077002
     
-    
     var coursePar: Int {
         get {
-            var parArray = [Int]()
+            var sum = 0
             for hole in holes   {
-                parArray.append(hole.par)
+                sum += hole.par
             }
-            return parArray.reduce(0, combine: +)
+            return sum
         }
     }
     
-    init(name: String, holes: [Hole])  {
+    init(name: String, description: String, holes: [Hole])  {
         self.name = name
+        self.description = description
         self.holes = holes
     }
 }
 
-var rooseveltPark = Course(name: "Roosevelt Park", holes: [hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9])
+var rooseveltPark = Course(name: "Roosevelt Park", description: "Roosevelt Park starts and finishes with longer holes, but mainly has par threes. Pins are usually trees and phone poles, but some holes require a little more creativity with the disc. As always, be mindful of traffic and roads, especially since all streets and alleyways are considered out of bounds. Have fun!", holes: [hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9])
 
 
