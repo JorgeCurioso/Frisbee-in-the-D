@@ -16,6 +16,8 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     let locationManager = CLLocationManager()
     var collectionOfTees = [MKAnnotation]()
+    var picForTee = MKAnnotationView()
+//    var tee = MKPointAnnotation()
 
 
     override func viewDidLoad() {
@@ -26,14 +28,29 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+//        courseMap.delegate = self
+        
         setupCourseMap()
         
         for eachHole in rooseveltPark.holes {
             let tee = MKPointAnnotation()
             tee.coordinate = eachHole.teeLocation
             tee.title = eachHole.name
+//                        if rooseveltPark.currentHoleIndex == 0  {
+//                            tee.subtitle = "Current Hole"
+//                        }
             collectionOfTees.append(tee)
         }
+//        for i in 0..<rooseveltPark.holes.count {
+//            picForTee.image = rooseveltPark.holes[i].firstPersonTeeImage
+//            tee.coordinate = rooseveltPark.holes[i].teeLocation
+//            tee.title = rooseveltPark.holes[i].name
+//            if i == 3   {
+//                tee.subtitle = "Current Hole"
+//            }
+//            collectionOfTees.append(tee)
+//        }
         courseMap.addAnnotations(collectionOfTees)
     }
 
@@ -48,6 +65,42 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         let region = MKCoordinateRegion(center: parkLocation, span: span)
         courseMap.setRegion(region, animated: false)
     }
+    
+    
+    //Whoa! This shows huge firstPersonTeeImages (hole1) overtop the map. Cool and not cool at the same 
+    // time
+//    func mapView(mapView: MKMapView!,
+//        viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+//            
+//            let reuseId = "pin"
+//            var teeView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+//            var teeImageView = UIImageView()
+//
+////            if teeView == nil {
+//            for eachHole in rooseveltPark.holes {
+//                
+//                
+//                teeView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//                
+//                teeView!.canShowCallout = true
+////                teeView!.animatesDrop = true
+////                teeView!.image = eachHole.firstPersonTeeImage!
+//                teeImageView.image = eachHole.firstPersonTeeImage
+//                
+//                
+//                
+////                teeView!.image.layer.setCornerRadius(8.0)
+////                teeView!.image.layer.clipsToBounds=true
+//    
+////
+////            }
+////            else {
+//                teeView!.annotation = annotation
+////            }
+//            }
+//            
+//            return teeView
+//    }
 
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

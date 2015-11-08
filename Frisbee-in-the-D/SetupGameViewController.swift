@@ -39,18 +39,33 @@ class SetupGameViewController: UIViewController {
         
         switch numberOfPlayers.selectedSegmentIndex    {
         case 0:
-            for i in 1...3  {playerLabels[i].hidden = true; playerNameTextField[i].hidden = true}
+            for i in 1...3  {
+                playerLabels[i].hidden = true;
+                playerNameTextField[i].hidden = true
+            }
         case 1:
-            for i in 0...1  {playerLabels[i].hidden = false; playerNameTextField[i].hidden = false}
-            for i in 2...3  {playerLabels[i].hidden = true; playerNameTextField[i].hidden = true}
+            for i in 0...1  {
+                playerLabels[i].hidden = false;
+                playerNameTextField[i].hidden = false
+            }
+            for i in 2...3  {
+                playerLabels[i].hidden = true;
+                playerNameTextField[i].hidden = true
+            }
         case 2:
-            for i in 0...2  {playerLabels[i].hidden = false; playerNameTextField[i].hidden = false}
-            playerLabels[3].hidden = true; playerNameTextField[3].hidden = true
+            for i in 0...2  {
+                playerLabels[i].hidden = false;
+                playerNameTextField[i].hidden = false
+            }
+                playerLabels[3].hidden = true;
+                playerNameTextField[3].hidden = true
         case 3:
-            for i in 0...3  {playerLabels[i].hidden = false; playerNameTextField[i].hidden = false}
+            for i in 0...3  {
+                playerLabels[i].hidden = false;
+                playerNameTextField[i].hidden = false
+            }
         default:
             print("uh-oh, spaghetti-o's")
         }
-        
     }
 }

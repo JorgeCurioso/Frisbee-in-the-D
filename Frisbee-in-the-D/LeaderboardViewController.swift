@@ -34,7 +34,6 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func saveFinalScores()  {
-        
         // if we're on the last hole of the course, send all our players up to Parse with a name and score attribute
         if currentHoleIndex == 8    {
             for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
@@ -68,7 +67,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath)
+
         let cell = UITableViewCell(style: .Value1, reuseIdentifier: "leaderboardCell")
         
         var players : [Player] = MultiPlayer.sharedMultiPlayer.players

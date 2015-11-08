@@ -35,7 +35,6 @@ class CurrentHoleViewController: UIViewController {
     }
     
     func displayNamesAndFields()    {
-
         for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
             playerNameLabel[i].hidden = false
             playerNameLabel[i].text = MultiPlayer.sharedMultiPlayer.players[i].name
@@ -46,11 +45,7 @@ class CurrentHoleViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        print("Current Hole:\(currentHoleIndex + 1)")
         reloadCurrentHole()
-        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
-            print(MultiPlayer.sharedMultiPlayer.players[i].holeScore)
-        }
     }
     
     func reloadCurrentHole()   {
@@ -63,14 +58,11 @@ class CurrentHoleViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func strokeIncrementerTapped(sender: AnyObject) {
-        
         for i in 0..<strokeIncrementers.count   {
             playerStrokesTextField[i].text = "\(Int(strokeIncrementers[i].value))"
-            playerStrokesTextField[i].reloadInputViews()
         }
     }
     
@@ -89,7 +81,6 @@ class CurrentHoleViewController: UIViewController {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
                 for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
-                    print(MultiPlayer.sharedMultiPlayer.players[i].name)
                     MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
                     MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
                 }
@@ -99,7 +90,7 @@ class CurrentHoleViewController: UIViewController {
     }
     
     
-    // Return from leaderboard
+    // Return from leaderboard and go to next hole in the array
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
             currentHoleIndex++
     }
