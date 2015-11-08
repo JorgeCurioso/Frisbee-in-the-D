@@ -86,7 +86,14 @@ class CurrentHoleViewController: UIViewController {
         }
     }
     
-    @IBAction func submitScoreButtonPressed(sender: AnyObject) {}
+    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
+        for textField in playerStrokesTextField  {
+            textField.text = ""
+        }
+        for stepper in strokeIncrementers   {
+            stepper.value = 0
+        }
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -69,6 +69,9 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 //        }
     }
 
+    @IBAction func newGameButtonPressed(sender: AnyObject) {
+        MultiPlayer.sharedMultiPlayer.players = []
+    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
