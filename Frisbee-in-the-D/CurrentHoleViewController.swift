@@ -23,9 +23,7 @@ class CurrentHoleViewController: UIViewController {
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
-    
-//    var players: [Player] = MultiPlayer.sharedMultiPlayer.players
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,35 +32,20 @@ class CurrentHoleViewController: UIViewController {
         currentHoleIndex = 0
         reloadCurrentHole()
         print("Current Hole has \(MultiPlayer.sharedMultiPlayer.players.count) players")
-//        print("Current Hole has \(players.count) players")
-
     }
     
     func displayNamesAndFields()    {
-
         for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
             playerNameLabel[i].hidden = false
             playerNameLabel[i].text = MultiPlayer.sharedMultiPlayer.players[i].name
             playerStrokesTextField[i].hidden = false
             strokeIncrementers[i].hidden = false
         }
-//        for i in 0..<players.count  {
-//            playerNameLabel[i].hidden = false
-//            playerNameLabel[i].text = players[i].name
-//            playerStrokesTextField[i].hidden = false
-//        }
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        print("Current Hole:\(currentHoleIndex + 1)")
         reloadCurrentHole()
-        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
-            print(MultiPlayer.sharedMultiPlayer.players[i].holeScore)
-        }
-//        for i in 0..<players.count    {
-//            print(players[i].holeScore)
-//        }
     }
     
     func reloadCurrentHole()   {
@@ -75,14 +58,11 @@ class CurrentHoleViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func strokeIncrementerTapped(sender: AnyObject) {
-        
         for i in 0..<strokeIncrementers.count   {
             playerStrokesTextField[i].text = "\(Int(strokeIncrementers[i].value))"
-            playerStrokesTextField[i].reloadInputViews()
         }
     }
     
@@ -101,22 +81,16 @@ class CurrentHoleViewController: UIViewController {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
                 for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
-                    print(MultiPlayer.sharedMultiPlayer.players[i].name)
                     MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
                     MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
                 }
-//            for i in 0..<players.count  {
-//                print(players[i].name)
-//                players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
-//                players[i].cumulativeScore += players[i].holeScore
-//            }
             
             destVC.currentHoleIndex = currentHoleIndex
         }
     }
     
     
-    // Return from leaderboard
+    // Return from leaderboard and go to next hole in the array
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
             currentHoleIndex++
     }
