@@ -12,6 +12,7 @@ class GetStartedViewController: UIViewController {
     
     @IBOutlet weak var courseParLabel: UILabel!
     @IBOutlet weak var courseDescriptionTextView: UITextView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
