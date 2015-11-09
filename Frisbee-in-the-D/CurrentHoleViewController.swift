@@ -73,11 +73,9 @@ class CurrentHoleViewController: UIViewController {
         // if the array has 0, go through and print a '?' for whoever has zero as their score
         if incrementerValuesArray.contains(0)   {
             for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
-                if strokeIncrementers[i].value == 0 {
-                    playerStrokesLabel[i].text = "?"
-                }
+                if strokeIncrementers[i].value == 0 {playerStrokesLabel[i].text = "?"}
             }
-            // otherwise calculate everyones score, perform the segue, and reset the stepper values
+            // otherwise, calculate everyones score, perform the segue, and reset the stepper values
         } else  {
             calculateScores()
             self.performSegueWithIdentifier("Current<->Leaderboard", sender: nil)
@@ -85,15 +83,6 @@ class CurrentHoleViewController: UIViewController {
         }
     }
     
-    @IBAction func strokeIncrementerTapped(sender: AnyObject) {
-        for i in 0..<strokeIncrementers.count   {
-            playerStrokesLabel[i].text = "\(Int(strokeIncrementers[i].value))"
-        }
-    }
-    
-    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
-        checkForNonEnteredScores()
-    }
     
     //To be called when moving on to the next hole
     func resetStepperValues()   {
@@ -117,6 +106,17 @@ class CurrentHoleViewController: UIViewController {
             destVC.currentHoleIndex = currentHoleIndex
         }
     }
+    
+    @IBAction func strokeIncrementerTapped(sender: AnyObject) {
+        for i in 0..<strokeIncrementers.count   {
+            playerStrokesLabel[i].text = "\(Int(strokeIncrementers[i].value))"
+        }
+    }
+    
+    @IBAction func submitScoreButtonPressed(sender: AnyObject) {
+        checkForNonEnteredScores()
+    }
+
     
     
     // Return from leaderboard and go to next hole in the array
