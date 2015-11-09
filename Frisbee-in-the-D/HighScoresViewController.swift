@@ -11,10 +11,6 @@ import Parse
 
 class HighScoresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var highScoreCellName: UILabel!
-    @IBOutlet weak var highScoreCellStrokes: UILabel!
-    @IBOutlet weak var highScoreCellPar: UILabel!
-    
     @IBOutlet weak var highScoresTableView: UITableView!
     
     var highScores = [Int]()

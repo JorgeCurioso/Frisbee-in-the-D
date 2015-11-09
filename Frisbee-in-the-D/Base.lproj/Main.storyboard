@@ -410,7 +410,7 @@
                                 <rect key="frame" x="20" y="79" width="280" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="HighScoreCell" id="0Wj-VI-CQr" customClass="LeaderboardTableViewCell" customModule="Frisbee_in_the_D" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="HighScoreCell" id="0Wj-VI-CQr" customClass="HighScoreTableViewCell" customModule="Frisbee_in_the_D" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Wj-VI-CQr" id="U2b-9X-9Tp">
@@ -439,6 +439,11 @@
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69000000000000006" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="highScoreCellName" destination="V7S-nK-lCi" id="aDq-ds-PWD"/>
+                                            <outlet property="highScoreCellPar" destination="V10-PI-WuU" id="q4K-Uz-b2q"/>
+                                            <outlet property="highScoreCellStrokes" destination="wKq-py-u5F" id="oUe-XQ-HL2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -458,9 +463,6 @@
                     <tabBarItem key="tabBarItem" title="High Scores" id="HTe-HR-WnO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="highScoreCellName" destination="V7S-nK-lCi" id="sId-Gb-lg8"/>
-                        <outlet property="highScoreCellPar" destination="V10-PI-WuU" id="c5t-Uw-KOx"/>
-                        <outlet property="highScoreCellStrokes" destination="wKq-py-u5F" id="ruJ-gg-AVa"/>
                         <outlet property="highScoresTableView" destination="dqU-Pi-GtT" id="DD1-JO-4mQ"/>
                     </connections>
                 </viewController>
