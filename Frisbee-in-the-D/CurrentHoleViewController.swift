@@ -14,6 +14,7 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet var playerStrokesLabel: [UILabel]!
     @IBOutlet var playerNameLabel: [UILabel]!
     @IBOutlet var strokeIncrementers: [UIStepper]!
+    @IBOutlet weak var submitButton: UIButton!
     
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -61,6 +62,29 @@ class CurrentHoleViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func checkForNonEnteredScores() {
+        
+        // go through steppers and add each's value to an array
+        var incrementerValuesArray = [Int]()
+        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count   {
+            incrementerValuesArray.append(Int(strokeIncrementers[i].value))
+        }
+        print("incrementerValuesArray = \(incrementerValuesArray)")
+        // if the array has 0, go through and print a '?' for whoever has zero as their score
+        if incrementerValuesArray.contains(0)   {
+            for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+                if strokeIncrementers[i].value == 0 {
+                    playerStrokesLabel[i].text = "?"
+                }
+            }
+            // otherwise calculate everyones score, perform the segue, and reset the stepper values
+        } else  {
+            calculateScores()
+            self.performSegueWithIdentifier("Current<->Leaderboard", sender: nil)
+            resetStepperValues()
+        }
+    }
+    
     @IBAction func strokeIncrementerTapped(sender: AnyObject) {
         for i in 0..<strokeIncrementers.count   {
             playerStrokesLabel[i].text = "\(Int(strokeIncrementers[i].value))"
@@ -68,11 +92,21 @@ class CurrentHoleViewController: UIViewController {
     }
     
     @IBAction func submitScoreButtonPressed(sender: AnyObject) {
-        for textField in playerStrokesLabel  {
-            textField.text = ""
-        }
-        for stepper in strokeIncrementers   {
-            stepper.value = 0
+        checkForNonEnteredScores()
+    }
+    
+    //To be called when moving on to the next hole
+    func resetStepperValues()   {
+        for textField in playerStrokesLabel  {textField.text = "0"}
+        for stepper in strokeIncrementers   {stepper.value = 0}
+    }
+    
+    //Take whatever current players we have and get a current score for this hole. Then, do 2 types of math, one with all strokes and another with a cumulative par
+    func calculateScores()  {
+        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
+            MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesLabel[i].text!)! - currentHole.par
+            MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
+            MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes += Int(playerStrokesLabel[i].text!)!
         }
     }
     
@@ -80,13 +114,6 @@ class CurrentHoleViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CurrentHole<->Leaderboard" {
             let destVC = segue.destinationViewController as! LeaderboardViewController
-
-                for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
-                    MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesLabel[i].text!)! - currentHole.par
-                    MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
-                    MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes += Int(playerStrokesLabel[i].text!)!
-                }
-            
             destVC.currentHoleIndex = currentHoleIndex
         }
     }
