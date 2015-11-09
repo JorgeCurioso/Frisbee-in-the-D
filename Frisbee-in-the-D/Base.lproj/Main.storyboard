@@ -35,7 +35,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-s6-3Hv">
-                                <rect key="frame" x="23" y="531" width="41" height="30"/>
+                                <rect key="frame" x="17" y="528" width="54" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -354,14 +354,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" translatesAutoresizingMaskIntoConstraints="NO" id="JGl-56-EoD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="522"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAI-kU-dps">
+                                <rect key="frame" x="20" y="530" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="EGA-BX-aZb" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="KK0-HQ-rPd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-7B-lnh">
+                                <rect key="frame" x="202" y="530" width="98" height="30"/>
+                                <state key="normal" title="Get Directions"/>
+                                <connections>
+                                    <action selector="getDirectionsButtonPressed:" destination="MPC-7D-zd5" eventType="touchUpInside" id="TYs-mt-RMz"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JGl-56-EoD" firstAttribute="leading" secondItem="e9b-pu-pe7" secondAttribute="leading" id="AeL-io-gAL"/>
                             <constraint firstAttribute="trailing" secondItem="JGl-56-EoD" secondAttribute="trailing" id="EAE-zI-11a"/>
-                            <constraint firstItem="Eb3-zL-wc0" firstAttribute="top" secondItem="JGl-56-EoD" secondAttribute="bottom" id="FLp-0J-b4W"/>
+                            <constraint firstItem="Eb3-zL-wc0" firstAttribute="top" secondItem="JGl-56-EoD" secondAttribute="bottom" constant="46" id="FLp-0J-b4W"/>
                             <constraint firstItem="JGl-56-EoD" firstAttribute="top" secondItem="e9b-pu-pe7" secondAttribute="top" id="soa-vP-bWT"/>
                         </constraints>
                     </view>
@@ -372,8 +385,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bow-F2-vaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EGA-BX-aZb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="306" y="855"/>
+            <point key="canvasLocation" x="426" y="1091"/>
         </scene>
         <!--Get Started-->
         <scene sceneID="ffq-l5-PBS">
@@ -425,6 +439,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-Nh-l1P">
+                                <rect key="frame" x="39" y="355" width="245" height="30"/>
+                                <state key="normal" title="Course Map">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MPC-7D-zd5" kind="presentation" id="cUi-yW-rHg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69664724570000003" green="0.74542297980000005" blue="0.63165896229999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -444,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DQ-Pb-Ph5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="-364"/>
+            <point key="canvasLocation" x="-608" y="-480"/>
         </scene>
         <!--High Scores-->
         <scene sceneID="6fs-ZB-9Zn">
@@ -652,7 +675,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="251"/>
+            <point key="canvasLocation" x="-1043" y="1363"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nbf-vL-ory">
@@ -672,7 +695,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoc-Cb-OX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="303"/>
+            <point key="canvasLocation" x="-247" y="1651"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xi7-IH-K7a">
@@ -699,6 +722,7 @@
         <image name="trainsStation" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cUi-yW-rHg"/>
         <segue reference="M6z-RZ-S4g"/>
     </inferredMetricsTieBreakers>
 </document>
