@@ -10,7 +10,8 @@ import UIKit
 
 class CurrentHoleViewController: UIViewController {
     
-    @IBOutlet var playerStrokesTextField: [UITextField]!
+    
+    @IBOutlet var playerStrokesLabel: [UILabel]!
     @IBOutlet var playerNameLabel: [UILabel]!
     @IBOutlet var strokeIncrementers: [UIStepper]!
     
@@ -32,14 +33,13 @@ class CurrentHoleViewController: UIViewController {
         displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
-//        print("Current Hole has \(MultiPlayer.sharedMultiPlayer.players.count) players")
     }
     
     func displayNamesAndFields()    {
         for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
             playerNameLabel[i].hidden = false
             playerNameLabel[i].text = MultiPlayer.sharedMultiPlayer.players[i].name
-            playerStrokesTextField[i].hidden = false
+            playerStrokesLabel[i].hidden = false
             strokeIncrementers[i].hidden = false
         }
     }
@@ -63,12 +63,12 @@ class CurrentHoleViewController: UIViewController {
     
     @IBAction func strokeIncrementerTapped(sender: AnyObject) {
         for i in 0..<strokeIncrementers.count   {
-            playerStrokesTextField[i].text = "\(Int(strokeIncrementers[i].value))"
+            playerStrokesLabel[i].text = "\(Int(strokeIncrementers[i].value))"
         }
     }
     
     @IBAction func submitScoreButtonPressed(sender: AnyObject) {
-        for textField in playerStrokesTextField  {
+        for textField in playerStrokesLabel  {
             textField.text = ""
         }
         for stepper in strokeIncrementers   {
@@ -82,9 +82,9 @@ class CurrentHoleViewController: UIViewController {
             let destVC = segue.destinationViewController as! LeaderboardViewController
 
                 for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
-                    MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
+                    MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesLabel[i].text!)! - currentHole.par
                     MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
-                    MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes += Int(playerStrokesTextField[i].text!)!
+                    MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes += Int(playerStrokesLabel[i].text!)!
                 }
             
             destVC.currentHoleIndex = currentHoleIndex
