@@ -31,7 +31,7 @@ class CurrentHoleViewController: UIViewController {
         displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
-        print("Current Hole has \(MultiPlayer.sharedMultiPlayer.players.count) players")
+//        print("Current Hole has \(MultiPlayer.sharedMultiPlayer.players.count) players")
     }
     
     func displayNamesAndFields()    {
