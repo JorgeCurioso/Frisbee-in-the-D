@@ -10,6 +10,7 @@ import UIKit
 
 class RulesViewController: UIViewController {
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var rulesTextView: UITextView!
     
     let rules = Rules()

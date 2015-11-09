@@ -11,6 +11,7 @@ import Parse
 
 class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var finalResultsLabel: UILabel!
     @IBOutlet weak var nextHoleButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!

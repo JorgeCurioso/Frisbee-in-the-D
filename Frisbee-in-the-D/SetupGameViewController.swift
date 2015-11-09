@@ -12,6 +12,7 @@ import Parse
 class SetupGameViewController: UIViewController {
 
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet var playerNameTextField: [UITextField]!
     @IBOutlet weak var numberOfPlayers: UISegmentedControl!
     @IBOutlet var playerLabels: [UILabel]!

@@ -15,6 +15,7 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet var strokeIncrementers: [UIStepper]!
     
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
     @IBOutlet weak var holePar: UILabel!

@@ -11,6 +11,7 @@ import Parse
 
 class HighScoresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var highScoresTableView: UITableView!
     
     var highScores = [Int]()
