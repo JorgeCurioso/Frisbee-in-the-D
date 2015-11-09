@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="ynb-La-m1x">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="ynb-La-m1x">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rules of the Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-KH-xsT">
@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="x8B-fE-E6P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="x8B-fE-E6P">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hole" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RZ-7E-KRV">
@@ -252,7 +252,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="3PQ-TX-iG2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="3PQ-TX-iG2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdP-EB-zAZ">
@@ -265,7 +265,7 @@
                                     <segue destination="ge1-8h-7Ej" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="oT3-jv-WnC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2f-vz-87h">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2f-vz-87h">
                                 <rect key="frame" x="20" y="20" width="280" height="81"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -328,11 +328,24 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="3PQ-TX-iG2" firstAttribute="leading" secondItem="wo9-b5-7kd" secondAttribute="leading" id="5ZQ-5b-2Gi"/>
+                            <constraint firstAttribute="trailing" secondItem="3PQ-TX-iG2" secondAttribute="trailing" id="VFE-Qb-wWd"/>
+                            <constraint firstItem="3PQ-TX-iG2" firstAttribute="top" secondItem="wo9-b5-7kd" secondAttribute="top" id="ds3-GO-IEw"/>
+                            <constraint firstItem="BLu-wc-ARV" firstAttribute="top" secondItem="3PQ-TX-iG2" secondAttribute="bottom" id="q3f-YW-Bax"/>
+                            <constraint firstItem="BLu-wc-ARV" firstAttribute="top" secondItem="3PQ-TX-iG2" secondAttribute="bottom" id="tkb-ya-VMj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="q3f-YW-Bax"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="3PQ-TX-iG2" id="SVv-kc-tr7"/>
                         <outlet property="finalResultsLabel" destination="S2f-vz-87h" id="CQ2-dm-LNW"/>
+                        <outlet property="leaderboardLabel" destination="S2f-vz-87h" id="V72-NY-YxY"/>
                         <outlet property="newGameButton" destination="EFK-LO-O8l" id="eSF-E8-mAD"/>
                         <outlet property="nextHoleButton" destination="EdP-EB-zAZ" id="1hb-c5-CPd"/>
                     </connections>
@@ -388,7 +401,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bow-F2-vaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EGA-BX-aZb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="426" y="1091"/>
+            <point key="canvasLocation" x="306" y="885"/>
         </scene>
         <!--Get Started-->
         <scene sceneID="ffq-l5-PBS">
@@ -468,7 +481,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DQ-Pb-Ph5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-608" y="-480"/>
+            <point key="canvasLocation" x="-560" y="-372"/>
         </scene>
         <!--High Scores-->
         <scene sceneID="6fs-ZB-9Zn">
@@ -482,7 +495,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="F4a-Jz-vgP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="F4a-Jz-vgP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H08-aA-NgE">
@@ -554,7 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0M-Og-7qE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="871"/>
+            <point key="canvasLocation" x="-560" y="893"/>
         </scene>
         <!--Setup Game-->
         <scene sceneID="Ku2-94-sSv">
@@ -677,7 +690,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1043" y="1363"/>
+            <point key="canvasLocation" x="-560" y="246"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nbf-vL-ory">
@@ -697,7 +710,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoc-Cb-OX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-247" y="1651"/>
+            <point key="canvasLocation" x="-143" y="289"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xi7-IH-K7a">
@@ -724,7 +737,7 @@
         <image name="trainsStation" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cUi-yW-rHg"/>
-        <segue reference="M6z-RZ-S4g"/>
+        <segue reference="9SM-D3-hGq"/>
+        <segue reference="ynO-0T-O20"/>
     </inferredMetricsTieBreakers>
 </document>
