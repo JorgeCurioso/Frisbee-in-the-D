@@ -15,6 +15,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var finalResultsLabel: UILabel!
     @IBOutlet weak var nextHoleButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
+    @IBOutlet weak var leaderboardLabel: UILabel!
     
     var currentHoleIndex: Int?
     
@@ -25,12 +26,11 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func changeLayoutForFinalHole() {
-        finalResultsLabel.hidden = true
         newGameButton.hidden = true
         if currentHoleIndex == 8    {
-            finalResultsLabel.hidden = false
             nextHoleButton.hidden = true
             newGameButton.hidden = false
+            leaderboardLabel.text = "Final Results"
         }
     }
     
