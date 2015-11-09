@@ -37,20 +37,8 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
             let tee = MKPointAnnotation()
             tee.coordinate = rooseveltPark.holes[i].teeLocation
             tee.title = rooseveltPark.holes[i].name
-//                        if i == rooseveltPark.currentHoleIndex  {
-//                            tee.subtitle = "Current Hole"
-//                        }
             collectionOfTees.append(tee)
         }
-//        for i in 0..<rooseveltPark.holes.count {
-//            picForTee.image = rooseveltPark.holes[i].firstPersonTeeImage
-//            tee.coordinate = rooseveltPark.holes[i].teeLocation
-//            tee.title = rooseveltPark.holes[i].name
-//            if i == 3   {
-//                tee.subtitle = "Current Hole"
-//            }
-//            collectionOfTees.append(tee)
-//        }
         courseMap.addAnnotations(collectionOfTees)
     }
 
@@ -103,6 +91,15 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
 //            return teeView
 //    }
 
+    @IBAction func getDirectionsButtonPressed(sender: AnyObject) {
+        
+        let firstTee = MKPlacemark(coordinate: rooseveltPark.holes[0].teeLocation, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: firstTee)
+        mapItem.name = "First Tee"
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+        mapItem.openInMapsWithLaunchOptions(launchOptions)
+        
+    }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Could not find your location")
