@@ -187,8 +187,8 @@
 				B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */,
 				23A73D161BE7B70E00846EF7 /* RulesViewController.swift */,
 				23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */,
-				2342AB021BED290700F622E8 /* HighScoresViewController.swift */,
 				2353595A1BF030BF0015D165 /* LeaderboardTableViewCell.swift */,
+				2342AB021BED290700F622E8 /* HighScoresViewController.swift */,
 				2353595C1BF03FAA0015D165 /* HighScoreTableViewCell.swift */,
 			);
 			name = Controllers;

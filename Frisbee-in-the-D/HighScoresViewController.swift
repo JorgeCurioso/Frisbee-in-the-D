@@ -59,14 +59,19 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
 //        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "HighScoreCell")
         let cell: HighScoreTableViewCell = tableView.dequeueReusableCellWithIdentifier("HighScoreCell", forIndexPath: indexPath) as! HighScoreTableViewCell
         
-        if Int(highScores[indexPath.row].value) > 0   {
-            cell.highScoreCellPar?.text = "+ \(highScores[indexPath.row])"
-        } else if Int(highScores[indexPath.row].value) == 0 {
-            cell.highScoreCellPar?.text = "E"
+        if Int(highScores[indexPath.row].value) > rooseveltPark.coursePar   {
+            cell.highScoreCellPar.text = "+ \(highScores[indexPath.row] - rooseveltPark.coursePar)"
+        } else if Int(highScores[indexPath.row].value) == rooseveltPark.coursePar {
+            cell.highScoreCellPar.text = "E"
+            cell.highScoreCellPar.textColor = UIColor.greenColor()
+            cell.highScoreCellStrokes?.textColor = UIColor.greenColor()
         } else  {
-            cell.highScoreCellPar?.text = "\((highScores[indexPath.row]))"
+            cell.highScoreCellPar.text = "\((highScores[indexPath.row] - rooseveltPark.coursePar))"
+            cell.highScoreCellPar.textColor = UIColor.redColor()
+            cell.highScoreCellStrokes.textColor = UIColor.redColor()
         }
         cell.highScoreCellName.text = playerNames[indexPath.row]
+        cell.highScoreCellStrokes.text = "\(highScores[indexPath.row])"
 
         return cell
     }

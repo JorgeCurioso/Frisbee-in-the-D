@@ -40,7 +40,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 let player = PFObject(className: "Player")
                 player.setObject(MultiPlayer.sharedMultiPlayer.players[i].name!, forKey: "Name")
-                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore, forKey: "Score")
+                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes, forKey: "Score")
                 player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
                     if succeeded {
                         print("\(player) Uploaded")
