@@ -13,6 +13,7 @@ class Player {
     var name: String?
     var holeScore = Int()
     var cumulativeScore = Int()
+    var cumulativeStrokes = Int()
     
     init(name: String)  {
         self.name = name

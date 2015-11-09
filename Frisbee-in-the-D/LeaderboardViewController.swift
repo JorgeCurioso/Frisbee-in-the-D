@@ -67,20 +67,25 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "leaderboardCell")
+        let cell:LeaderboardTableViewCell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath) as! LeaderboardTableViewCell
+//        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "leaderboardCell")
         
         var players : [Player] = MultiPlayer.sharedMultiPlayer.players
         players.sortInPlace({ $0.cumulativeScore < $1.cumulativeScore })
         
         if players[indexPath.row].cumulativeScore > 0   {
-            cell.detailTextLabel?.text = "+ \(players[indexPath.row].cumulativeScore)"
+            cell.cellParLabel.text = "+ \(players[indexPath.row].cumulativeScore)"
         } else if players[indexPath.row].cumulativeScore == 0 {
-            cell.detailTextLabel?.text = "E"
+            cell.cellParLabel.text = "E"
+            cell.cellParLabel.textColor = UIColor.greenColor()
+            cell.cellStrokesLabel.textColor = UIColor.greenColor()
         } else  {
-            cell.detailTextLabel?.text = "\(players[indexPath.row].cumulativeScore)"
+            cell.cellParLabel.text = "\(players[indexPath.row].cumulativeScore)"
+            cell.cellParLabel.textColor = UIColor.redColor()
+            cell.cellStrokesLabel.textColor = UIColor.redColor()
         }
-        cell.textLabel?.text = players[indexPath.row].name
+        cell.cellNameLabel.text = players[indexPath.row].name
+        cell.cellStrokesLabel.text = "\(players[indexPath.row].cumulativeStrokes)"
         return cell
     }
 }
