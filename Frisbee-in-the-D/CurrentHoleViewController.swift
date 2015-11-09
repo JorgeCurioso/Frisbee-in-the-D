@@ -83,6 +83,7 @@ class CurrentHoleViewController: UIViewController {
                 for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
                     MultiPlayer.sharedMultiPlayer.players[i].holeScore = Int(playerStrokesTextField[i].text!)! - currentHole.par
                     MultiPlayer.sharedMultiPlayer.players[i].cumulativeScore += MultiPlayer.sharedMultiPlayer.players[i].holeScore
+                    MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes += Int(playerStrokesTextField[i].text!)!
                 }
             
             destVC.currentHoleIndex = currentHoleIndex

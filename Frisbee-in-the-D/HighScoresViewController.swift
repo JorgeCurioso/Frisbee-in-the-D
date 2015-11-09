@@ -11,6 +11,9 @@ import Parse
 
 class HighScoresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var highScoreCellName: UILabel!
+    @IBOutlet weak var highScoreCellStrokes: UILabel!
+    @IBOutlet weak var highScoreCellPar: UILabel!
     
     @IBOutlet weak var highScoresTableView: UITableView!
     
@@ -57,17 +60,17 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell  {
-        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "HighScoreCell")
-        tableView.dequeueReusableCellWithIdentifier("HighScoreCell")
+//        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "HighScoreCell")
+        let cell: HighScoreTableViewCell = tableView.dequeueReusableCellWithIdentifier("HighScoreCell", forIndexPath: indexPath) as! HighScoreTableViewCell
         
         if Int(highScores[indexPath.row].value) > 0   {
-            cell.detailTextLabel?.text = "+ \(highScores[indexPath.row])"
+            cell.highScoreCellPar?.text = "+ \(highScores[indexPath.row])"
         } else if Int(highScores[indexPath.row].value) == 0 {
-            cell.detailTextLabel?.text = "E"
+            cell.highScoreCellPar?.text = "E"
         } else  {
-            cell.detailTextLabel?.text = "\((highScores[indexPath.row]))"
+            cell.highScoreCellPar?.text = "\((highScores[indexPath.row]))"
         }
-        cell.textLabel?.text = playerNames[indexPath.row]
+        cell.highScoreCellName.text = playerNames[indexPath.row]
 
         return cell
     }
