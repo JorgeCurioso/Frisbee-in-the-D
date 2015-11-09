@@ -19,6 +19,10 @@ class SetupGameViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        var blur = UIBlurEffect(style: UIBlurEffectStyle.init(rawValue: 4)!)
+        var blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = backgroundImage.bounds
+        backgroundImage.addSubview(blurView)
     }
 
     @IBAction func startRoundWithName(sender: AnyObject) {
