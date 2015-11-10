@@ -51,6 +51,15 @@ class CurrentHoleViewController: UIViewController {
         print("Current hole = \(currentHoleIndex + 1)")
     }
     
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(2.0, delay: 1.0, options: UIViewAnimationOptions.CurveEaseIn, animations:{
+            self.teeImage.alpha = 1.0;
+            self.holeNumber.alpha = 1.0;
+            self.holeDescription.alpha = 1.0;
+            self.holePar.alpha = 1.0},
+            completion: nil)
+    }
+    
     func reloadCurrentHole()   {
         currentHole = course[currentHoleIndex]
         holeNumber.text = currentHole.name
@@ -123,5 +132,9 @@ class CurrentHoleViewController: UIViewController {
     // Return from leaderboard and go to next hole in the array
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
             currentHoleIndex++
+        self.teeImage.alpha = 0.0
+        self.holeNumber.alpha = 0.0
+        self.holeDescription.alpha = 0.0
+        self.holePar.alpha = 0.0
     }
 }
