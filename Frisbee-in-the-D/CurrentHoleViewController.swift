@@ -48,6 +48,7 @@ class CurrentHoleViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         reloadCurrentHole()
+        print("Current hole = \(currentHoleIndex + 1)")
     }
     
     func reloadCurrentHole()   {
@@ -99,13 +100,13 @@ class CurrentHoleViewController: UIViewController {
         }
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CurrentHole<->Leaderboard" {
+        if segue.identifier == "Current<->Leaderboard" {
             let destVC = segue.destinationViewController as! LeaderboardViewController
             destVC.currentHoleIndex = currentHoleIndex
         }
     }
+
     
     @IBAction func strokeIncrementerTapped(sender: AnyObject) {
         for i in 0..<strokeIncrementers.count   {

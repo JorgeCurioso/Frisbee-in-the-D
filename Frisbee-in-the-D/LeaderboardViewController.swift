@@ -21,8 +21,6 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeLayoutForFinalHole()
-        saveFinalScores()
     }
     
     func changeLayoutForFinalHole() {
@@ -31,6 +29,13 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
             nextHoleButton.hidden = true
             newGameButton.hidden = false
             leaderboardLabel.text = "Final Results"
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if currentHoleIndex == 8    {
+            changeLayoutForFinalHole()
+            saveFinalScores()
         }
     }
     
@@ -69,7 +74,6 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:LeaderboardTableViewCell = tableView.dequeueReusableCellWithIdentifier("leaderboardCell", forIndexPath: indexPath) as! LeaderboardTableViewCell
-//        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "leaderboardCell")
         
         var players : [Player] = MultiPlayer.sharedMultiPlayer.players
         players.sortInPlace({ $0.cumulativeScore < $1.cumulativeScore })

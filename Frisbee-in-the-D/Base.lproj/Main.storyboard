@@ -22,7 +22,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rules of the Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-KH-xsT">
                                 <rect key="frame" x="20" y="20" width="280" height="45"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -243,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4H-eJ-cfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="306" y="246"/>
+            <point key="canvasLocation" x="306" y="240"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="8SM-Wd-QVz">
@@ -257,7 +257,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="3PQ-TX-iG2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="trainsStation" translatesAutoresizingMaskIntoConstraints="NO" id="3PQ-TX-iG2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdP-EB-zAZ">
@@ -267,26 +267,15 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ge1-8h-7Ej" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="oT3-jv-WnC"/>
+                                    <segue destination="ge1-8h-7Ej" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="ctq-X3-YqF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2f-vz-87h">
                                 <rect key="frame" x="20" y="20" width="280" height="81"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="42"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-LO-O8l">
-                                <rect key="frame" x="34" y="425" width="251" height="80"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="New Game">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="newGameButtonPressed:" destination="0sx-Mg-pJC" eventType="touchUpInside" id="9Mr-r4-D3J"/>
-                                    <segue destination="dLr-ip-sWh" kind="show" id="FF3-r0-p1e"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0nq-8J-sW3">
                                 <rect key="frame" x="20" y="160" width="280" height="239"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -332,6 +321,17 @@
                                     <outlet property="delegate" destination="0sx-Mg-pJC" id="Vlg-0Z-5xf"/>
                                 </connections>
                             </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-LO-O8l">
+                                <rect key="frame" x="34" y="425" width="251" height="80"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameButtonPressed:" destination="0sx-Mg-pJC" eventType="touchUpInside" id="9Mr-r4-D3J"/>
+                                    <segue destination="dLr-ip-sWh" kind="show" id="FF3-r0-p1e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="3PQ-TX-iG2" firstAttribute="leading" secondItem="wo9-b5-7kd" secondAttribute="leading" id="5ZQ-5b-2Gi"/>
@@ -406,7 +406,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bow-F2-vaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EGA-BX-aZb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="306" y="885"/>
+            <point key="canvasLocation" x="306" y="851"/>
         </scene>
         <!--Get Started-->
         <scene sceneID="ffq-l5-PBS">
@@ -486,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DQ-Pb-Ph5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-560" y="-372"/>
+            <point key="canvasLocation" x="-566" y="-372"/>
         </scene>
         <!--High Scores-->
         <scene sceneID="6fs-ZB-9Zn">
@@ -505,7 +505,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H08-aA-NgE">
                                 <rect key="frame" x="20" y="20" width="280" height="51"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -605,7 +605,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="123" id="Wjy-Ii-oJ3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="39"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -617,7 +617,6 @@
                                 </state>
                                 <connections>
                                     <action selector="startRoundWithName:" destination="RyD-FE-jBf" eventType="touchUpInside" id="8BU-wQ-7HX"/>
-                                    <segue destination="Ptf-Sa-WV2" kind="show" identifier="Start-&gt;TabBar" id="Ij1-ey-G2s"/>
                                 </connections>
                             </button>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 2 Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xad-GI-R5P">
@@ -691,11 +690,12 @@
                         <outletCollection property="playerLabels" destination="YND-gx-58Y" collectionClass="NSMutableArray" id="u1I-L5-rj6"/>
                         <outletCollection property="playerLabels" destination="2Nl-sf-r9N" collectionClass="NSMutableArray" id="4zm-bW-8Ak"/>
                         <outletCollection property="playerLabels" destination="eNd-uC-g8j" collectionClass="NSMutableArray" id="efI-rS-0lB"/>
+                        <segue destination="Ptf-Sa-WV2" kind="show" identifier="Start-&gt;Tab" id="kem-c0-Fcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-BU-wRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-560" y="246"/>
+            <point key="canvasLocation" x="-560" y="268"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nbf-vL-ory">
@@ -735,14 +735,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3C-w0-acw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1043" y="303"/>
+            <point key="canvasLocation" x="-1107" y="356"/>
         </scene>
     </scenes>
     <resources>
         <image name="trainsStation" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9SM-D3-hGq"/>
-        <segue reference="ynO-0T-O20"/>
+        <segue reference="cUi-yW-rHg"/>
+        <segue reference="M6z-RZ-S4g"/>
     </inferredMetricsTieBreakers>
 </document>

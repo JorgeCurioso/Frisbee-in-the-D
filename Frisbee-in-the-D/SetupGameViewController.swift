@@ -27,9 +27,15 @@ class SetupGameViewController: UIViewController {
             if playerNameTextField[i].text != ""   {
                 let player = Player(name: playerNameTextField[i].text!)
                 MultiPlayer.sharedMultiPlayer.players.append(player)
-            }
+                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+            } 
         }
     }
+    
+    /*
+    
+
+*/
 
 
     @IBAction func numberOfPlayersChanged(sender: AnyObject) {
