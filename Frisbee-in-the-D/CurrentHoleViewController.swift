@@ -16,12 +16,18 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet var strokeIncrementers: [UIStepper]!
     @IBOutlet weak var submitButton: UIButton!
     
+    @IBOutlet weak var eachItemOnPage: UIView!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
     @IBOutlet weak var holePar: UILabel!
     @IBOutlet weak var holeDescription: UILabel!
+    
+    @IBOutlet weak var imageBorder: UIView!
+    @IBOutlet weak var holeLabel: UILabel!
+    @IBOutlet weak var parLabel: UILabel!
+    
     
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
@@ -53,10 +59,17 @@ class CurrentHoleViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(2.0, delay: 1.0, options: UIViewAnimationOptions.CurveEaseIn, animations:{
-            self.teeImage.alpha = 1.0;
-            self.holeNumber.alpha = 1.0;
-            self.holeDescription.alpha = 1.0;
-            self.holePar.alpha = 1.0},
+//            self.teeImage.alpha = 1.0;
+//            self.holeNumber.alpha = 1.0;
+//            self.holeDescription.alpha = 1.0;
+//            self.holePar.alpha = 1.0;
+//            self.holeLabel.alpha = 1.0;
+//            self.parLabel.alpha = 1.0
+//            self.imageBorder.alpha = 1.0
+//            self.submitButton.alpha = 1.0
+            self.eachItemOnPage.alpha = 1.0
+            self.imageBorder.alpha = 1.0
+            self.teeImage.alpha = 1.0},
             completion: nil)
     }
     
@@ -132,9 +145,16 @@ class CurrentHoleViewController: UIViewController {
     // Return from leaderboard and go to next hole in the array
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
             currentHoleIndex++
+//        self.teeImage.alpha = 0.0
+//        self.holeNumber.alpha = 0.0
+//        self.holeDescription.alpha = 0.0
+//        self.holePar.alpha = 0.0
+//        self.holeLabel.alpha = 0.0
+//        self.parLabel.alpha = 0.0
+//        self.imageBorder.alpha = 0.0
+//        self.submitButton.alpha = 0.0
+        self.eachItemOnPage.alpha = 0.0
+        self.imageBorder.alpha = 0.0
         self.teeImage.alpha = 0.0
-        self.holeNumber.alpha = 0.0
-        self.holeDescription.alpha = 0.0
-        self.holePar.alpha = 0.0
     }
 }
