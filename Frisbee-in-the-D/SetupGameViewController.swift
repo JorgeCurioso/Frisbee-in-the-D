@@ -23,59 +23,98 @@ class SetupGameViewController: UIViewController {
 
     @IBAction func startRoundWithName(sender: AnyObject) {
         
-//        for i in 0..<playerNameTextField.count  {
-//            if playerNameTextField[i].text == ""    {
-//                playerNameTextField[i].placeholder = "Please add a name!"
-//            } else  {
-//                let player = Player(name: playerNameTextField[i].text!)
+//        if playerNameTextField![0].text == "" || playerNameTextField![1].text == nil
+//            || playerNameTextField![2].text == nil || playerNameTextField![3].text == nil   {
+//                for i in 0..<playerNameTextField!.count  {
+//                    if playerNameTextField![i].text == ""    {
+//                        playerNameTextField![i].placeholder = "Please add a name!"
+//                    }
+//                }
+//        } else  {
+//            for i in 0..<playerNameTextField!.count  {
+//                if playerNameTextField![i].hidden == false    {
+//                let player = Player(name: playerNameTextField![i].text!)
 //                MultiPlayer.sharedMultiPlayer.players.append(player)
 //                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+//                }
 //            }
 //        }
         
-        if playerNameTextField[0].text == "" || playerNameTextField[1].text == ""
-            || playerNameTextField[2].text == "" || playerNameTextField[3].text == ""   {
-                for i in 0..<playerNameTextField.count  {
-                    if playerNameTextField[i].text == ""    {
-                        playerNameTextField[i].placeholder = "Please add a name!"
-                    }
-                }
-        } else  {
-            for i in 0..<playerNameTextField.count  {
-                let player = Player(name: playerNameTextField[i].text!)
-                MultiPlayer.sharedMultiPlayer.players.append(player)
-                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+//        switch  numberOfPlayers.selectedSegmentIndex {
+//        case 0:
+//            let player = Player(name: playerNameTextField[0].text!)
+//            MultiPlayer.sharedMultiPlayer.players.append(player)
+//        case 1:
+//        case 2:
+//        case 3:
+//        }
+        
+//        for i in 0...numberOfPlayers.selectedSegmentIndex   {
+//            print("segmentIndex:\(numberOfPlayers.selectedSegmentIndex)")
+//            if playerNameTextField[i].text == ""   {
+////                playerNameTextField[i].placeholder = "Please add a name!"
+////                print("Empty Field:\(playerNameTextField[i].text)")
+//                for eachField in playerNameTextField {
+//                    if eachField.text == ""  {
+//                        eachField.placeholder = "Please add a name!"
+//                    }
+//                }
+//                return
+//            } else  {
+////                if playerNameTextField[i].text != ""    {
+//                    let player = Player(name: playerNameTextField[i].text!)
+//                    MultiPlayer.sharedMultiPlayer.players.append(player)
+//                    print("Player Added:\(player.name)")
+////                }
+//            }
+//        }
+//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+        
+//        for field in playerNameTextField    {
+//            var emptyFields: [String] = []
+//            if field.text == "" {
+//                emptyFields.append(field.text!)
+//                print(emptyFields.count)
+//            }
+//            if emptyFields.isEmpty {
+//                for name in playerNameTextField {
+//                    let player = Player(name: name.text!)
+//                    MultiPlayer.sharedMultiPlayer.players.append(player)
+//                    print("Player Added:\(player.name)")
+//                }
+//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+//   
+//            }
+//        }
+        var names = [String]()
+
+        
+        for textField in playerNameTextField    {
+            if textField.text != ""  {
+                names.append(textField.text!)
+                print("\(names)")
             }
         }
-//        if playerNameTextField[0].text ==
         
-//        for i in 0..<playerNameTextField.count    {
-//            if playerNameTextField[i].text != ""   {
-//                let player = Player(name: playerNameTextField[i].text!)
-//                MultiPlayer.sharedMultiPlayer.players.append(player)
-//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
-//            } 
-//        }
-//    
-//        var namesArray = [String]()
-//        for i in 0..<playerNameTextField.count   {
-//            namesArray.append(playerNameTextField[i].text!)
-//        }
-//        print("namesArray: \(namesArray)")
-//        // if the array has 0, go through and print a '?' for whoever has zero as their score
-//        if namesArray.contains("")   {
-//            for i in 0..<namesArray.count  {
-//                if namesArray[i] == "" {playerNameTextField[i].text = "Please add a name"}
-//            }
-//            // otherwise, calculate everyones score, perform the segue, and reset the stepper values
-//        } else  {
-//            self.performSegueWithIdentifier("Start->Tab", sender: nil)
-//        }
-    }
-    /*
-    
+        if names.count == (numberOfPlayers.selectedSegmentIndex + 1){
+            for eachName in playerNameTextField {
+                if eachName.text != ""  {
+                    let player = Player(name: eachName.text!)
+                    MultiPlayer.sharedMultiPlayer.players.append(player)
+                    print("Player Added:\(player.name)")
+                }
+            }
+        self.performSegueWithIdentifier("Start->Tab", sender: nil)
 
-*/
+        } else  {
+            for eachField in playerNameTextField    {
+                if eachField.text == "" {
+                    eachField.placeholder = "Please enter a name"
+                }
+            }
+        }
+    }
+
 
 
     @IBAction func numberOfPlayersChanged(sender: AnyObject) {
