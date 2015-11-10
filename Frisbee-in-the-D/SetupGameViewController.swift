@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SetupGameViewController: UIViewController {
+class SetupGameViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -19,83 +19,28 @@ class SetupGameViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        for field in playerNameTextField    {
+            field.delegate = self
+        }
     }
 
     @IBAction func startRoundWithName(sender: AnyObject) {
-        
-//        if playerNameTextField![0].text == "" || playerNameTextField![1].text == nil
-//            || playerNameTextField![2].text == nil || playerNameTextField![3].text == nil   {
-//                for i in 0..<playerNameTextField!.count  {
-//                    if playerNameTextField![i].text == ""    {
-//                        playerNameTextField![i].placeholder = "Please add a name!"
-//                    }
-//                }
-//        } else  {
-//            for i in 0..<playerNameTextField!.count  {
-//                if playerNameTextField![i].hidden == false    {
-//                let player = Player(name: playerNameTextField![i].text!)
-//                MultiPlayer.sharedMultiPlayer.players.append(player)
-//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
-//                }
-//            }
-//        }
-        
-//        switch  numberOfPlayers.selectedSegmentIndex {
-//        case 0:
-//            let player = Player(name: playerNameTextField[0].text!)
-//            MultiPlayer.sharedMultiPlayer.players.append(player)
-//        case 1:
-//        case 2:
-//        case 3:
-//        }
-        
-//        for i in 0...numberOfPlayers.selectedSegmentIndex   {
-//            print("segmentIndex:\(numberOfPlayers.selectedSegmentIndex)")
-//            if playerNameTextField[i].text == ""   {
-////                playerNameTextField[i].placeholder = "Please add a name!"
-////                print("Empty Field:\(playerNameTextField[i].text)")
-//                for eachField in playerNameTextField {
-//                    if eachField.text == ""  {
-//                        eachField.placeholder = "Please add a name!"
-//                    }
-//                }
-//                return
-//            } else  {
-////                if playerNameTextField[i].text != ""    {
-//                    let player = Player(name: playerNameTextField[i].text!)
-//                    MultiPlayer.sharedMultiPlayer.players.append(player)
-//                    print("Player Added:\(player.name)")
-////                }
-//            }
-//        }
-//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
-        
-//        for field in playerNameTextField    {
-//            var emptyFields: [String] = []
-//            if field.text == "" {
-//                emptyFields.append(field.text!)
-//                print(emptyFields.count)
-//            }
-//            if emptyFields.isEmpty {
-//                for name in playerNameTextField {
-//                    let player = Player(name: name.text!)
-//                    MultiPlayer.sharedMultiPlayer.players.append(player)
-//                    print("Player Added:\(player.name)")
-//                }
-//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
-//   
-//            }
-//        }
+        checkForEmptyFields()
+    }
+    
+    func checkForEmptyFields()  {
         var names = [String]()
-
         
+        // If any fields are NOT empty, add them to the names array
         for textField in playerNameTextField    {
             if textField.text != ""  {
                 names.append(textField.text!)
                 print("\(names)")
             }
         }
-        
+        // if the number of names in the names array is the same as the number of user's selected (1 player...4 player),
+        // instantiate Player objects with those names & segue to the start of the round
         if names.count == (numberOfPlayers.selectedSegmentIndex + 1){
             for eachName in playerNameTextField {
                 if eachName.text != ""  {
@@ -104,14 +49,30 @@ class SetupGameViewController: UIViewController {
                     print("Player Added:\(player.name)")
                 }
             }
-        self.performSegueWithIdentifier("Start->Tab", sender: nil)
-
+            self.performSegueWithIdentifier("Start->Tab", sender: nil)
+            
+        // Otherwise, change the placeholder text of the empty fields
         } else  {
             for eachField in playerNameTextField    {
                 if eachField.text == "" {
                     eachField.placeholder = "Please enter a name"
                 }
             }
+        }
+    }
+    
+    // functions to remove keyboard when either pressing return or tapping off the screen
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        for field in playerNameTextField    {
+            field.resignFirstResponder()
+        }
+        return true;
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for field in playerNameTextField    {
+            field.resignFirstResponder()
+            self.view.endEditing(true)
         }
     }
 
