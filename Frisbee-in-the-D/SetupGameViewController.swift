@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SetupGameViewController: UIViewController {
+class SetupGameViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -19,6 +19,10 @@ class SetupGameViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        for field in playerNameTextField    {
+            field.delegate = self
+        }
     }
 
     @IBAction func startRoundWithName(sender: AnyObject) {
@@ -114,6 +118,25 @@ class SetupGameViewController: UIViewController {
             }
         }
     }
+    
+    
+    //03 textfield func for the return key
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        for field in playerNameTextField    {
+            field.resignFirstResponder()
+        }
+        return true;
+    }
+    
+    //textfield func for the touch on BG
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        for field in playerNameTextField    {
+//            field.resignFirstResponder()
+//            self.view.endEditing(true)
+//        }
+//
+//    }
 
 
 
