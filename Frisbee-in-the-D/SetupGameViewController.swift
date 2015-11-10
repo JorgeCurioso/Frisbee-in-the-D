@@ -23,15 +23,55 @@ class SetupGameViewController: UIViewController {
 
     @IBAction func startRoundWithName(sender: AnyObject) {
         
-        for i in 0..<playerNameTextField.count    {
-            if playerNameTextField[i].text != ""   {
+//        for i in 0..<playerNameTextField.count  {
+//            if playerNameTextField[i].text == ""    {
+//                playerNameTextField[i].placeholder = "Please add a name!"
+//            } else  {
+//                let player = Player(name: playerNameTextField[i].text!)
+//                MultiPlayer.sharedMultiPlayer.players.append(player)
+//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+//            }
+//        }
+        
+        if playerNameTextField[0].text == "" || playerNameTextField[1].text == ""
+            || playerNameTextField[2].text == "" || playerNameTextField[3].text == ""   {
+                for i in 0..<playerNameTextField.count  {
+                    if playerNameTextField[i].text == ""    {
+                        playerNameTextField[i].placeholder = "Please add a name!"
+                    }
+                }
+        } else  {
+            for i in 0..<playerNameTextField.count  {
                 let player = Player(name: playerNameTextField[i].text!)
                 MultiPlayer.sharedMultiPlayer.players.append(player)
                 self.performSegueWithIdentifier("Start->Tab", sender: nil)
-            } 
+            }
         }
+//        if playerNameTextField[0].text ==
+        
+//        for i in 0..<playerNameTextField.count    {
+//            if playerNameTextField[i].text != ""   {
+//                let player = Player(name: playerNameTextField[i].text!)
+//                MultiPlayer.sharedMultiPlayer.players.append(player)
+//                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+//            } 
+//        }
+//    
+//        var namesArray = [String]()
+//        for i in 0..<playerNameTextField.count   {
+//            namesArray.append(playerNameTextField[i].text!)
+//        }
+//        print("namesArray: \(namesArray)")
+//        // if the array has 0, go through and print a '?' for whoever has zero as their score
+//        if namesArray.contains("")   {
+//            for i in 0..<namesArray.count  {
+//                if namesArray[i] == "" {playerNameTextField[i].text = "Please add a name"}
+//            }
+//            // otherwise, calculate everyones score, perform the segue, and reset the stepper values
+//        } else  {
+//            self.performSegueWithIdentifier("Start->Tab", sender: nil)
+//        }
     }
-    
     /*
     
 
