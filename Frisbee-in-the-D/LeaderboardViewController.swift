@@ -11,6 +11,7 @@ import Parse
 
 class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var eachItemOnPage: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var finalResultsLabel: UILabel!
     @IBOutlet weak var nextHoleButton: UIButton!
@@ -37,6 +38,17 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
             changeLayoutForFinalHole()
             saveFinalScores()
         }
+        self.eachItemOnPage.alpha = 0.0
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations:{
+        self.eachItemOnPage.alpha = 0.0}, completion: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(1.5, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromTop, animations:{
+        self.eachItemOnPage.alpha = 1.0}, completion: nil)
     }
     
     func saveFinalScores()  {
@@ -93,4 +105,12 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         cell.cellStrokesLabel.text = "\(players[indexPath.row].cumulativeStrokes)"
         return cell
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "Leaderboard->Current" {
+//            let destVC = segue.destinationViewController as! CurrentHoleViewController
+//            destVC.currentHoleIndex = currentHoleIndex!++
+//            destVC.eachItemOnPage.alpha = 0.0
+//        }
+//    }
 }

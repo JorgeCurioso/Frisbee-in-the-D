@@ -16,6 +16,7 @@ class SetupGameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var playerNameTextField: [UITextField]!
     @IBOutlet weak var numberOfPlayers: UISegmentedControl!
     @IBOutlet var playerLabels: [UILabel]!
+    @IBOutlet weak var eachItemOnPage: UIView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,11 @@ class SetupGameViewController: UIViewController, UITextFieldDelegate {
                     print("Player Added:\(player.name)")
                 }
             }
-            self.performSegueWithIdentifier("Start->Tab", sender: nil)
+            UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations:{
+            self.eachItemOnPage.alpha = 0.0}, completion: nil)
+            if eachItemOnPage.alpha == 0.0  {
+                self.performSegueWithIdentifier("Start->Tab", sender: nil)
+            }
             
         // Otherwise, change the placeholder text of the empty fields
         } else  {

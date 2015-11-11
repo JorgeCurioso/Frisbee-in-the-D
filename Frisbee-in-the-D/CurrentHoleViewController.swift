@@ -16,12 +16,18 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet var strokeIncrementers: [UIStepper]!
     @IBOutlet weak var submitButton: UIButton!
     
+    @IBOutlet weak var eachItemOnPage: UIView!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var teeImage: UIImageView!
     @IBOutlet weak var holeNumber: UILabel!
     @IBOutlet weak var holePar: UILabel!
     @IBOutlet weak var holeDescription: UILabel!
+    
+    @IBOutlet weak var imageBorder: UIView!
+    @IBOutlet weak var holeLabel: UILabel!
+    @IBOutlet weak var parLabel: UILabel!
+    
     
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
@@ -49,6 +55,11 @@ class CurrentHoleViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         reloadCurrentHole()
         print("Current hole = \(currentHoleIndex + 1)")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations:{
+            self.eachItemOnPage.alpha = 1.0}, completion: nil)
     }
     
     func reloadCurrentHole()   {
@@ -79,6 +90,7 @@ class CurrentHoleViewController: UIViewController {
             // otherwise, calculate everyones score, perform the segue, and reset the stepper values
         } else  {
             calculateScores()
+            
             self.performSegueWithIdentifier("Current<->Leaderboard", sender: nil)
             resetStepperValues()
         }
@@ -117,11 +129,10 @@ class CurrentHoleViewController: UIViewController {
     @IBAction func submitScoreButtonPressed(sender: AnyObject) {
         checkForNonEnteredScores()
     }
-
-    
     
     // Return from leaderboard and go to next hole in the array
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
             currentHoleIndex++
+            self.eachItemOnPage.alpha = 0.0
     }
 }
