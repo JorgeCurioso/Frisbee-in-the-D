@@ -19,6 +19,7 @@ class GetStartedViewController: UIViewController {
 
         courseParLabel.text = "\(rooseveltPark.coursePar)"
         courseDescriptionTextView.text = rooseveltPark.description
+        courseDescriptionTextView.textColor = UIColor.whiteColor()
     }
     
     @IBAction func newToGameButtonPressed(sender: AnyObject) {}
