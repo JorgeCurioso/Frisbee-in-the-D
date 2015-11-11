@@ -42,12 +42,12 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     override func viewWillDisappear(animated: Bool) {
-        UIView.animateWithDuration(1.0, delay: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations:{
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations:{
         self.eachItemOnPage.alpha = 0.0}, completion: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(1.0, delay: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations:{
+        UIView.animateWithDuration(1.5, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromTop, animations:{
         self.eachItemOnPage.alpha = 1.0}, completion: nil)
     }
     

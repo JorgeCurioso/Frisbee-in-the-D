@@ -58,7 +58,7 @@ class CurrentHoleViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(1.0, delay: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations:{
+        UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations:{
             self.eachItemOnPage.alpha = 1.0}, completion: nil)
     }
     
@@ -90,6 +90,7 @@ class CurrentHoleViewController: UIViewController {
             // otherwise, calculate everyones score, perform the segue, and reset the stepper values
         } else  {
             calculateScores()
+            
             self.performSegueWithIdentifier("Current<->Leaderboard", sender: nil)
             resetStepperValues()
         }

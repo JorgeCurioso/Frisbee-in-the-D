@@ -45,6 +45,9 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewWillAppear(animated: Bool) {
         highScoresTableView.reloadData()
+        highScoresTableView.alpha = 0.0
+        UIView.animateWithDuration(2.0, delay: 0.5, options: UIViewAnimationOptions.TransitionFlipFromTop, animations:{
+            self.highScoresTableView.alpha = 1.0}, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
