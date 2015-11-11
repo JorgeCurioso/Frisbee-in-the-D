@@ -467,10 +467,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JGl-56-EoD">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="satellite" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JGl-56-EoD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAI-kU-dps">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAI-kU-dps">
                                 <rect key="frame" x="20" y="513" width="51" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Home">
@@ -480,7 +480,7 @@
                                     <segue destination="EGA-BX-aZb" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="KK0-HQ-rPd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-7B-lnh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-7B-lnh">
                                 <rect key="frame" x="178" y="513" width="122" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Get Directions">
@@ -493,7 +493,11 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="JGl-56-EoD" firstAttribute="leading" secondItem="e9b-pu-pe7" secondAttribute="leading" id="AeL-io-gAL"/>
+                            <constraint firstItem="KAI-kU-dps" firstAttribute="leading" secondItem="e9b-pu-pe7" secondAttribute="leading" constant="20" id="BSi-gs-74Z"/>
                             <constraint firstAttribute="trailing" secondItem="JGl-56-EoD" secondAttribute="trailing" id="EAE-zI-11a"/>
+                            <constraint firstItem="Eb3-zL-wc0" firstAttribute="top" secondItem="sEE-7B-lnh" secondAttribute="bottom" constant="20" id="F29-wn-Rhy"/>
+                            <constraint firstItem="Eb3-zL-wc0" firstAttribute="top" secondItem="KAI-kU-dps" secondAttribute="bottom" constant="20" id="lIa-hB-QQx"/>
+                            <constraint firstAttribute="trailing" secondItem="sEE-7B-lnh" secondAttribute="trailing" constant="20" id="n4m-iv-sa7"/>
                             <constraint firstItem="Eb3-zL-wc0" firstAttribute="top" secondItem="JGl-56-EoD" secondAttribute="bottom" id="olx-Iu-Ya1"/>
                             <constraint firstItem="JGl-56-EoD" firstAttribute="top" secondItem="e9b-pu-pe7" secondAttribute="top" id="soa-vP-bWT"/>
                         </constraints>
