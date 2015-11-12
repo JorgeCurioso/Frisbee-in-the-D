@@ -45,7 +45,7 @@ let hole1 = Hole(name: "1",
 
 
 let hole2 = Hole(name: "2",
-                description: "The alleyway is out of bounds. Be careful as you go for another phone pole!",
+                description: "Once again, the alleyway is out of bounds. Be careful as you go for another phone pole!",
                 par: 3,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole2")),
@@ -53,7 +53,7 @@ let hole2 = Hole(name: "2",
                 teeLongitude: -83.074835)
 
 let hole3 = Hole(name: "3",
-                description: "Aim for the big tree",
+                description: "Aim for the big tree on the other side of the red sculpture",
                 par: 2,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole3")),
@@ -61,7 +61,7 @@ let hole3 = Hole(name: "3",
                 teeLongitude: -83.075698)
 
 let hole4 = Hole(name: "4",
-                description: "You must go around the middle post before hitting the one on the right",
+                description: "The pin here is the large letter 'P'. Navigate through the trees any which way you like",
                 par: 4,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole4")),
@@ -77,7 +77,7 @@ let hole5 = Hole(name: "5",
                 teeLongitude: -83.076476)
 
 let hole6 = Hole(name: "6",
-                description: "This one is equally tricky. Through the 'A', but only from the side you're currently facing (not the far side). Careful not to overshoot; It could cost you!",
+                description: "This one is equally tricky; Through the 'A', but only from the side you're currently facing (not the far side). Careful not to overshoot!",
                 par: 3,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole6")),
@@ -93,7 +93,7 @@ let hole7 = Hole(name: "7",
                 teeLongitude: -83.077247)
 
 let hole8 = Hole(name: "8",
-                description: "This hole is a little differet. There is a wall on the far side you must hit (anywhere is fine)",
+                description: "This hole is a little differet. You must hit the wall on the far side of the terrace (anywhere on the wall is fine)",
                 par: 3,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole8")),
@@ -101,7 +101,7 @@ let hole8 = Hole(name: "8",
                 teeLongitude:  -83.077724)
 
 let hole9 = Hole(name: "9",
-                description: "To complete this hole, you must go through the two central trees before hitting the distant tree on the right",
+                description: "To complete this hole, you must go through the two central trees before hitting the distant tree on the right. Pace yourself!",
                 par: 5,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole9")),
