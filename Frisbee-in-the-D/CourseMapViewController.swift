@@ -13,23 +13,25 @@ import MapKit
 class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var courseMap: MKMapView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var directionsButton: UIButton!
     
     let locationManager = CLLocationManager()
     var collectionOfTees = [MKAnnotation]()
-    var picForTee = MKAnnotationView()
-//    var tee = MKPointAnnotation()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if MultiPlayer.sharedMultiPlayer.players.isEmpty {
+            backButton.hidden = false
+            directionsButton.hidden = false
+        }
 
         // Do any additional setup after loading the view.
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-//        courseMap.delegate = self
         
         setupCourseMap()
         
@@ -41,12 +43,6 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         }
         courseMap.addAnnotations(collectionOfTees)
     }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func setupCourseMap() {
         let parkLocation = CLLocationCoordinate2D(latitude: rooseveltPark.parkLattitude, longitude: rooseveltPark.parkLongitude)
@@ -54,42 +50,6 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         let region = MKCoordinateRegion(center: parkLocation, span: span)
         courseMap.setRegion(region, animated: false)
     }
-    
-    
-    //Whoa! This shows huge firstPersonTeeImages (hole1) overtop the map. Cool and not cool at the same 
-    // time
-//    func mapView(mapView: MKMapView!,
-//        viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-//            
-//            let reuseId = "pin"
-//            var teeView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-//            var teeImageView = UIImageView()
-//
-////            if teeView == nil {
-//            for eachHole in rooseveltPark.holes {
-//                
-//                
-//                teeView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//                
-//                teeView!.canShowCallout = true
-////                teeView!.animatesDrop = true
-////                teeView!.image = eachHole.firstPersonTeeImage!
-//                teeImageView.image = eachHole.firstPersonTeeImage
-//                
-//                
-//                
-////                teeView!.image.layer.setCornerRadius(8.0)
-////                teeView!.image.layer.clipsToBounds=true
-//    
-////
-////            }
-////            else {
-//                teeView!.annotation = annotation
-////            }
-//            }
-//            
-//            return teeView
-//    }
 
     @IBAction func getDirectionsButtonPressed(sender: AnyObject) {
         
@@ -98,7 +58,6 @@ class CourseMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         mapItem.name = "First Tee"
         let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
         mapItem.openInMapsWithLaunchOptions(launchOptions)
-        
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
