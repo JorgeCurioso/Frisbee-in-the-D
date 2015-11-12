@@ -36,7 +36,7 @@ struct Hole {
 
 
 let hole1 = Hole(name: "1",
-                description: "You must go around the middle post before hitting the one on the right",
+                description: "Aim for the phone pole in the middle of the field, but watch out for the alleyway-it's out of bounds!",
                 par: 4,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole1")),
@@ -45,7 +45,7 @@ let hole1 = Hole(name: "1",
 
 
 let hole2 = Hole(name: "2",
-                description: "The alleyway is out of bounds. Be careful as you go for the post!",
+                description: "The alleyway is out of bounds. Be careful as you go for another phone pole!",
                 par: 3,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole2")),
