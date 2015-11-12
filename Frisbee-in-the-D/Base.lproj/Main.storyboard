@@ -744,7 +744,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="1qY-H0-oUh"/>
+                    <tabBarItem key="tabBarItem" id="1qY-H0-oUh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="nfR-yp-ySq" id="LS2-po-kD0"/>
