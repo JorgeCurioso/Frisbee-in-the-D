@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eWp-df-W7a">
-                                <rect key="frame" x="16" y="130" width="288" height="381"/>
+                                <rect key="frame" x="16" y="130" width="288" height="354"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +64,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="mHr-s6-3Hv" secondAttribute="bottom" id="CwC-kO-PDL"/>
                             <constraint firstItem="eWp-df-W7a" firstAttribute="top" secondItem="yTU-KH-xsT" secondAttribute="bottom" constant="20" id="GMC-7M-47L"/>
                             <constraint firstItem="eWp-df-W7a" firstAttribute="leading" secondItem="tlQ-2N-UIP" secondAttribute="leadingMargin" id="Ne2-8v-ySb"/>
-                            <constraint firstItem="rA6-ht-wGq" firstAttribute="top" secondItem="eWp-df-W7a" secondAttribute="bottom" constant="13" id="O73-TR-anI"/>
+                            <constraint firstItem="rA6-ht-wGq" firstAttribute="top" secondItem="eWp-df-W7a" secondAttribute="bottom" constant="40" id="O73-TR-anI"/>
                             <constraint firstItem="yTU-KH-xsT" firstAttribute="top" secondItem="hsH-T9-mRu" secondAttribute="bottom" id="Q80-1n-5nb"/>
                             <constraint firstAttribute="bottomMargin" secondItem="mHr-s6-3Hv" secondAttribute="bottom" constant="4" id="ZnJ-wx-hRL"/>
                             <constraint firstItem="ynb-La-m1x" firstAttribute="top" secondItem="tlQ-2N-UIP" secondAttribute="top" id="ae7-Ko-yV7"/>
@@ -778,7 +778,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="27" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-Pi-GtT">
-                                <rect key="frame" x="20" y="175" width="280" height="344"/>
+                                <rect key="frame" x="20" y="175" width="280" height="324"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="oCB-A1-DIu"/>
@@ -828,7 +828,7 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="iga-Xf-ZIT" firstAttribute="top" secondItem="dqU-Pi-GtT" secondAttribute="bottom" id="4Qz-yj-TYt"/>
+                            <constraint firstItem="iga-Xf-ZIT" firstAttribute="top" secondItem="dqU-Pi-GtT" secondAttribute="bottom" constant="20" id="4Qz-yj-TYt"/>
                             <constraint firstItem="F4a-Jz-vgP" firstAttribute="leading" secondItem="Ivo-8d-q0c" secondAttribute="leading" id="51a-h4-fzP"/>
                             <constraint firstItem="H08-aA-NgE" firstAttribute="trailing" secondItem="Ivo-8d-q0c" secondAttribute="trailingMargin" id="5qM-4P-W8L"/>
                             <constraint firstItem="F4a-Jz-vgP" firstAttribute="top" secondItem="Ivo-8d-q0c" secondAttribute="top" id="EN0-ej-NjB"/>
