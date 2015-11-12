@@ -84,7 +84,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Rules" image="ruler" id="TVt-Ns-qMz"/>
+                    <tabBarItem key="tabBarItem" title="Rules" image="ruler-1" id="TVt-Ns-qMz"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -373,7 +373,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hole" id="FU8-Ut-hMf"/>
+                    <tabBarItem key="tabBarItem" title="Hole" image="sphere" id="FU8-Ut-hMf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="x8B-fE-E6P" id="IAP-tu-OJh"/>
@@ -624,7 +624,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Course Map" image="compass" id="clO-h2-bCR"/>
+                    <tabBarItem key="tabBarItem" title="Course Map" image="flag_fanion" id="clO-h2-bCR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backButton" destination="KAI-kU-dps" id="15c-eo-aEM"/>
@@ -744,7 +744,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" id="1qY-H0-oUh"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="1qY-H0-oUh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="nfR-yp-ySq" id="LS2-po-kD0"/>
@@ -840,7 +840,7 @@
                             <constraint firstAttribute="bottom" secondItem="F4a-Jz-vgP" secondAttribute="bottom" id="ish-HZ-Xcx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="High Scores" id="HTe-HR-WnO"/>
+                    <tabBarItem key="tabBarItem" title="High Scores" image="winners_podium" id="HTe-HR-WnO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="F4a-Jz-vgP" id="OFd-xx-dbb"/>
@@ -1010,7 +1010,7 @@
                             <constraint firstAttribute="trailing" secondItem="K8X-N6-nSP" secondAttribute="trailing" id="txe-Gz-pWR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Start Round" id="gYS-t8-ftm"/>
+                    <tabBarItem key="tabBarItem" title="Start Round" image="controls_play" id="gYS-t8-ftm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="K8X-N6-nSP" id="sZ5-nE-Vwj"/>
@@ -1073,9 +1073,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="compass" width="612" height="792"/>
-        <image name="ruler" width="30" height="30"/>
+        <image name="controls_play" width="22" height="22"/>
+        <image name="flag_fanion" width="22" height="22"/>
+        <image name="home" width="22" height="22"/>
+        <image name="ruler-1" width="22" height="22"/>
+        <image name="sphere" width="22" height="22"/>
         <image name="trainsStation" width="1536" height="2048"/>
+        <image name="winners_podium" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cUi-yW-rHg"/>
