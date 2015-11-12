@@ -45,7 +45,7 @@ let hole1 = Hole(name: "1",
 
 
 let hole2 = Hole(name: "2",
-                description: "The alleyway is out of bounds. Be careful as you go for another phone pole!",
+                description: "Once again, the alleyway is out of bounds. Be careful as you go for another phone pole!",
                 par: 3,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole2")),
@@ -77,7 +77,7 @@ let hole5 = Hole(name: "5",
                 teeLongitude: -83.076476)
 
 let hole6 = Hole(name: "6",
-                description: "This one is equally tricky. Through the 'A', but only from the side you're currently facing (not the far side). Careful not to overshoot; It could cost you!",
+                description: "This one is equally tricky; Through the 'A', but only from the side you're currently facing (not the far side). Careful not to overshoot!",
                 par: 3,
                 userStrokes: nil,
                 firstPersonTeeImage: (patternImage: UIImage(named: "Hole6")),
