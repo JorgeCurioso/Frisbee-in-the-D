@@ -64,6 +64,8 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
         
         if Int(highScores[indexPath.row].value) > rooseveltPark.coursePar   {
             cell.highScoreCellPar.text = "+ \(highScores[indexPath.row] - rooseveltPark.coursePar)"
+            cell.highScoreCellPar.textColor = UIColor.blackColor()
+            cell.highScoreCellStrokes.textColor = UIColor.blackColor()
         } else if Int(highScores[indexPath.row].value) == rooseveltPark.coursePar {
             cell.highScoreCellPar.text = "E"
             cell.highScoreCellPar.textColor = UIColor.greenColor()
