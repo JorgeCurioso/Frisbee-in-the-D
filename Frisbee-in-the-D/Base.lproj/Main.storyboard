@@ -337,8 +337,10 @@
                                     <mask key="constraints">
                                         <exclude reference="Vdd-Ih-0Na"/>
                                         <exclude reference="jKA-ua-eKQ"/>
+                                        <exclude reference="ajg-Vj-XxD"/>
                                         <exclude reference="jZa-mb-XvN"/>
                                         <exclude reference="YTI-ge-kzr"/>
+                                        <exclude reference="Hin-Qc-HHj"/>
                                         <exclude reference="rqO-qI-VWW"/>
                                         <exclude reference="HpR-b4-kgf"/>
                                         <exclude reference="cdw-AK-Ujr"/>
@@ -368,7 +370,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hole" image="frisbeeGuy2" id="FU8-Ut-hMf"/>
+                    <tabBarItem key="tabBarItem" title="Hole" id="FU8-Ut-hMf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="x8B-fE-E6P" id="IAP-tu-OJh"/>
@@ -386,13 +388,13 @@
                         <outletCollection property="strokeIncrementers" destination="gk1-xS-wyc" collectionClass="NSMutableArray" id="TU4-kJ-fHY"/>
                         <outletCollection property="strokeIncrementers" destination="Rhj-4u-BGZ" collectionClass="NSMutableArray" id="jWz-bA-LYP"/>
                         <outletCollection property="strokeIncrementers" destination="ZKE-2w-gut" collectionClass="NSMutableArray" id="SVU-mj-fUY"/>
-                        <outletCollection property="playerNameLabel" destination="7Cr-6t-KUI" collectionClass="NSMutableArray" id="xou-uv-QPQ"/>
-                        <outletCollection property="playerNameLabel" destination="qh3-CW-gs7" collectionClass="NSMutableArray" id="fC4-Xb-QyV"/>
-                        <outletCollection property="playerNameLabel" destination="Vhb-zw-ZBo" collectionClass="NSMutableArray" id="RLs-Y9-pMY"/>
                         <outletCollection property="playerStrokesLabel" destination="jHR-8E-sRE" collectionClass="NSMutableArray" id="xjv-Oq-23j"/>
                         <outletCollection property="playerStrokesLabel" destination="wnO-Ow-aKD" collectionClass="NSMutableArray" id="umR-cH-Wub"/>
                         <outletCollection property="playerStrokesLabel" destination="qjR-Vo-EaO" collectionClass="NSMutableArray" id="cyX-Vl-7f5"/>
                         <outletCollection property="playerStrokesLabel" destination="BIc-co-GbM" collectionClass="NSMutableArray" id="WKL-m7-5eH"/>
+                        <outletCollection property="playerNameLabel" destination="Vhb-zw-ZBo" collectionClass="NSMutableArray" id="z2L-XA-th6"/>
+                        <outletCollection property="playerNameLabel" destination="qh3-CW-gs7" collectionClass="NSMutableArray" id="riB-Zt-eAZ"/>
+                        <outletCollection property="playerNameLabel" destination="7Cr-6t-KUI" collectionClass="NSMutableArray" id="VF5-5h-PHl"/>
                         <segue destination="0sx-Mg-pJC" kind="presentation" identifier="Current&lt;-&gt;Leaderboard" animates="NO" modalTransitionStyle="crossDissolve" id="ZXm-Y7-WbU"/>
                     </connections>
                 </viewController>
@@ -435,7 +437,7 @@
                                         </state>
                                         <connections>
                                             <action selector="newGameButtonPressed:" destination="0sx-Mg-pJC" eventType="touchUpInside" id="9Mr-r4-D3J"/>
-                                            <segue destination="ge1-8h-7Ej" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="EeH-n2-9tt"/>
+                                            <segue destination="dLr-ip-sWh" kind="presentation" identifier="newGameSegue" modalTransitionStyle="crossDissolve" id="s6A-eW-fAh"/>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0nq-8J-sW3">
@@ -488,8 +490,8 @@
                                             <outlet property="delegate" destination="0sx-Mg-pJC" id="Vlg-0Z-5xf"/>
                                         </connections>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdP-EB-zAZ">
-                                        <rect key="frame" x="60" y="425" width="200" height="81"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdP-EB-zAZ">
+                                        <rect key="frame" x="68" y="487" width="200" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="2DL-Dd-1Lw"/>
                                             <constraint firstAttribute="height" constant="81" id="QjF-t1-GjU"/>
@@ -551,7 +553,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYw-8U-iHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ge1-8h-7Ej" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="714" y="246"/>
+            <point key="canvasLocation" x="-71" y="-149"/>
         </scene>
         <!--Course Map-->
         <scene sceneID="Q6D-Cr-UqX">
@@ -1054,7 +1056,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="frisbeeGuy2" width="25" height="25"/>
         <image name="ruler" width="30" height="30"/>
         <image name="trainsStation" width="1536" height="2048"/>
     </resources>
