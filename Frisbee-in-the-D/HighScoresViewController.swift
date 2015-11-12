@@ -60,7 +60,6 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell  {
-//        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "HighScoreCell")
         let cell: HighScoreTableViewCell = tableView.dequeueReusableCellWithIdentifier("HighScoreCell", forIndexPath: indexPath) as! HighScoreTableViewCell
         
         if Int(highScores[indexPath.row].value) > rooseveltPark.coursePar   {

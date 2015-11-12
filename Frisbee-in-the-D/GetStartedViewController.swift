@@ -22,6 +22,8 @@ class GetStartedViewController: UIViewController {
         courseDescriptionTextView.textColor = UIColor.whiteColor()
     }
     
+    
+    
     @IBAction func newToGameButtonPressed(sender: AnyObject) {}
     
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {}
