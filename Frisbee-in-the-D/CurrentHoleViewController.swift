@@ -54,7 +54,7 @@ class CurrentHoleViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         reloadCurrentHole()
-        print("Current hole = \(currentHoleIndex + 1)")
+        print("Current hole VC current hole = \(currentHoleIndex + 1)")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -81,7 +81,7 @@ class CurrentHoleViewController: UIViewController {
         for i in 0..<MultiPlayer.sharedMultiPlayer.players.count   {
             incrementerValuesArray.append(Int(strokeIncrementers[i].value))
         }
-        print("incrementerValuesArray = \(incrementerValuesArray)")
+//        print("incrementerValuesArray = \(incrementerValuesArray)")
         // if the array has 0, go through and print a '?' for whoever has zero as their score
         if incrementerValuesArray.contains(0)   {
             for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
@@ -90,14 +90,12 @@ class CurrentHoleViewController: UIViewController {
             // otherwise, calculate everyones score, perform the segue, and reset the stepper values
         } else  {
             calculateScores()
-            
             self.performSegueWithIdentifier("Current<->Leaderboard", sender: nil)
             resetStepperValues()
         }
     }
     
     
-    //To be called when moving on to the next hole
     func resetStepperValues()   {
         for textField in playerStrokesLabel  {textField.text = "0"}
         for stepper in strokeIncrementers   {stepper.value = 0}

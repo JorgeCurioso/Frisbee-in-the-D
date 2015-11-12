@@ -18,22 +18,23 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var leaderboardLabel: UILabel!
     
-    var currentHoleIndex: Int?
+    var currentHoleIndex = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func changeLayoutForFinalHole() {
-        newGameButton.hidden = true
-        if currentHoleIndex == 8    {
+//        newGameButton.hidden = true
+//        if currentHoleIndex ==     {
             nextHoleButton.hidden = true
             newGameButton.hidden = false
             leaderboardLabel.text = "Final Results"
-        }
+//        }
     }
     
     override func viewWillAppear(animated: Bool) {
+        print("leaderboard current hole is \(currentHoleIndex)")
         if currentHoleIndex == 8    {
             changeLayoutForFinalHole()
             saveFinalScores()
@@ -53,7 +54,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     func saveFinalScores()  {
         // if we're on the last hole of the course, send all our players up to Parse with a name and score attribute
-        if currentHoleIndex == 8    {
+//        if currentHoleIndex == 7    {
             for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
                 
                 let player = PFObject(className: "Player")
@@ -67,7 +68,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
                     }
                 }
             }
-        }
+//        }
     }
 
     // clears the collection of Players so none are added to another round
