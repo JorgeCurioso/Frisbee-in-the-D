@@ -13,12 +13,14 @@ class GetStartedViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var courseParLabel: UILabel!
     @IBOutlet weak var courseDescriptionLabel: UILabel!
+    @IBOutlet weak var numberOfHolesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         courseParLabel.text = "\(rooseveltPark.coursePar)"
         courseDescriptionLabel.text = rooseveltPark.description
+        numberOfHolesLabel.text = "\(rooseveltPark.holes.count)"
     }
     
     @IBAction func newToGameButtonPressed(sender: AnyObject) {}
