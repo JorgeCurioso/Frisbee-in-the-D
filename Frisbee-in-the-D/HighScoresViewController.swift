@@ -60,11 +60,12 @@ class HighScoresViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell  {
-//        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "HighScoreCell")
         let cell: HighScoreTableViewCell = tableView.dequeueReusableCellWithIdentifier("HighScoreCell", forIndexPath: indexPath) as! HighScoreTableViewCell
         
         if Int(highScores[indexPath.row].value) > rooseveltPark.coursePar   {
             cell.highScoreCellPar.text = "+ \(highScores[indexPath.row] - rooseveltPark.coursePar)"
+            cell.highScoreCellPar.textColor = UIColor.blackColor()
+            cell.highScoreCellStrokes.textColor = UIColor.blackColor()
         } else if Int(highScores[indexPath.row].value) == rooseveltPark.coursePar {
             cell.highScoreCellPar.text = "E"
             cell.highScoreCellPar.textColor = UIColor.greenColor()

@@ -25,12 +25,9 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func changeLayoutForFinalHole() {
-//        newGameButton.hidden = true
-//        if currentHoleIndex ==     {
             nextHoleButton.hidden = true
             newGameButton.hidden = false
             leaderboardLabel.text = "Final Results"
-//        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,27 +50,27 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func saveFinalScores()  {
-        // if we're on the last hole of the course, send all our players up to Parse with a name and score attribute
-//        if currentHoleIndex == 7    {
-            for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
+        //send all our players up to Parse with a name and score attribute
+        for i in 0..<MultiPlayer.sharedMultiPlayer.players.count    {
                 
-                let player = PFObject(className: "Player")
-                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].name!, forKey: "Name")
-                player.setObject(MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes, forKey: "Score")
-                player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-                    if succeeded {
-                        print("\(player) Uploaded")
-                    } else {
-                        print("Error: \(error) \(error!.userInfo)")
-                    }
+            let player = PFObject(className: "Player")
+            player.setObject(MultiPlayer.sharedMultiPlayer.players[i].name!, forKey: "Name")
+            
+            player.setObject(MultiPlayer.sharedMultiPlayer.players[i].cumulativeStrokes, forKey: "Score")
+            player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+                if succeeded {
+                    print("\(player) Uploaded")
+                } else {
+                    print("Error: \(error) \(error!.userInfo)")
                 }
             }
-//        }
+        }
     }
 
     // clears the collection of Players so none are added to another round
     @IBAction func newGameButtonPressed(sender: AnyObject) {
         MultiPlayer.sharedMultiPlayer.players = []
+        self.performSegueWithIdentifier("newGameSegue", sender: nil)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -106,12 +103,4 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         cell.cellStrokesLabel.text = "\(players[indexPath.row].cumulativeStrokes)"
         return cell
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "Leaderboard->Current" {
-//            let destVC = segue.destinationViewController as! CurrentHoleViewController
-//            destVC.currentHoleIndex = currentHoleIndex!++
-//            destVC.eachItemOnPage.alpha = 0.0
-//        }
-//    }
 }

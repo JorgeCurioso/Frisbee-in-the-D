@@ -24,11 +24,6 @@ class CurrentHoleViewController: UIViewController {
     @IBOutlet weak var holePar: UILabel!
     @IBOutlet weak var holeDescription: UILabel!
     
-    @IBOutlet weak var imageBorder: UIView!
-    @IBOutlet weak var holeLabel: UILabel!
-    @IBOutlet weak var parLabel: UILabel!
-    
-    
     var course = rooseveltPark.holes
     var currentHole = rooseveltPark.currentHole
     var currentHoleIndex = rooseveltPark.currentHoleIndex
@@ -36,7 +31,6 @@ class CurrentHoleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         displayNamesAndFields()
         currentHoleIndex = 0
         reloadCurrentHole()
@@ -81,13 +75,12 @@ class CurrentHoleViewController: UIViewController {
         for i in 0..<MultiPlayer.sharedMultiPlayer.players.count   {
             incrementerValuesArray.append(Int(strokeIncrementers[i].value))
         }
-//        print("incrementerValuesArray = \(incrementerValuesArray)")
         // if the array has 0, go through and print a '?' for whoever has zero as their score
         if incrementerValuesArray.contains(0)   {
             for i in 0..<MultiPlayer.sharedMultiPlayer.players.count  {
                 if strokeIncrementers[i].value == 0 {playerStrokesLabel[i].text = "?"}
             }
-            // otherwise, calculate everyones score, perform the segue, and reset the stepper values
+        // otherwise, calculate everyones score, perform the segue, and reset the stepper values
         } else  {
             calculateScores()
             self.performSegueWithIdentifier("Current<->Leaderboard", sender: nil)
