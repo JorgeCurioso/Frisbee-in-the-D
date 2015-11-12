@@ -429,8 +429,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-LO-O8l">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-LO-O8l">
                                         <rect key="frame" x="34" y="425" width="251" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="251" id="7UG-Ac-jwX"/>
+                                            <constraint firstAttribute="height" constant="80" id="Zpa-88-fRC"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
                                         <state key="normal" title="New Game">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -508,9 +512,11 @@
                                 <constraints>
                                     <constraint firstItem="0nq-8J-sW3" firstAttribute="centerY" secondItem="sSl-NC-sVw" secondAttribute="centerY" id="0jk-oy-XXe"/>
                                     <constraint firstAttribute="trailing" secondItem="S2f-vz-87h" secondAttribute="trailing" constant="20" id="6si-Hg-ZX1"/>
+                                    <constraint firstAttribute="bottom" secondItem="EFK-LO-O8l" secondAttribute="bottom" constant="63" id="7zb-w1-te7"/>
                                     <constraint firstItem="S2f-vz-87h" firstAttribute="top" secondItem="sSl-NC-sVw" secondAttribute="top" constant="60" id="8Mw-pd-crP"/>
                                     <constraint firstItem="0nq-8J-sW3" firstAttribute="top" secondItem="S2f-vz-87h" secondAttribute="bottom" constant="20" id="CoB-zy-Rxy"/>
                                     <constraint firstAttribute="bottom" secondItem="EdP-EB-zAZ" secondAttribute="bottom" constant="62" id="EZF-n7-jjq"/>
+                                    <constraint firstItem="EFK-LO-O8l" firstAttribute="centerX" secondItem="sSl-NC-sVw" secondAttribute="centerX" id="JaM-pE-ehu"/>
                                     <constraint firstItem="S2f-vz-87h" firstAttribute="leading" secondItem="sSl-NC-sVw" secondAttribute="leading" constant="20" id="ch9-LS-eiA"/>
                                     <constraint firstItem="0nq-8J-sW3" firstAttribute="centerX" secondItem="sSl-NC-sVw" secondAttribute="centerX" id="fNw-3z-bio"/>
                                     <constraint firstItem="EdP-EB-zAZ" firstAttribute="centerX" secondItem="sSl-NC-sVw" secondAttribute="centerX" id="i6b-CY-iGF"/>
@@ -675,17 +681,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqd-ba-X73">
-                                <rect key="frame" x="46" y="252" width="228" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="228" id="3AO-pN-ZFy"/>
-                                    <constraint firstAttribute="height" constant="64" id="UmV-J9-nAs"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-Nh-l1P">
                                 <rect key="frame" x="16" y="20" width="83" height="30"/>
                                 <state key="normal" title="Course Map">
@@ -705,18 +700,28 @@
                                     <segue destination="KHh-li-AQK" kind="modal" identifier="Start&lt;-&gt;Rules" modalPresentationStyle="pageSheet" modalTransitionStyle="crossDissolve" id="M6z-RZ-S4g"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETr-T9-3Yh">
+                                <rect key="frame" x="40.5" y="233.5" width="240" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="7lk-og-LlY"/>
+                                    <constraint firstAttribute="height" constant="160" id="oT5-5U-1mo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="nfR-yp-ySq" secondAttribute="trailing" id="23A-AP-vCS"/>
                             <constraint firstItem="ZAg-pL-N18" firstAttribute="centerX" secondItem="SLR-2v-pTH" secondAttribute="centerX" constant="-40" id="4z0-mU-UTp"/>
                             <constraint firstItem="jHH-q6-26m" firstAttribute="top" secondItem="QHq-mx-GPk" secondAttribute="bottom" constant="40" id="7O0-F1-n4w"/>
-                            <constraint firstItem="Uqd-ba-X73" firstAttribute="centerY" secondItem="SLR-2v-pTH" secondAttribute="centerY" id="CnE-uR-2Yu"/>
                             <constraint firstAttribute="bottom" secondItem="nfR-yp-ySq" secondAttribute="bottom" id="Ezq-Ui-8V4"/>
                             <constraint firstItem="rDR-yl-u9l" firstAttribute="leading" secondItem="ZAg-pL-N18" secondAttribute="trailing" constant="5" id="F3q-KI-VA7"/>
                             <constraint firstAttribute="trailing" secondItem="nfR-yp-ySq" secondAttribute="trailing" id="MwF-ef-GOT"/>
                             <constraint firstItem="nfR-yp-ySq" firstAttribute="leading" secondItem="SLR-2v-pTH" secondAttribute="leading" id="QdN-IW-4y8"/>
-                            <constraint firstItem="Uqd-ba-X73" firstAttribute="centerX" secondItem="SLR-2v-pTH" secondAttribute="centerX" id="Wjy-Y5-EtV"/>
+                            <constraint firstItem="ETr-T9-3Yh" firstAttribute="centerY" secondItem="SLR-2v-pTH" secondAttribute="centerY" constant="30" id="V6b-u6-jhA"/>
+                            <constraint firstItem="ETr-T9-3Yh" firstAttribute="centerX" secondItem="SLR-2v-pTH" secondAttribute="centerX" id="W4c-mC-n1x"/>
                             <constraint firstItem="dqA-Nh-l1P" firstAttribute="top" secondItem="SLR-2v-pTH" secondAttribute="topMargin" constant="20" id="aJB-Ie-W8x"/>
                             <constraint firstItem="2cV-8h-yJG" firstAttribute="top" secondItem="SLR-2v-pTH" secondAttribute="topMargin" constant="20" id="dRE-k6-tjy"/>
                             <constraint firstItem="jHH-q6-26m" firstAttribute="trailing" secondItem="SLR-2v-pTH" secondAttribute="trailingMargin" id="e2C-JF-TdI"/>
@@ -743,7 +748,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundImage" destination="nfR-yp-ySq" id="LS2-po-kD0"/>
-                        <outlet property="courseDescriptionTextView" destination="Uqd-ba-X73" id="Kon-Ml-h3A"/>
+                        <outlet property="courseDescriptionLabel" destination="ETr-T9-3Yh" id="sWz-xq-sQY"/>
                         <outlet property="courseParLabel" destination="rDR-yl-u9l" id="0KY-lF-kxD"/>
                     </connections>
                 </viewController>
@@ -1072,7 +1077,7 @@
         <image name="trainsStation" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cUi-yW-rHg"/>
         <segue reference="M6z-RZ-S4g"/>
-        <segue reference="ynO-0T-O20"/>
     </inferredMetricsTieBreakers>
 </document>
