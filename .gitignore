@@ -20,6 +20,14 @@ DerivedData
 *.DS_Store
 *.DS_Store?
 
+
+*Keys
+*Keys*
+*keys
+*keys*
+Keys.plist
+keys.plist
+
 *Keys.swift
 Keys.swift
 /Pods/
