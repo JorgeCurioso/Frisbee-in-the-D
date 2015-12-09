@@ -58,7 +58,7 @@
 		23A73D1A1BE901C800846EF7 /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupGameViewController.swift; sourceTree = "<group>"; };
 		23A73D1E1BE989A900846EF7 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		23F30DF91C17B4C000C5F3F5 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		23F30DF91C17B4C000C5F3F5 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = ../Keys.plist; sourceTree = "<group>"; };
 		4161C1D03EFF733BA9D1939C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		644D87FF2951CB7B3702927A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B363F5271BE6CA9F00DB6358 /* Frisbee-in-the-D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Frisbee-in-the-D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +126,6 @@
 		B363F51E1BE6CA9F00DB6358 = {
 			isa = PBXGroup;
 			children = (
-				23F30DF91C17B4C000C5F3F5 /* Keys.plist */,
 				B363F5291BE6CA9F00DB6358 /* Frisbee-in-the-D */,
 				B363F53E1BE6CAA000DB6358 /* Frisbee-in-the-DTests */,
 				B363F5491BE6CAA000DB6358 /* Frisbee-in-the-DUITests */,
@@ -158,6 +157,7 @@
 				B363F5311BE6CA9F00DB6358 /* Assets.xcassets */,
 				B363F5331BE6CA9F00DB6358 /* LaunchScreen.storyboard */,
 				B363F5361BE6CA9F00DB6358 /* Info.plist */,
+				23F30DF91C17B4C000C5F3F5 /* Keys.plist */,
 				230AE9611BEC308F005101F8 /* Frisbee-in-the-D-Bridging-Header.h */,
 			);
 			path = "Frisbee-in-the-D";
