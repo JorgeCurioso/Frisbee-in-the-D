@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		230AE9651BEC3190005101F8 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AE9641BEC3190005101F8 /* Keys.swift */; settings = {ASSET_TAGS = (); }; };
-		2342AB011BED28F300F622E8 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342AB001BED28F300F622E8 /* GetStartedViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		2342AB031BED290700F622E8 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342AB021BED290700F622E8 /* HighScoresViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		2353595B1BF030BF0015D165 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353595A1BF030BF0015D165 /* LeaderboardTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		2353595D1BF03FAA0015D165 /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353595C1BF03FAA0015D165 /* HighScoreTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		23A73D171BE7B70E00846EF7 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D161BE7B70E00846EF7 /* RulesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		23A73D191BE7E0F900846EF7 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		23A73D1B1BE901C800846EF7 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1A1BE901C800846EF7 /* Rules.swift */; settings = {ASSET_TAGS = (); }; };
-		23A73D1D1BE988CD00846EF7 /* SetupGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		23A73D1F1BE989A900846EF7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1E1BE989A900846EF7 /* Player.swift */; settings = {ASSET_TAGS = (); }; };
+		2342AB011BED28F300F622E8 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342AB001BED28F300F622E8 /* GetStartedViewController.swift */; };
+		2342AB031BED290700F622E8 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342AB021BED290700F622E8 /* HighScoresViewController.swift */; };
+		2353595B1BF030BF0015D165 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353595A1BF030BF0015D165 /* LeaderboardTableViewCell.swift */; };
+		2353595D1BF03FAA0015D165 /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353595C1BF03FAA0015D165 /* HighScoreTableViewCell.swift */; };
+		23A73D171BE7B70E00846EF7 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D161BE7B70E00846EF7 /* RulesViewController.swift */; };
+		23A73D191BE7E0F900846EF7 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D181BE7E0F900846EF7 /* LeaderboardViewController.swift */; };
+		23A73D1B1BE901C800846EF7 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1A1BE901C800846EF7 /* Rules.swift */; };
+		23A73D1D1BE988CD00846EF7 /* SetupGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */; };
+		23A73D1F1BE989A900846EF7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A73D1E1BE989A900846EF7 /* Player.swift */; };
+		23F30DFA1C17B4C000C5F3F5 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23F30DF91C17B4C000C5F3F5 /* Keys.plist */; };
 		53FBFF1CCF7DD1ADAA24385F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC908D1F2BF7DF32A19284A6 /* Pods.framework */; };
 		B363F52B1BE6CA9F00DB6358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F52A1BE6CA9F00DB6358 /* AppDelegate.swift */; };
 		B363F5301BE6CA9F00DB6358 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B363F52E1BE6CA9F00DB6358 /* Main.storyboard */; };
@@ -24,10 +24,10 @@
 		B363F5351BE6CA9F00DB6358 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B363F5331BE6CA9F00DB6358 /* LaunchScreen.storyboard */; };
 		B363F5401BE6CAA000DB6358 /* Frisbee_in_the_DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F53F1BE6CAA000DB6358 /* Frisbee_in_the_DTests.swift */; };
 		B363F54B1BE6CAA000DB6358 /* Frisbee_in_the_DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F54A1BE6CAA000DB6358 /* Frisbee_in_the_DUITests.swift */; };
-		B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55D1BE6EBB700DB6358 /* Hole.swift */; settings = {ASSET_TAGS = (); }; };
-		B363F5611BE6F27F00DB6358 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F5601BE6F27F00DB6358 /* Course.swift */; settings = {ASSET_TAGS = (); }; };
+		B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F5581BE6E5A200DB6358 /* CourseMapViewController.swift */; };
+		B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55A1BE6E5B100DB6358 /* CurrentHoleViewController.swift */; };
+		B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F55D1BE6EBB700DB6358 /* Hole.swift */; };
+		B363F5611BE6F27F00DB6358 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363F5601BE6F27F00DB6358 /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		230AE9611BEC308F005101F8 /* Frisbee-in-the-D-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frisbee-in-the-D-Bridging-Header.h"; sourceTree = "<group>"; };
-		230AE9641BEC3190005101F8 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		2342AB001BED28F300F622E8 /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		2342AB021BED290700F622E8 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 		2353595A1BF030BF0015D165 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		23A73D1A1BE901C800846EF7 /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		23A73D1C1BE988CD00846EF7 /* SetupGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupGameViewController.swift; sourceTree = "<group>"; };
 		23A73D1E1BE989A900846EF7 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		23F30DF91C17B4C000C5F3F5 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = ../Keys.plist; sourceTree = "<group>"; };
 		4161C1D03EFF733BA9D1939C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		644D87FF2951CB7B3702927A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B363F5271BE6CA9F00DB6358 /* Frisbee-in-the-D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Frisbee-in-the-D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +157,7 @@
 				B363F5311BE6CA9F00DB6358 /* Assets.xcassets */,
 				B363F5331BE6CA9F00DB6358 /* LaunchScreen.storyboard */,
 				B363F5361BE6CA9F00DB6358 /* Info.plist */,
+				23F30DF91C17B4C000C5F3F5 /* Keys.plist */,
 				230AE9611BEC308F005101F8 /* Frisbee-in-the-D-Bridging-Header.h */,
 			);
 			path = "Frisbee-in-the-D";
@@ -201,7 +202,6 @@
 				B363F5601BE6F27F00DB6358 /* Course.swift */,
 				23A73D1A1BE901C800846EF7 /* Rules.swift */,
 				23A73D1E1BE989A900846EF7 /* Player.swift */,
-				230AE9641BEC3190005101F8 /* Keys.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -313,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F30DFA1C17B4C000C5F3F5 /* Keys.plist in Resources */,
 				B363F5351BE6CA9F00DB6358 /* LaunchScreen.storyboard in Resources */,
 				B363F5321BE6CA9F00DB6358 /* Assets.xcassets in Resources */,
 				B363F5301BE6CA9F00DB6358 /* Main.storyboard in Resources */,
@@ -393,7 +394,6 @@
 				B363F55B1BE6E5B100DB6358 /* CurrentHoleViewController.swift in Sources */,
 				2342AB011BED28F300F622E8 /* GetStartedViewController.swift in Sources */,
 				B363F55E1BE6EBB700DB6358 /* Hole.swift in Sources */,
-				230AE9651BEC3190005101F8 /* Keys.swift in Sources */,
 				B363F5611BE6F27F00DB6358 /* Course.swift in Sources */,
 				23A73D1D1BE988CD00846EF7 /* SetupGameViewController.swift in Sources */,
 				B363F5591BE6E5A200DB6358 /* CourseMapViewController.swift in Sources */,

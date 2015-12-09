@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist")
+        let plist = NSDictionary(contentsOfFile: path!)
+
+        let appID:String = plist?.objectForKey("AppID") as! String
+        let clientID:String = plist?.objectForKey("ClientID")as! String
+        
         Parse.setApplicationId(appID, clientKey: clientID)
         
         return true
